@@ -16,6 +16,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución",
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBScripts", "DBScripts", "{3A4ED895-639F-4E55-BE62-5F77EFE0BF42}"
+	ProjectSection(SolutionItems) = preProject
+		DBScripts\CreateTABLES.sql = DBScripts\CreateTABLES.sql
+		DBScripts\CreateTABLES_DOCS_y_CLIENT.sql = DBScripts\CreateTABLES_DOCS_y_CLIENT.sql
+		DBScripts\CreateTABLES_Poliza_Historial.txt = DBScripts\CreateTABLES_Poliza_Historial.txt
+		DBScripts\INSERT_INTO_TABLES.sql = DBScripts\INSERT_INTO_TABLES.sql
+		DBScripts\ScriptsBDProyectoSeguros.txt = DBScripts\ScriptsBDProyectoSeguros.txt
+		DBScripts\SP_BRANCHMASTER.sql = DBScripts\SP_BRANCHMASTER.sql
+		DBScripts\SP_CLIENTES.sql = DBScripts\SP_CLIENTES.sql
+		DBScripts\SP_DOCUMENTOS.sql = DBScripts\SP_DOCUMENTOS.sql
+		DBScripts\SP_POLIZA_UPDATE.sql = DBScripts\SP_POLIZA_UPDATE.sql
+		DBScripts\SP_PRODUCTMASTER.sql = DBScripts\SP_PRODUCTMASTER.sql
+		DBScripts\SP_ROLEMASTER.sql = DBScripts\SP_ROLEMASTER.sql
+		DBScripts\SP_WAYPAYMASTER.sql = DBScripts\SP_WAYPAYMASTER.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
