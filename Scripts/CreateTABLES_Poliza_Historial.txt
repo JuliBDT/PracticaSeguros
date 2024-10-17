@@ -1,0 +1,30 @@
+
+CREATE TABLE Poliza (
+    ramo INT,
+    producto INT,
+    poliza INT,
+    cliente_titular VARCHAR2(50),
+    nulldate DATE,
+    fecha_efecto DATE,
+    fecha_vigencia DATE,
+    domicilio VARCHAR2(255),
+    suma_asegurada INT,
+    waypay INT,
+    PRIMARY KEY (ramo, producto, poliza)
+);
+
+
+
+CREATE TABLE Historial_Polizas (
+    ramo INT,
+    producto INT,
+    poliza INT,
+    cliente_titular VARCHAR2(50),
+    nulldate TIMESTAMP,
+    fecha_efecto DATE,
+    fecha_vigencia DATE,
+    domicilio VARCHAR2(255),
+    suma_asegurada INT,
+    waypay INT,
+    PRIMARY KEY (ramo, producto, poliza, nulldate)
+);
