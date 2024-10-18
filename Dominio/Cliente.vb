@@ -1,62 +1,62 @@
 ﻿Public Class Cliente
-    Private _cliente As String
-    Private _nombre As String
-    Private _fechaNacimiento As Date
-    Private _nulldate As Date
-    Private _fechaModificacion As Date
-    Private _estadoCivil As Integer
+    Private _Cliente As String
+    Private _Nombre As String
+    Private _FechaNacimiento As Date
+    Private _Nulldate As Date
+    Private _FechaModificacion As Date
+    Private _EstadoCivil As Integer
 
     Public Property Cliente As String
         Get
-            Return _cliente
+            Return _Cliente
         End Get
         Set(value As String)
-            _cliente = value
+            _Cliente = value
         End Set
     End Property
 
     Public Property Nombre As String
         Get
-            Return _nombre
+            Return _Nombre
         End Get
         Set(value As String)
-            _nombre = value
+            _Nombre = value
         End Set
     End Property
 
     Public Property FechaNacimiento As Date
         Get
-            Return _fechaNacimiento
+            Return _FechaNacimiento
         End Get
         Set(value As Date)
-            _fechaNacimiento = value
+            _FechaNacimiento = value
         End Set
     End Property
 
     Public Property Nulldate As Date
         Get
-            Return _nulldate
+            Return _Nulldate
         End Get
         Set(value As Date)
-            _nulldate = value
+            _Nulldate = value
         End Set
     End Property
 
     Public Property FechaModificacion As Date
         Get
-            Return _fechaModificacion
+            Return _FechaModificacion
         End Get
         Set(value As Date)
-            _fechaModificacion = value
+            _FechaModificacion = value
         End Set
     End Property
 
     Public Property EstadoCivil As Integer
         Get
-            Return _estadoCivil
+            Return _EstadoCivil
         End Get
         Set(value As Integer)
-            _estadoCivil = value
+            _EstadoCivil = value
         End Set
     End Property
 End Class
