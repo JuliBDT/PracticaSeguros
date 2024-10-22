@@ -6,6 +6,16 @@
     Private _EstadoRegistro As Integer
     Private _CodUsuario As Integer
 
+    Public Sub New(ramos As Integer, producto As Integer, fechaComputo As Date, descripcion As String, estadoRegistro As Integer, codUsuario As Integer)
+        _Ramos = ramos
+        _Producto = producto
+        _FechaComputo = fechaComputo
+        _Descripcion = descripcion
+        _EstadoRegistro = estadoRegistro
+        _CodUsuario = codUsuario
+    End Sub
+
+
 #Region "Properties"
     Public Property Ramos As Integer
         Get

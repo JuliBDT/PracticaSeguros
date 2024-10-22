@@ -1,26 +1,24 @@
-﻿Public Class Ramo
-    Private _Ramo As Integer
+﻿Public Class WayPay
+    Private _WayPay As Integer
     Private _FechaComputo As Date
     Private _Descripcion As String
-    Private _EstadoRegistro As Integer
+    Private _Estado As Integer
     Private _CodUsuario As Integer
 
-    Public Sub New(ramo As Integer, fechaComputo As Date, descripcion As String, estadoRegistro As Integer, codUsuario As Integer)
-        _Ramo = ramo
-        _FechaComputo = fechaComputo
-        _Descripcion = descripcion
-        _EstadoRegistro = estadoRegistro
-        _CodUsuario = codUsuario
+    Public Sub New(wayPay As Integer, fechaComputo As Date, descripcion As String, estado As Integer, codUsuario As Integer)
+        Me.WayPay = wayPay
+        Me.FechaComputo = fechaComputo
+        Me.Descripcion = descripcion
+        Me.Estado = estado
+        Me.CodUsuario = codUsuario
     End Sub
 
-
-#Region "Properties"
-    Public Property Ramo As Integer
+    Public Property WayPay As Integer
         Get
-            Return _Ramo
+            Return _WayPay
         End Get
         Set(value As Integer)
-            _Ramo = value
+            _WayPay = value
         End Set
     End Property
 
@@ -42,12 +40,12 @@
         End Set
     End Property
 
-    Public Property EstadoRegistro As Integer
+    Public Property Estado As Integer
         Get
-            Return _EstadoRegistro
+            Return _Estado
         End Get
         Set(value As Integer)
-            _EstadoRegistro = value
+            _Estado = value
         End Set
     End Property
 
@@ -59,6 +57,6 @@
             _CodUsuario = value
         End Set
     End Property
-#End Region
+
 
 End Class

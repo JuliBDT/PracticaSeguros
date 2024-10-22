@@ -64,6 +64,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WayPay.vb" />
     <Compile Include="Producto.vb" />
     <Compile Include="Ramo.vb" />
     <Compile Include="Rol.vb" />
