@@ -2,6 +2,7 @@
     Private _Ramo As Integer
     Private _Producto As Integer
     Private _Poliza As Integer
+    Private _ClienteTitular As String
     Private _Nulldate As Date
     Private _FechaDeEfecto As Date
     Private _FechaDeVigencia As Date
@@ -9,20 +10,12 @@
     Private _SumaAsegurada As Integer
     Private _Waypay As Integer
 
-    Public Sub New(ramo As Integer, producto As Integer, poliza As Integer, nulldate As Date, fechaDeEfecto As Date, fechaDeVigencia As Date,
+    Public Sub New(ramo As Integer, producto As Integer, poliza As Integer, Cliente As String, nulldate As Date, fechaDeEfecto As Date, fechaDeVigencia As Date,
                    domicilio As String, sumaAsegurada As Integer, waypay As Integer)
         Me.Ramo = ramo
         Me.Producto = producto
         Me.Poliza = poliza
-        Me.Nulldate = nulldate
-        Me.FechaDeEfecto = fechaDeEfecto
-        Me.FechaDeVigencia = fechaDeVigencia
-        Me.Domicilio = domicilio
-        Me.SumaAsegurada = sumaAsegurada
-        Me.Waypay = waypay
-        Me.Ramo = ramo
-        Me.Producto = producto
-        Me.Poliza = poliza
+        Me.ClienteTitular = Cliente
         Me.Nulldate = nulldate
         Me.FechaDeEfecto = fechaDeEfecto
         Me.FechaDeVigencia = fechaDeVigencia
@@ -111,6 +104,15 @@
         End Get
         Set(value As Integer)
             _Waypay = value
+        End Set
+    End Property
+
+    Public Property ClienteTitular As String
+        Get
+            Return _ClienteTitular
+        End Get
+        Set(value As String)
+            _ClienteTitular = value
         End Set
     End Property
 #End Region

@@ -5,6 +5,7 @@
     Private _Descripcion As String
     Private _EstadoRegistro As Integer
     Private _CodUsuario As Integer
+
 #Region "Properties"
     Public Property Ramos As Integer
         Get

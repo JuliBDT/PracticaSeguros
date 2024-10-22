@@ -4,11 +4,6 @@
     Private _Descripcion As String
     Private _EstadoRegistro As Integer
     Private _CodUsuario As Integer
-    Private _ListadoDeProductos As List(Of Producto)
-
-    Public Sub New()
-        Me._ListadoDeProductos = New List(Of Producto)()
-    End Sub
 
 #Region "Properties"
     Public Property Ramo As Integer
