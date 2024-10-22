@@ -9,6 +9,30 @@
     Private _SumaAsegurada As Integer
     Private _Waypay As Integer
 
+    Public Sub New(ramo As Integer, producto As Integer, poliza As Integer, nulldate As Date, fechaDeEfecto As Date, fechaDeVigencia As Date,
+                   domicilio As String, sumaAsegurada As Integer, waypay As Integer)
+        Me.Ramo = ramo
+        Me.Producto = producto
+        Me.Poliza = poliza
+        Me.Nulldate = nulldate
+        Me.FechaDeEfecto = fechaDeEfecto
+        Me.FechaDeVigencia = fechaDeVigencia
+        Me.Domicilio = domicilio
+        Me.SumaAsegurada = sumaAsegurada
+        Me.Waypay = waypay
+        Me.Ramo = ramo
+        Me.Producto = producto
+        Me.Poliza = poliza
+        Me.Nulldate = nulldate
+        Me.FechaDeEfecto = fechaDeEfecto
+        Me.FechaDeVigencia = fechaDeVigencia
+        Me.Domicilio = domicilio
+        Me.SumaAsegurada = sumaAsegurada
+        Me.Waypay = waypay
+    End Sub
+
+
+#Region "Properties"
     Public Property Ramo As Integer
         Get
             Return _Ramo
@@ -89,4 +113,6 @@
             _Waypay = value
         End Set
     End Property
+#End Region
+
 End Class
