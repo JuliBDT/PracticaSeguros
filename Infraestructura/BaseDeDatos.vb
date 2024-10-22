@@ -146,5 +146,7 @@ Public Class BaseDeDatos
         Return pBuscada.ClienteTitular
     End Function
 
-
+    Public Function ObtenerRamos() As List(Of Ramo)
+        Throw New NotImplementedException()
+    End Function
 End Class

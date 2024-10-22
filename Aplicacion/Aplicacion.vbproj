@@ -103,6 +103,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Dominio\Dominio.vbproj">
+      <Project>{0D945B26-F90E-4D43-8FF5-053BAC2C7119}</Project>
+      <Name>Dominio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Infraestructura\Infraestructura.vbproj">
       <Project>{E2369925-BD96-4296-8FD4-A7FA167080F2}</Project>
       <Name>Infraestructura</Name>
