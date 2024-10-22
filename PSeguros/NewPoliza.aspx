@@ -41,6 +41,8 @@
         <label for="txtWayPay">Forma de Pago (WayPay):</label>
         <asp:TextBox ID="txtWayPay" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
         <br />
+
+        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
     </div>
 
 </asp:Content>
