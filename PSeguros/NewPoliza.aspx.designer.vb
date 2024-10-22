@@ -14,31 +14,31 @@ Option Explicit On
 Partial Public Class NewPoliza
 
     '''<summary>
-    '''Control txtRamo.
+    '''Control ddlRamo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtRamo As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ddlRamo As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Control txtProducto.
+    '''Control ddlProducto.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtProducto As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ddlProducto As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Control txtPoliza.
+    '''Control ddlPoliza.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtPoliza As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ddlPoliza As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control txtClienteTitular.

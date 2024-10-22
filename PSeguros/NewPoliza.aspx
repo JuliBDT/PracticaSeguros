@@ -3,16 +3,19 @@
 
     <div>
         <h2>Nueva Póliza de Seguro</h2>
-        <label for="txtRamo">Ramo:</label>
-        <asp:TextBox ID="txtRamo" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+        <label for="ddlRamo">Ramo:</label>
+        <asp:DropDownList ID="ddlRamo" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlRamo_SelectedIndexChanged">
+        </asp:DropDownList>
         <br />
 
-        <label for="txtProducto">Producto:</label>
-        <asp:TextBox ID="txtProducto" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+        <label for="ddlProducto">Producto:</label>
+        <asp:DropDownList ID="ddlProducto" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlProducto_SelectedIndexChanged">
+        </asp:DropDownList>
         <br />
 
-        <label for="txtPoliza">Póliza:</label>
-        <asp:TextBox ID="txtPoliza" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+        <label for="ddlPoliza">Póliza:</label>
+        <asp:DropDownList ID="ddlPoliza" runat="server" CssClass="form-control">
+        </asp:DropDownList>
         <br />
 
         <label for="txtClienteTitular">Cliente Titular:</label>
