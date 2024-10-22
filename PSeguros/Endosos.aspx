@@ -1,22 +1,25 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="NewPoliza.aspx.vb" Inherits="PSeguros.NewPoliza" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="Endosos.aspx.vb" Inherits="PSeguros.Endosos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+    <h2>Endoso de Póliza</h2>
+
+    <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="alert alert-danger" />
+
     <div>
-        <h2>Nueva Póliza de Seguro</h2>
         <label for="txtRamo">Ramo:</label>
-        <asp:TextBox ID="txtRamo" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+        <asp:TextBox ID="txtRamo" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
         <br />
 
         <label for="txtProducto">Producto:</label>
-        <asp:TextBox ID="txtProducto" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+        <asp:TextBox ID="txtProducto" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
         <br />
 
         <label for="txtPoliza">Póliza:</label>
-        <asp:TextBox ID="txtPoliza" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+        <asp:TextBox ID="txtPoliza" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
         <br />
 
         <label for="txtClienteTitular">Cliente Titular:</label>
-        <asp:TextBox ID="txtClienteTitular" runat="server" CssClass="form-control"></asp:TextBox>
+        <asp:TextBox ID="txtClienteTitular" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
         <br />
 
         <label for="txtFechaEfecto">Fecha de Efecto:</label>
@@ -38,6 +41,7 @@
         <label for="txtWayPay">Forma de Pago (WayPay):</label>
         <asp:TextBox ID="txtWayPay" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
         <br />
+
     </div>
 
 </asp:Content>
