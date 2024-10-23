@@ -39,11 +39,11 @@
         <br />
 
         <label for="ddlWayPay">Forma de Pago:</label>
-        <asp:DropDownList ID="ddlWayPay" runat="server" CssClass="form-control">
+        <asp:DropDownList ID="ddlWayPay" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlWayPay_SelectedIndexChanged">
         </asp:DropDownList>
         <br />
 
-        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
+        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" AutoPostBack="True" />
     </div>
 
 </asp:Content>
