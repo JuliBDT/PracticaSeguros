@@ -133,8 +133,8 @@ Public Class BaseDeDatos
         Return _ListaDePolizas.FirstOrDefault(Function(p) p.Poliza = poliza AndAlso p.Producto = producto AndAlso p.Ramo = ramo)
     End Function
 
-    Public Function PolizaPorRamo(ramo As Integer) As List(Of Producto)
-        Return _ListaDeProductos.Where(Function(p) p.Ramos = ramo).ToList()
+    Public Function PolizaPorRamo(ramo As Integer) As List(Of Poliza)
+        Return _ListaDePolizas.Where(Function(p) p.Ramo = ramo).ToList()
     End Function
 
 
@@ -187,5 +187,8 @@ Public Class BaseDeDatos
         Return _ListaDeTipoDeRoles
     End Function
 
+    Public Function ProductoPorRamo(ramo As Integer) As List(Of Producto)
+        Return _ListaDeProductos.Where(Function(p) p.Ramos = ramo).ToList()
+    End Function
 
 End Class
