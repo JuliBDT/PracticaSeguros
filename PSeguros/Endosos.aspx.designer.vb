@@ -23,31 +23,31 @@ Partial Public Class Endosos
     Protected WithEvents ValidationSummary1 As Global.System.Web.UI.WebControls.ValidationSummary
 
     '''<summary>
-    '''Control txtRamo.
+    '''Control ddlRamos.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtRamo As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ddlRamos As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Control txtProducto.
+    '''Control ddlProductos.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtProducto As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ddlProductos As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Control txtPoliza.
+    '''Control ddlPolizas.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtPoliza As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ddlPolizas As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control txtClienteTitular.
@@ -102,4 +102,13 @@ Partial Public Class Endosos
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents txtWayPay As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control btnGuardar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnGuardar As Global.System.Web.UI.WebControls.Button
 End Class

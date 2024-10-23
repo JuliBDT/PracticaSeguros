@@ -10,7 +10,31 @@ Public Class BaseDeDatos
     Private _ListaDeClientes As List(Of Cliente)
     Private _ListaDeWayPays As List(Of WayPay)
     Private _ListaDeRoles As List(Of Rol)
+    Private Shared _instance As BaseDeDatos
+    Private Shared ReadOnly _lock As New Object()
 
+    Private Sub New()
+        GenerarListaDeRamos()
+        GenerarListaDeRoles()
+        GenerarListaDeWayPays()
+        _HistorialDePolizas = New List(Of Poliza)
+        GenerarListaDeProductos()
+        _ListaDePolizas = New List(Of Poliza)
+        _ListaDeClientes = New List(Of Cliente)
+    End Sub
+
+    ' Método público para acceder a la instancia única
+    Public Shared Function Instance() As BaseDeDatos
+        If _instance Is Nothing Then
+            ' Asegurar que solo un hilo puede crear la instancia
+            SyncLock _lock
+                If _instance Is Nothing Then
+                    _instance = New BaseDeDatos()
+                End If
+            End SyncLock
+        End If
+        Return _instance
+    End Function
     Public Property ListaDeRoles As List(Of Rol)
         Get
             Return _ListaDeRoles
@@ -20,15 +44,6 @@ Public Class BaseDeDatos
         End Set
     End Property
 
-    Public Sub New()
-        GenerarListaDeRamos()
-        GenerarListaDeRoles()
-        GenerarListaDeWayPays()
-        _HistorialDePolizas = New List(Of Poliza)
-        GenerarListaDeProductos()
-        _ListaDePolizas = New List(Of Poliza)
-        _ListaDeClientes = New List(Of Cliente)
-    End Sub
 
     Private Sub GenerarListaDeWayPays()
         _ListaDeWayPays.Add(New WayPay(1, #2014-04-17#, "Mastercard", 1, 30172))
