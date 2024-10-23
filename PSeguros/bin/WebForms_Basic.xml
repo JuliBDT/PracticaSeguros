@@ -46,27 +46,27 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.Endosos._txtRamo">
+<member name="F:PSeguros.Endosos._ddlRamos">
 <summary>
-Control txtRamo.
+Control ddlRamos.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.Endosos._txtProducto">
+<member name="F:PSeguros.Endosos._ddlProductos">
 <summary>
-Control txtProducto.
+Control ddlProductos.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.Endosos._txtPoliza">
+<member name="F:PSeguros.Endosos._ddlPolizas">
 <summary>
-Control txtPoliza.
+Control ddlPolizas.
 </summary>
 <remarks>
 Campo generado automáticamente.

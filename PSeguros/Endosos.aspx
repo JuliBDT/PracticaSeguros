@@ -5,21 +5,21 @@
 
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="alert alert-danger" />
 
-         <div>
-         <label for="ddlRamo">Ramo:</label>
-         <asp:DropDownList ID="ddlRamos" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlRamo_SelectedIndexChanged">
-         </asp:DropDownList>
-         <br />
+    <div>
+        <label for="ddlRamo">Ramo:</label>
+        <asp:DropDownList ID="ddlRamos" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlRamo_SelectedIndexChanged">
+        </asp:DropDownList>
+        <br />
 
-         <label for="ddlProducto">Producto:</label>
-         <asp:DropDownList ID="ddlProductos" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlProducto_SelectedIndexChanged">
-         </asp:DropDownList>
-         <br />
+        <label for="ddlProducto">Producto:</label>
+        <asp:DropDownList ID="ddlProductos" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlProducto_SelectedIndexChanged">
+        </asp:DropDownList>
+        <br />
 
-         <label for="ddlPoliza">Póliza:</label>
-         <asp:DropDownList ID="ddlPolizas" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlPoliza_SelectedIndexChanged">
-         </asp:DropDownList>
-         <br />
+        <label for="ddlPoliza">Póliza:</label>
+        <asp:DropDownList ID="ddlPolizas" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlPoliza_SelectedIndexChanged">
+        </asp:DropDownList>
+        <br />
 
         <label for="txtClienteTitular">Cliente Titular:</label>
         <asp:TextBox ID="txtClienteTitular" runat="server" CssClass="form-control" ReadOnly="true"></asp:TextBox>
@@ -46,7 +46,6 @@
         <br />
 
         <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
-
     </div>
 
 </asp:Content>

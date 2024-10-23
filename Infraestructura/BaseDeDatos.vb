@@ -46,6 +46,7 @@ Public Class BaseDeDatos
 
 
     Private Sub GenerarListaDeWayPays()
+        _ListaDeWayPays = New List(Of WayPay)
         _ListaDeWayPays.Add(New WayPay(1, #2014-04-17#, "Mastercard", 1, 30172))
         _ListaDeWayPays.Add(New WayPay(2, #2017-05-26#, "Visa", 1, 891))
         _ListaDeWayPays.Add(New WayPay(3, #2017-04-20#, "American Express", 1, 34))
@@ -57,6 +58,7 @@ Public Class BaseDeDatos
     End Sub
 
     Private Sub GenerarListaDeProductos()
+        Me._ListaDeProductos = New List(Of Producto)
         _ListaDeProductos.Add(New Producto(1, 1501, #2017-05-16#, "Incendio", 1, 386))
         _ListaDeProductos.Add(New Producto(2, 2041, #2024-08-28#, "Hogar Clientes BGBA", 1, 459))
         _ListaDeProductos.Add(New Producto(2, 2043, #2017-11-13#, "Hogar Empleados", 1, 386))
@@ -107,6 +109,7 @@ Public Class BaseDeDatos
     End Sub
 
     Private Sub GenerarListaDeRoles()
+        Me._ListaDeTipoDeRoles = New List(Of TipoDeRoles)
         _ListaDeTipoDeRoles.Add(New TipoDeRoles(1, #2007-01-29#, "Contratante", 1, 1))
         _ListaDeTipoDeRoles.Add(New TipoDeRoles(2, #2007-01-29#, "Asegurado", 1, 1))
         _ListaDeTipoDeRoles.Add(New TipoDeRoles(3, #2007-01-29#, "Tercero", 1, 1))
@@ -120,6 +123,7 @@ Public Class BaseDeDatos
     End Sub
 
     Private Sub GenerarListaDeRamos()
+        Me._ListaDeRamos = New List(Of Ramo)
         _ListaDeRamos.Add(New Ramo(1, #2014-04-17#, "Incendio", 1, 30172))
         _ListaDeRamos.Add(New Ramo(2, #2017-05-26#, "Combinado Familiar", 1, 891))
         _ListaDeRamos.Add(New Ramo(5, #2017-04-20#, "Integral de Comercio", 1, 34))

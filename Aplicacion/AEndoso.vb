@@ -17,7 +17,7 @@ Public Class AEndoso
         Return _instance
     End Function
 
-    Public Function ObtenerPoliza(ramo As Integer, producto As Integer, poliza As integuer) As Poliza
+    Public Function ObtenerPoliza(ramo As Integer, producto As Integer, poliza As Integer) As Poliza
         Dim bd As BaseDeDatos = BaseDeDatos.Instance
         Return bd.ObtenerPolizas(ramo, producto, poliza)
     End Function

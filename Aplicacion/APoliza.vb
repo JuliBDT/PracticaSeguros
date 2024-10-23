@@ -21,7 +21,7 @@ Public Class APoliza
     End Function
 
     Public Function ObtenerProductosPorRamo(ramoId As Integer) As List(Of Producto)
-        Return _db.PolizaPorRamo(ramoId)
+        Return _db.ProductoPorRamo(ramoId)
     End Function
 
     Public Sub CrearPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer, cliente As String,
