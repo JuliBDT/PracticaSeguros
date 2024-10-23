@@ -4,17 +4,17 @@
     <div>
         <h2>Nueva Póliza de Seguro</h2>
         <label for="ddlRamo">Ramo:</label>
-        <asp:DropDownList ID="ddlRamo" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlRamo_SelectedIndexChanged">
+        <asp:DropDownList ID="ddlRamos" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlRamo_SelectedIndexChanged">
         </asp:DropDownList>
         <br />
 
         <label for="ddlProducto">Producto:</label>
-        <asp:DropDownList ID="ddlProducto" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlProducto_SelectedIndexChanged">
+        <asp:DropDownList ID="ddlProductos" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlProducto_SelectedIndexChanged">
         </asp:DropDownList>
         <br />
 
         <label for="ddlPoliza">Póliza:</label>
-        <asp:DropDownList ID="ddlPoliza" runat="server" CssClass="form-control">
+        <asp:DropDownList ID="ddlPolizas" runat="server" CssClass="form-control">
         </asp:DropDownList>
         <br />
 
@@ -38,8 +38,9 @@
         <asp:TextBox ID="txtSumaAsegurada" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
         <br />
 
-        <label for="txtWayPay">Forma de Pago (WayPay):</label>
-        <asp:TextBox ID="txtWayPay" runat="server" CssClass="form-control" TextMode="Number"></asp:TextBox>
+        <label for="ddlWayPay">Forma de Pago:</label>
+        <asp:DropDownList ID="ddlWayPay" runat="server" CssClass="form-control">
+        </asp:DropDownList>
         <br />
 
         <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />

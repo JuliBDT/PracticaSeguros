@@ -148,6 +148,10 @@ Public Class BaseDeDatos
         Me._ListaDePolizas.Add(New Poliza(nRamo, nProducto, nPoliza, cliente, Nothing, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay))
     End Sub
 
+    Public Function ObtenerPolizas()
+        Return _ListaDePolizas
+    End Function
+
     Public Function GetHistoriaPoliza() As List(Of Poliza)
         Return Me._HistorialDePolizas
     End Function
@@ -164,6 +168,12 @@ Public Class BaseDeDatos
 
 
     Public Function ObtenerRamos() As List(Of Ramo)
-        Throw New NotImplementedException()
+        Return _ListaDeRamos
     End Function
+
+    Public Function ObtenerRoles() As List(Of TipoDeRoles)
+        Return _ListaDeTipoDeRoles
+    End Function
+
+
 End Class

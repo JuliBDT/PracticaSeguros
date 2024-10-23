@@ -14,31 +14,31 @@ Option Explicit On
 Partial Public Class NewPoliza
 
     '''<summary>
-    '''Control ddlRamo.
+    '''Control ddlRamos.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents ddlRamo As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddlRamos As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Control ddlProducto.
+    '''Control ddlProductos.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents ddlProducto As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddlProductos As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Control ddlPoliza.
+    '''Control ddlPolizas.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents ddlPoliza As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddlPolizas As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control txtClienteTitular.
@@ -86,13 +86,13 @@ Partial Public Class NewPoliza
     Protected WithEvents txtSumaAsegurada As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control txtWayPay.
+    '''Control ddlWayPay.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtWayPay As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ddlWayPay As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control btnGuardar.

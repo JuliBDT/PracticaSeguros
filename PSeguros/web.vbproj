@@ -389,6 +389,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aplicacion\Aplicacion.vbproj">
+      <Project>{A104B6BF-3D3B-4033-9D7B-F07B9C1B2152}</Project>
+      <Name>Aplicacion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dominio\Dominio.vbproj">
+      <Project>{0D945B26-F90E-4D43-8FF5-053BAC2C7119}</Project>
+      <Name>Dominio</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

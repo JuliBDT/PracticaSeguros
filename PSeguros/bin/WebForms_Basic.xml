@@ -154,27 +154,27 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.NewPoliza._txtRamo">
+<member name="F:PSeguros.NewPoliza._ddlRamos">
 <summary>
-Control txtRamo.
+Control ddlRamos.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.NewPoliza._txtProducto">
+<member name="F:PSeguros.NewPoliza._ddlProductos">
 <summary>
-Control txtProducto.
+Control ddlProductos.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.NewPoliza._txtPoliza">
+<member name="F:PSeguros.NewPoliza._ddlPolizas">
 <summary>
-Control txtPoliza.
+Control ddlPolizas.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -226,9 +226,18 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.NewPoliza._txtWayPay">
+<member name="F:PSeguros.NewPoliza._ddlWayPay">
 <summary>
-Control txtWayPay.
+Control ddlWayPay.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:PSeguros.NewPoliza._btnGuardar">
+<summary>
+Control btnGuardar.
 </summary>
 <remarks>
 Campo generado automáticamente.
