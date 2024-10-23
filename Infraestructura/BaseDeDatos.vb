@@ -9,6 +9,16 @@ Public Class BaseDeDatos
     Private _ListaDeProductos As List(Of Producto)
     Private _ListaDeClientes As List(Of Cliente)
     Private _ListaDeWayPays As List(Of WayPay)
+    Private _ListaDeRoles As List(Of Rol)
+
+    Public Property ListaDeRoles As List(Of Rol)
+        Get
+            Return _ListaDeRoles
+        End Get
+        Set(value As List(Of Rol))
+            _ListaDeRoles = value
+        End Set
+    End Property
 
     Public Sub New()
         GenerarListaDeRamos()
@@ -112,7 +122,13 @@ Public Class BaseDeDatos
         Return _ListaDeProductos.Where(Function(p) p.Ramos = ramo).ToList()
     End Function
 
+    Public Function ObtenerPolizas() As List(Of Poliza)
+        Return Me._ListaDePolizas
+    End Function
 
+    Public Sub AgregarRol(rol As Rol)
+        Me.ListaDeRoles.Add(rol)
+    End Sub
     Public Sub EndosarPoliza(nProducto As Integer, nPoliza As Integer, nRamo As Integer, cliente As String,
                              fechaVigencia As Date, domicilio As String,
                              fechaEfecto As Date, sumaAsegurada As Integer, waypay As Integer)
@@ -145,6 +161,7 @@ Public Class BaseDeDatos
 
         Return pBuscada.ClienteTitular
     End Function
+
 
     Public Function ObtenerRamos() As List(Of Ramo)
         Throw New NotImplementedException()
