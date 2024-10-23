@@ -2,7 +2,19 @@
 Imports Infraestructura
 
 Public Class APoliza
-    Private _db As BaseDeDatos
+    Private _db As BaseDeDatos = BaseDeDatos.Instance
+    Private Shared _instance As APoliza
+    Private Shared ReadOnly _lock As New Object()
+    Public Shared Function Instance() As APoliza
+        If _instance Is Nothing Then
+            SyncLock _lock
+                If _instance Is Nothing Then
+                    _instance = New APoliza()
+                End If
+            End SyncLock
+        End If
+        Return _instance
+    End Function
 
     Public Function ObtenerRamos() As List(Of Ramo)
         Return _db.ObtenerRamos() ' Esta función se implementa en la capa de Infraestructura
