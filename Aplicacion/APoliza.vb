@@ -42,23 +42,19 @@ Public Class APoliza
         Throw New NotImplementedException()
     End Function
 
-    Public Function ObtenerListaRamos() As Object
+    Public Function ObtenerListaWayPay() As List(Of WayPay)
+        Return _db.ObtenerListaWayPay
+    End Function
+
+    Public Function ObtenerListaProductos() As List(Of Producto)
         Throw New NotImplementedException()
     End Function
 
-    Public Function ObtenerListaWayPay() As Object
-        Throw New NotImplementedException()
-    End Function
-
-    Public Function ObtenerListaProductos() As Object
-        Throw New NotImplementedException()
-    End Function
-
-    Public Function ObtenerListaPolizasPorRamo(idRamo As Integer) As Object
+    Public Function ObtenerListaPolizasPorRamo(idRamo As Integer) As List(Of Poliza)
         Return _db.PolizaPorRamo(idRamo)
     End Function
 
-    Public Shared Function ObtenerListaProductosPorRamo(idRamo As Integer) As Object
+    Public Shared Function ObtenerListaProductosPorRamo(idRamo As Integer) As List(Of Producto)
         Throw New NotImplementedException()
     End Function
 

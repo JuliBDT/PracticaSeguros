@@ -9,12 +9,12 @@
         <br />
 
         <label for="ddlProducto">Producto:</label>
-        <asp:DropDownList ID="ddlProductos" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlProducto_SelectedIndexChanged">
+        <asp:DropDownList ID="ddlProductos" runat="server" CssClass="form-control" AutoPostBack="True">
         </asp:DropDownList>
         <br />
 
         <label for="ddlPoliza">Póliza:</label>
-        <asp:DropDownList ID="ddlPolizas" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlPoliza_SelectedIndexChanged">
+        <asp:DropDownList ID="ddlPolizas" runat="server" CssClass="form-control" AutoPostBack="True">
         </asp:DropDownList>
         <br />
 
@@ -39,7 +39,7 @@
         <br />
 
         <label for="ddlWayPay">Forma de Pago:</label>
-        <asp:DropDownList ID="ddlWayPay" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlWayPay_SelectedIndexChanged">
+        <asp:DropDownList ID="ddlWayPay" runat="server" CssClass="form-control" AutoPostBack="True">
         </asp:DropDownList>
         <br />
 

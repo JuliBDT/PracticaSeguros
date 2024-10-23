@@ -195,4 +195,8 @@ Public Class BaseDeDatos
         Return _ListaDeProductos.Where(Function(p) p.Ramos = ramo).ToList()
     End Function
 
+
+    Public Function ObtenerListaWayPay() As List(Of WayPay)
+        Return _ListaDeWayPays
+    End Function
 End Class
