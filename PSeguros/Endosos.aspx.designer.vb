@@ -14,15 +14,6 @@ Option Explicit On
 Partial Public Class Endosos
 
     '''<summary>
-    '''Control ValidationSummary1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents ValidationSummary1 As Global.System.Web.UI.WebControls.ValidationSummary
-
-    '''<summary>
     '''Control ddlRamos.
     '''</summary>
     '''<remarks>
@@ -95,13 +86,13 @@ Partial Public Class Endosos
     Protected WithEvents txtSumaAsegurada As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control txtWayPay.
+    '''Control ddlWayPay.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtWayPay As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ddlWayPay As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control btnGuardar.

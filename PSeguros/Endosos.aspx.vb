@@ -1,71 +1,89 @@
 ﻿Imports System
+Imports Aplicacion
 Imports Dominio
 Imports Infraestructura
 
 Public Class Endosos
     Inherits System.Web.UI.Page
+    Dim aEndosos As AEndoso = AEndoso.Instance
 
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         If Not IsPostBack Then
             CargarRamos()
+            CargarWayPay()
         End If
     End Sub
 
     Private Sub CargarRamos()
-        ' Cargar los ramos desde la base de datos
-        ddlRamos.DataSource = BaseDeDatos.Instance.ObtenerRamos()
-        ddlRamos.DataTextField = "ramo" ' Cambia esto según tu propiedad
-        ddlRamos.DataValueField = "Id" ' Cambia esto según tu propiedad
+        ddlRamos.DataSource = aEndosos.ObtenerRamos
+        ddlRamos.DataTextField = "Descripcion"
+        ddlRamos.DataValueField = "Ramo"
         ddlRamos.DataBind()
-    End Sub
-    Protected Sub ddlRamo_SelectedIndexChanged(sender As Object, e As EventArgs)
-        ' Cargar productos según el ramo seleccionado
-        Dim ramo As Integer = Convert.ToInt32(ddlRamos.SelectedValue)
-        ddlProductos.DataSource = BaseDeDatos.Instance.ProductoPorRamo(ramo)
-        ddlProductos.DataTextField = "Nombre" ' Cambia esto según tu propiedad
-        ddlProductos.DataValueField = "Id" ' Cambia esto según tu propiedad
-        ddlProductos.DataBind()
+        ddlRamos.Items.Insert(0, New ListItem("--Seleccione un Ramo--", "0"))
     End Sub
 
-    Protected Sub ddlProducto_SelectedIndexChanged(sender As Object, e As EventArgs)
-        ' Cargar pólizas según el producto seleccionado
-        Dim producto As Integer = Convert.ToInt32(ddlProductos.SelectedValue)
-        Dim ramo As Integer = Convert.ToInt32(ddlRamos.SelectedValue)
-        ddlPolizas.DataSource = BaseDeDatos.Instance.PolizaPorRamo(ramo).Where(Function(p) p.Producto = producto).ToList()
-        ddlPolizas.DataTextField = "Poliza" ' Cambia esto según tu propiedad
-        ddlPolizas.DataValueField = "Poliza" ' Cambia esto según tu propiedad
-        ddlPolizas.DataBind()
-    End Sub
+    ' Evento que se dispara cuando se selecciona un ramo
+    Protected Sub ddlRamo_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles ddlRamos.SelectedIndexChanged
+        If ddlRamos.SelectedIndex > 0 Then
+            Dim idRamo As Integer = Convert.ToInt32(ddlRamos.SelectedValue)
 
-    Protected Sub ddlPoliza_SelectedIndexChanged(sender As Object, e As EventArgs)
-        ' Cargar datos de la póliza seleccionada
-        Dim poliza As Integer = Convert.ToInt32(ddlPolizas.SelectedValue)
-        Dim ramo As Integer = Convert.ToInt32(ddlRamos.SelectedValue)
-        Dim producto As Integer = Convert.ToInt32(ddlProductos.SelectedValue)
-        Dim polizaEncontrada As Poliza = BaseDeDatos.Instance.BuscarPoliza(poliza, ramo, producto)
+            ' Cargar las pólizas correspondientes al ramo seleccionado
+            Dim listaPolizas = aEndosos.ObtenerListaPolizasPorRamo(idRamo)
+            ddlPolizas.DataSource = listaPolizas
+            ddlPolizas.DataValueField = "Poliza"
+            ddlPolizas.DataBind()
 
-        If polizaEncontrada IsNot Nothing Then
-            txtClienteTitular.Text = polizaEncontrada.ClienteTitular
-            txtFechaEfecto.Text = polizaEncontrada.FechaDeEfecto.ToString
-            txtFechaVigencia.Text = polizaEncontrada.FechaDeVigencia.ToString
-            txtDomicilio.Text = polizaEncontrada.Domicilio
-            txtSumaAsegurada.Text = polizaEncontrada.SumaAsegurada.ToString()
-            txtWayPay.Text = polizaEncontrada.Waypay.ToString()
+            If Not listaPolizas.Any() Then
+                ddlPolizas.Items.Insert(0, New ListItem("No existen polizas para este ramo"))
+            End If ' Insertar la opción "Nueva Póliza"
+            ddlPolizas.Items.Insert(0, New ListItem("Selecciona una poliza"))
+
+            Dim listaProductos = aEndosos.ObtenerProductosPorRamo(idRamo)
+            ddlProductos.DataSource = listaProductos
+            ddlProductos.DataTextField = "Descripcion"
+            ddlProductos.DataValueField = "Producto"
+            ddlProductos.DataBind()
+            ddlProductos.Items.Insert(0, New ListItem("--Seleccione un Producto--", "0"))
+        Else
+            ddlPolizas.Items.Clear()
+            ddlPolizas.Items.Insert(0, New ListItem("Nueva Póliza", "NuevaPoliza"))
+            ddlPolizas.Items.Insert(1, New ListItem("--Seleccione una Póliza--", "0"))
         End If
     End Sub
 
-    Protected Sub btnGuardar_Click(sender As Object, e As EventArgs)
-        ' Guardar los cambios de la póliza
-        Dim ramo As Integer = Convert.ToInt32(ddlRamos.SelectedValue)
-        Dim producto As Integer = Convert.ToInt32(ddlProductos.SelectedValue)
-        Dim poliza As Integer = Convert.ToInt32(ddlPolizas.SelectedValue)
+    Private Sub CargarWayPay()
+        ddlWayPay.DataSource = aEndosos.ObtenerListaWayPay()
+        ddlWayPay.DataTextField = "Descripcion"
+        ddlWayPay.DataValueField = "WayPay"
+        ddlWayPay.DataBind()
+        ddlWayPay.Items.Insert(0, New ListItem("--Seleccione una Forma de Pago--", "0"))
+    End Sub
 
-        ' Aquí podrías agregar la lógica para modificar la póliza
-        BaseDeDatos.Instance.EndosarPoliza(producto, poliza, ramo, txtClienteTitular.Text,
-                                            DateTime.Parse(txtFechaVigencia.Text),
-                                            txtDomicilio.Text,
-                                            DateTime.Parse(txtFechaEfecto.Text),
-                                            Convert.ToInt32(txtSumaAsegurada.Text),
-                                            Convert.ToInt32(txtWayPay.Text))
+    Protected Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Dim idRamo As Integer = Convert.ToInt32(ddlRamos.SelectedValue)
+        Dim idProducto As Integer = Convert.ToInt32(ddlProductos.SelectedValue)
+        Dim idWayPay As Integer = Convert.ToInt32(ddlWayPay.SelectedValue)
+        Dim fechaEfecto As Date = Convert.ToDateTime(txtFechaEfecto.Text)
+        Dim fechaVigencia As Date = Convert.ToDateTime(txtFechaVigencia.Text)
+        Dim idPoliza As Integer = Convert.ToInt32(ddlPolizas.SelectedValue)
+
+        aEndosos.EndosarPoliza(idProducto, idPoliza, idRamo, txtClienteTitular.Text,
+                                fechaVigencia, fechaEfecto, txtDomicilio.Text, txtSumaAsegurada.Text, idWayPay)
+
+        ' Validar si el usuario seleccionó "Nueva Póliza"
+        'If idPoliza = "NuevaPoliza" Then
+        ' Lógica para manejar la creación de una nueva póliza
+        ' Aquí puedes redirigir a otro formulario o mostrar un pop-up para ingresar los detalles de la nueva póliza.
+        ' Ejemplo:
+        ' Response.Redirect("CrearNuevaPoliza.aspx")
+
+        ' Guardar la póliza existente
+        'If idRamo > 0 AndAlso idPoliza > 0 AndAlso idProducto > 0 AndAlso idWayPay > 0 Then
+        'aPoliza.CrearPoliza(idRamo, idProducto, idPoliza, txtClienteTitular.Text, Nothing, fechaEfecto,
+        'fechaVigencia, txtDomicilio.Text, txtSumaAsegurada.Text, idWayPay)
+        'Else
+        ' Mostrar un mensaje de error si faltan datos
+        'End If
     End Sub
 End Class
+

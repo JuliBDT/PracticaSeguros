@@ -37,15 +37,6 @@ PSeguros
  Devuelve el objeto de registro Asp.
  </summary>
 </member>
-<member name="F:PSeguros.Endosos._ValidationSummary1">
-<summary>
-Control ValidationSummary1.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
 <member name="F:PSeguros.Endosos._ddlRamos">
 <summary>
 Control ddlRamos.
@@ -118,9 +109,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.Endosos._txtWayPay">
+<member name="F:PSeguros.Endosos._ddlWayPay">
 <summary>
-Control txtWayPay.
+Control ddlWayPay.
 </summary>
 <remarks>
 Campo generado automáticamente.
