@@ -3,7 +3,7 @@ Imports Dominio
 
 Public Class NewPoliza
     Inherits System.Web.UI.Page
-    Dim aPoliza As APoliza = APoliza.Instance
+    Dim Controlador As Controlador = Controlador.Instance
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         If Not IsPostBack Then
@@ -13,7 +13,7 @@ Public Class NewPoliza
     End Sub
 
     Private Sub CargarRamos()
-        ddlRamos.DataSource = aPoliza.ObtenerRamos()
+        ddlRamos.DataSource = Controlador.ObtenerRamos()
         ddlRamos.DataTextField = "Descripcion"
         ddlRamos.DataValueField = "Ramo"
         ddlRamos.DataBind()
@@ -26,7 +26,7 @@ Public Class NewPoliza
             Dim idRamo As Integer = Convert.ToInt32(ddlRamos.SelectedValue)
 
             ' Cargar las pólizas correspondientes al ramo seleccionado
-            Dim listaPolizas = aPoliza.ObtenerListaPolizasPorRamo(idRamo)
+            Dim listaPolizas = Controlador.ObtenerListaPolizasPorRamo(idRamo)
             ddlPolizas.DataSource = listaPolizas
             ddlPolizas.DataValueField = "Poliza"
             ddlPolizas.DataBind()
@@ -35,7 +35,7 @@ Public Class NewPoliza
             ddlPolizas.Items.Insert(0, New ListItem("Nueva Póliza"))
             ddlPolizas.Items.Insert(1, New ListItem("--Seleccione una Póliza--"))
 
-            Dim listaProductos = aPoliza.ObtenerProductosPorRamo(idRamo)
+            Dim listaProductos = Controlador.ObtenerProductosPorRamo(idRamo)
             ddlProductos.DataSource = listaProductos
             ddlProductos.DataTextField = "Descripcion"
             ddlProductos.DataValueField = "Producto"
@@ -49,7 +49,7 @@ Public Class NewPoliza
     End Sub
 
     Private Sub CargarWayPay()
-        ddlWayPay.DataSource = aPoliza.ObtenerListaWayPay()
+        ddlWayPay.DataSource = Controlador.ObtenerListaWayPay()
         ddlWayPay.DataTextField = "Descripcion"
         ddlWayPay.DataValueField = "WayPay"
         ddlWayPay.DataBind()
@@ -63,7 +63,7 @@ Public Class NewPoliza
         Dim fechaEfecto As DateTime = Convert.ToDateTime(txtFechaEfecto.Text)
         Dim fechaVigencia As DateTime = Convert.ToDateTime(txtFechaVigencia.Text)
 
-        aPoliza.CrearPoliza(idRamo, idProducto, (aPoliza.ObtenerUltimoidPoliza() + 1), txtClienteTitular.Text, Nothing, fechaEfecto,
+        Controlador.CrearPoliza(idRamo, idProducto, (Controlador.ObtenerUltimoidPoliza() + 1), txtClienteTitular.Text, Nothing, fechaEfecto,
                                 fechaVigencia, txtDomicilio.Text, txtSumaAsegurada.Text, idWayPay)
         ' Mostrar mensaje de éxito
         ' En el evento BtnGuardar_Click

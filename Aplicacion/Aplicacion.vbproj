@@ -64,10 +64,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AEndoso.vb" />
-    <Compile Include="APoliza.vb" />
-    <Compile Include="AProducto.vb" />
-    <Compile Include="ARamo.vb" />
+    <Compile Include="Controlador.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

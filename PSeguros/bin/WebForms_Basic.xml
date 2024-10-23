@@ -253,45 +253,45 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.Roles._txtRamo">
+<member name="F:PSeguros.Roles._ddlRamos">
 <summary>
-Control txtRamo.
+Control ddlRamos.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.Roles._txtProducto">
+<member name="F:PSeguros.Roles._ddlProductos">
 <summary>
-Control txtProducto.
+Control ddlProductos.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.Roles._txtPoliza">
+<member name="F:PSeguros.Roles._ddlPolizas">
 <summary>
-Control txtPoliza.
+Control ddlPolizas.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.Roles._txtRol">
+<member name="F:PSeguros.Roles._ddlRol">
 <summary>
-Control txtRol.
+Control ddlRol.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.Roles._txtCliente">
+<member name="F:PSeguros.Roles._txtClienteTitular">
 <summary>
-Control txtCliente.
+Control txtClienteTitular.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -301,6 +301,15 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:PSeguros.Roles._txtFechaEfecto">
 <summary>
 Control txtFechaEfecto.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:PSeguros.Roles._btnGuardar">
+<summary>
+Control btnGuardar.
 </summary>
 <remarks>
 Campo generado automáticamente.

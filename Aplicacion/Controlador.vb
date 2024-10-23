@@ -1,15 +1,15 @@
 ﻿Imports Dominio
 Imports Infraestructura
 
-Public Class APoliza
+Public Class Controlador
     Private _db As BaseDeDatos = BaseDeDatos.Instance
-    Private Shared _instance As APoliza
+    Private Shared _instance As Controlador
     Private Shared ReadOnly _lock As New Object()
-    Public Shared Function Instance() As APoliza
+    Public Shared Function Instance() As Controlador
         If _instance Is Nothing Then
             SyncLock _lock
                 If _instance Is Nothing Then
-                    _instance = New APoliza()
+                    _instance = New Controlador()
                 End If
             End SyncLock
         End If
@@ -71,4 +71,8 @@ Public Class APoliza
             Return 0 ' O algún valor que represente que no hay pólizas
         End If
     End Function
+
+    Public Sub CrearRol(idRamo As Integer, idProducto As Integer, idPoliza As Integer, text As String, fechaEfecto As Date, value As Object)
+        Throw New NotImplementedException()
+    End Sub
 End Class
