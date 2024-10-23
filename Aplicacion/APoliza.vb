@@ -19,7 +19,6 @@ Public Class APoliza
     End Sub
 
     Public Function ObtenerPolizas() As List(Of Poliza)
-
         Return _db.ObtenerPolizas()
     End Function
 
@@ -27,8 +26,8 @@ Public Class APoliza
         Return _db.ObtenerRoles
     End Function
 
-    Public Function AgregarRol(rolID As Integer, descripcion As String, rol Rol)
-
+    Public Function AgregarRol(rolID As TipoDeRoles, rol As Rol)
+        Throw New NotImplementedException()
     End Function
 
     Public Function ObtenerListaRamos() As Object

@@ -122,9 +122,6 @@ Public Class BaseDeDatos
         Return _ListaDeProductos.Where(Function(p) p.Ramos = ramo).ToList()
     End Function
 
-    Public Function ObtenerPolizas() As List(Of Poliza)
-        Return Me._ListaDePolizas
-    End Function
 
     Public Sub AgregarRol(rol As Rol)
         Me.ListaDeRoles.Add(rol)

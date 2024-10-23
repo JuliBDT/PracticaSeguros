@@ -14,7 +14,7 @@
         <br />
 
         <label for="ddlPoliza">Póliza:</label>
-        <asp:DropDownList ID="ddlPolizas" runat="server" CssClass="form-control">
+        <asp:DropDownList ID="ddlPolizas" runat="server" CssClass="form-control" AutoPostBack="True" OnSelectedIndexChanged="ddlPoliza_SelectedIndexChanged">
         </asp:DropDownList>
         <br />
 

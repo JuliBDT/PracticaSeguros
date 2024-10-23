@@ -29,10 +29,13 @@ Public Class NewPoliza
     End Sub
 
     Protected Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-
+        Dim idRamo As Integer = Convert.ToInt32(ddlRamos.SelectedValue)
+        Dim idPoliza As Integer = Convert.ToInt32(ddlPolizas.SelectedValue)
+        Dim idProducto As Integer = Convert.ToInt32(ddlProductos.SelectedValue)
+        Dim idWayPay As Integer = Convert.ToInt32(ddlWayPay.SelectedValue)
         Dim servicioPoliza As New APoliza()
-        servicioPoliza.CrearPoliza(ddlRamos.ID, ddlProductos.ID, ddlPolizas.ID, txtClienteTitular.Text, Nothing, Now,
-                                   Now, txtDomicilio.Text, txtSumaAsegurada.Text, ddlWayPay.ID)
+        servicioPoliza.CrearPoliza(idRamo, idProducto, idPoliza, txtClienteTitular.Text, Nothing, Now,
+                                   Now, txtDomicilio.Text, txtSumaAsegurada.Text, idWayPay)
     End Sub
 
 
