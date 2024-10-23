@@ -162,6 +162,7 @@ Public Class BaseDeDatos
                              fechaVigencia As Date, domicilio As String,
                              fechaEfecto As Date, sumaAsegurada As Integer, waypay As Integer)
         Me._ListaDePolizas.Add(New Poliza(nRamo, nProducto, nPoliza, cliente, Nothing, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay))
+        Console.WriteLine(_ListaDePolizas)
     End Sub
 
     Public Function ObtenerPolizas()

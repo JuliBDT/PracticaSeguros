@@ -65,7 +65,13 @@ Public Class NewPoliza
 
         aPoliza.CrearPoliza(idRamo, idProducto, (aPoliza.ObtenerUltimoidPoliza() + 1), txtClienteTitular.Text, Nothing, fechaEfecto,
                                 fechaVigencia, txtDomicilio.Text, txtSumaAsegurada.Text, idWayPay)
+        ' Mostrar mensaje de éxito
+        ' En el evento BtnGuardar_Click
+        ' ScriptManager.RegisterStartupScript(Me, Me.GetType(), "alert", "alert('Póliza creada con éxito.');", True)
 
+
+        ' Limpiar el formulario
+        LimpiarFormulario()
 
         ' Validar si el usuario seleccionó "Nueva Póliza"
         'If idPoliza = "NuevaPoliza" Then
@@ -78,8 +84,26 @@ Public Class NewPoliza
         'If idRamo > 0 AndAlso idPoliza > 0 AndAlso idProducto > 0 AndAlso idWayPay > 0 Then
         'aPoliza.CrearPoliza(idRamo, idProducto, idPoliza, txtClienteTitular.Text, Nothing, fechaEfecto,
         'fechaVigencia, txtDomicilio.Text, txtSumaAsegurada.Text, idWayPay)
+        'lblMensaje.Text = "Póliza guardada con éxito."
+        'lblMensaje.Visible = True
+        'LimpiarFormulario()
         'Else
         ' Mostrar un mensaje de error si faltan datos
+        'lblMensaje.Text = "Error: Faltan datos para crear la póliza."
+        'lblMensaje.CssClass = "text-danger"
+        'lblMensaje.Visible = True
         'End If
+    End Sub
+
+    Private Sub LimpiarFormulario()
+        ddlRamos.SelectedIndex = 0
+        ddlPolizas.SelectedIndex = 0
+        ddlProductos.SelectedIndex = 0
+        ddlWayPay.SelectedIndex = 0
+        txtClienteTitular.Text = String.Empty
+        txtFechaEfecto.Text = String.Empty
+        txtFechaVigencia.Text = String.Empty
+        txtDomicilio.Text = String.Empty
+        txtSumaAsegurada.Text = String.Empty
     End Sub
 End Class
