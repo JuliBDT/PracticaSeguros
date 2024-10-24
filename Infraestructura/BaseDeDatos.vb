@@ -23,6 +23,10 @@ Public Class BaseDeDatos
         _ListaDeClientes = New List(Of Cliente)
     End Sub
 
+    Public Function PolizasActivas() As List(Of Poliza)
+        Return Me._ListaDePolizas
+    End Function
+
     ' Método público para acceder a la instancia única
     Public Shared Function Instance() As BaseDeDatos
         If _instance Is Nothing Then

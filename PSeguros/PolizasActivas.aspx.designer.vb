@@ -11,5 +11,14 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class prueba
+Partial Public Class WebForm1
+
+    '''<summary>
+    '''Control gvPolizas.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents gvPolizas As Global.System.Web.UI.WebControls.GridView
 End Class

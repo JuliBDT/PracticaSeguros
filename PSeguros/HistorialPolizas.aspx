@@ -3,7 +3,7 @@
 
     <h2>Historial de Pólizas</h2>
 
-    <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="alert alert-danger" />
+    <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="table table-striped" />
 
     
         <asp:GridView ID="gvPolizas" runat="server" AutoGenerateColumns="False">
