@@ -149,17 +149,28 @@ Public Class BaseDeDatos
     Public Sub AgregarRol(rol As Rol)
         Me.ListaDeRoles.Add(rol)
     End Sub
-    Public Sub EndosarPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer, cliente As String, nulldate As Date,
+    Public Sub EndosarPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer, cliente As String,
                            fechaEfecto As Date, fechaVigencia As Date, domicilio As String, sumaAsegurada As Integer, waypay As Integer)
         Dim polizaExistente As Poliza = BuscarPoliza(ramoId, productoId, polizaId)
         If polizaExistente IsNot Nothing Then
             polizaExistente.Nulldate = Now
-            Me._HistorialDePolizas.Add(polizaExistente)
-            Me._ListaDePolizas.Remove(polizaExistente)
-            Dim nuevaPoliza As Poliza = New Poliza(ramoId, productoId, polizaId, cliente, Nothing, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay)
-            Me._ListaDePolizas.Add(nuevaPoliza)
+            Dim polizaARegistrar As Poliza = polizaExistente
+            Me._HistorialDePolizas.Add(polizaARegistrar)
+            Dim polizaModificada As Poliza = EfectuarEndoso(polizaExistente, cliente, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay)
+            Me._ListaDePolizas.Add(polizaModificada)
         End If
     End Sub
+
+    Private Function EfectuarEndoso(polizaExistente As Poliza, cliente As String, fechaEfecto As Date, fechaVigencia As Date, domicilio As String, sumaAsegurada As Integer, waypay As Integer) As Object
+        polizaExistente.ClienteTitular = cliente
+        polizaExistente.FechaDeEfecto = fechaEfecto
+        polizaExistente.FechaDeVigencia = fechaVigencia
+        polizaExistente.Domicilio = domicilio
+        polizaExistente.SumaAsegurada = sumaAsegurada
+        polizaExistente.Waypay = waypay
+
+        Return polizaExistente
+    End Function
 
     Public Sub AgregarPoliza(nRamo As Integer, nProducto As Integer, nPoliza As Integer, cliente As String, nulldate As Date, fechaEfecto As Date,
                              fechaVigencia As Date, domicilio As String, sumaAsegurada As Integer, waypay As Integer)

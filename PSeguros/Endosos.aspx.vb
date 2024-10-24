@@ -60,15 +60,15 @@ Public Class Endosos
     End Sub
 
     Protected Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        Dim idRamo As Integer = Convert.ToInt32(ddlRamos.SelectedValue)
-        Dim idProducto As Integer = Convert.ToInt32(ddlProductos.SelectedValue)
-        Dim idWayPay As Integer = Convert.ToInt32(ddlWayPay.SelectedValue)
+        Dim ramoId As Integer = Convert.ToInt32(ddlRamos.SelectedValue)
+        Dim productoId As Integer = Convert.ToInt32(ddlProductos.SelectedValue)
+        Dim wayPay As Integer = Convert.ToInt32(ddlWayPay.SelectedValue)
         Dim fechaEfecto As Date = Convert.ToDateTime(txtFechaEfecto.Text)
         Dim fechaVigencia As Date = Convert.ToDateTime(txtFechaVigencia.Text)
-        Dim idPoliza As Integer = Convert.ToInt32(ddlPolizas.SelectedValue)
+        Dim polizaId As Integer = Convert.ToInt32(ddlPolizas.SelectedValue)
 
-        acontrolador.EndosarPoliza(idRamo, idProducto, idPoliza,, txtClienteTitular.Text, Now, fechaEfecto,
-                                fechaVigencia, txtDomicilio.Text, txtSumaAsegurada.Text, idWayPay)
+        acontrolador.EndosarPoliza(ramoId, productoId, polizaId, txtClienteTitular.Text, fechaEfecto, fechaVigencia,
+                                   txtDomicilio.Text, txtSumaAsegurada.Text, wayPay)
 
         ' Validar si el usuario seleccionó "Nueva Póliza"
         'If idPoliza = "NuevaPoliza" Then

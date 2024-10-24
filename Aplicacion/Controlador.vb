@@ -73,6 +73,7 @@ Public Class Controlador
     End Function
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     Public Sub EndosarPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer, cliente As String, nulldate As Date,
                            fechaEfecto As Date, fechaVigencia As Date, domicilio As String, sumaAsegurada As Integer, waypay As Integer)
         _db.EndosarPoliza(ramoId, productoId, polizaId, cliente, nulldate, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay)
@@ -85,6 +86,11 @@ Public Class Controlador
                                 fechaVigencia, domicilio, fechaEfecto, sumaAsegurada, idWayPay)
         _db.EndosarPoliza(idProducto, idPoliza, idRamo, cliente,
                                  fechaVigencia, domicilio, fechaEfecto, sumaAsegurada, idWayPay)
+>>>>>>> Stashed changes
+=======
+    Public Sub EndosarPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer, cliente As String, fechaEfecto As Date,
+                             fechaVigencia As Date, domicilio As String, sumaAsegurada As Integer, waypay As Integer)
+        _db.EndosarPoliza(ramoId, productoId, polizaId, cliente, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay)
 >>>>>>> Stashed changes
     End Sub
 
