@@ -64,6 +64,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EstadoCivil.vb" />
     <Compile Include="TipoDeRoles.vb" />
     <Compile Include="WayPay.vb" />
     <Compile Include="Producto.vb" />

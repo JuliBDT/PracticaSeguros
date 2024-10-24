@@ -10,6 +10,7 @@ Public Class BaseDeDatos
     Private _ListaDeClientes As List(Of Cliente)
     Private _ListaDeWayPays As List(Of WayPay)
     Private _ListaDeRoles As List(Of Rol)
+    Private _ListaEstadoCivil As List(Of EstadoCivil)
     Private Shared _instance As BaseDeDatos
     Private Shared ReadOnly _lock As New Object()
 
@@ -20,8 +21,22 @@ Public Class BaseDeDatos
         _HistorialDePolizas = New List(Of Poliza)
         GenerarListaDeProductos()
         _ListaDePolizas = New List(Of Poliza)
-        _ListaDeClientes = New List(Of Cliente)
+        GenerarListaDeClientes()
+        GenerarEstadoCivil()
         _ListaDeRoles = New List(Of Rol)
+    End Sub
+
+    Private Sub GenerarEstadoCivil()
+        _ListaEstadoCivil = New List(Of EstadoCivil)
+        _ListaEstadoCivil.Add(New EstadoCivil(1, "SOLTERO"))
+        _ListaEstadoCivil.Add(New EstadoCivil(2, "CASADO"))
+        _ListaEstadoCivil.Add(New EstadoCivil(3, "DIVORCIADO"))
+        _ListaEstadoCivil.Add(New EstadoCivil(4, "VIUDO"))
+    End Sub
+
+    Private Sub GenerarListaDeClientes()
+        _ListaDeClientes = New List(Of Cliente)
+        _ListaDeClientes.Add(New Cliente("1111111111", "AAAAAA", #1074-04-17#, Nothing, Now, 1))
     End Sub
 
     Public Function PolizasActivas() As List(Of Poliza)

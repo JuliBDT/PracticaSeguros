@@ -6,6 +6,15 @@
     Private _FechaModificacion As Date
     Private _EstadoCivil As Integer
 
+    Public Sub New(cliente As String, nombre As String, fechaNacimiento As Date, fechaModificacion As Date, estadoCivil As Integer)
+        _Cliente = cliente
+        _Nombre = nombre
+        _FechaNacimiento = fechaNacimiento
+        _Nulldate = Nothing
+        _FechaModificacion = fechaModificacion
+        _EstadoCivil = estadoCivil
+    End Sub
+
     Public Property Cliente As String
         Get
             Return _Cliente
