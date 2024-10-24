@@ -7,7 +7,16 @@ Public Class Roles
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         If Not IsPostBack Then
             CargarRamos()
+            CargamosTiposDeRol()
         End If
+    End Sub
+
+    Private Sub CargamosTiposDeRol()
+        ddlRol.DataSource = Controlador.ObtenerListaRoles()
+        ddlRol.DataTextField = "Descripcion"
+        ddlRol.DataValueField = "Rol"
+        ddlRol.DataBind()
+        ddlRol.Items.Insert(0, New ListItem("--Seleccione un Rol--", "0"))
     End Sub
 
     Private Sub CargarRamos()
@@ -23,23 +32,12 @@ Public Class Roles
         If ddlRamos.SelectedIndex > 0 Then
             Dim idRamo As Integer = Convert.ToInt32(ddlRamos.SelectedValue)
 
-            ' Cargar las pólizas correspondientes al ramo seleccionado
-            Dim listaPolizas = Controlador.ObtenerListaPolizasPorRamo(idRamo)
-            ddlPolizas.DataSource = listaPolizas
-            ddlPolizas.DataValueField = "Poliza"
-            ddlPolizas.DataBind()
-
-            ddlPolizas.Items.Insert(0, New ListItem("--Seleccione una Póliza--"))
-
             Dim listaProductos = Controlador.ObtenerProductosPorRamo(idRamo)
             ddlProductos.DataSource = listaProductos
             ddlProductos.DataTextField = "Descripcion"
             ddlProductos.DataValueField = "Producto"
             ddlProductos.DataBind()
             ddlProductos.Items.Insert(0, New ListItem("--Seleccione un Producto--", "0"))
-        Else
-            ddlPolizas.Items.Clear()
-            ddlPolizas.Items.Insert(0, New ListItem("--No hay existencias--", "0"))
         End If
     End Sub
 
@@ -47,14 +45,10 @@ Public Class Roles
     Protected Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim idRamo As Integer = Convert.ToInt32(ddlRamos.SelectedValue)
         Dim idProducto As Integer = Convert.ToInt32(ddlProductos.SelectedValue)
-        Dim idPoliza As Integer = Convert.ToInt32(ddlPolizas.SelectedValue)
+        Dim idRol As Integer = Convert.ToInt32(ddlRol.SelectedValue)
         Dim fechaEfecto As DateTime = Convert.ToDateTime(txtFechaEfecto.Text)
 
-        Controlador.CrearRol(idRamo, idProducto, idPoliza, txtClienteTitular.Text, fechaEfecto, Nothing)
-        ' Mostrar mensaje de éxito
-        ' En el evento BtnGuardar_Click
-        ScriptManager.RegisterStartupScript(Me, Me.GetType(), "alert", "alert('Póliza creada con éxito.');", True)
-
+        Controlador.CrearRol(idRamo, idProducto, idRol, txtClienteTitular.Text, fechaEfecto)
 
         ' Limpiar el formulario
         LimpiarFormulario()
@@ -62,7 +56,6 @@ Public Class Roles
 
     Private Sub LimpiarFormulario()
         ddlRamos.SelectedIndex = 0
-        ddlPolizas.SelectedIndex = 0
         ddlProductos.SelectedIndex = 0
         txtClienteTitular.Text = String.Empty
         txtFechaEfecto.Text = String.Empty

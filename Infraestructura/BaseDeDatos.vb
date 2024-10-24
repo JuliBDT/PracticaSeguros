@@ -21,6 +21,7 @@ Public Class BaseDeDatos
         GenerarListaDeProductos()
         _ListaDePolizas = New List(Of Poliza)
         _ListaDeClientes = New List(Of Cliente)
+        _ListaDeRoles = New List(Of Rol)
     End Sub
 
     Public Function PolizasActivas() As List(Of Poliza)

@@ -13,11 +13,6 @@
         </asp:DropDownList>
         <br />
 
-        <label for="ddlPoliza">Póliza:</label>
-        <asp:DropDownList ID="ddlPolizas" runat="server" CssClass="form-control" AutoPostBack="True">
-        </asp:DropDownList>
-        <br />
-
         <label for="ddlRol">Rol:</label>
         <asp:DropDownList ID="ddlRol" runat="server" CssClass="form-control" TextMode="Number">
         </asp:DropDownList>
