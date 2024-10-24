@@ -10,7 +10,7 @@
     Private _SumaAsegurada As Integer
     Private _Waypay As Integer
 
-    Public Sub New(ramo As Integer, producto As Integer, poliza As Integer, Cliente As String, nulldate As Date, fechaDeEfecto As Date, fechaDeVigencia As Date,
+    Public Sub New(ramo As Integer, producto As Integer, poliza As Integer, Cliente As String, nulldate As DateTime, fechaDeEfecto As Date, fechaDeVigencia As Date,
                    domicilio As String, sumaAsegurada As Integer, waypay As Integer)
         Me.Ramo = ramo
         Me.Producto = producto
@@ -118,10 +118,10 @@
 
     Public ReadOnly Property EstadoNulldate As String
         Get
-            Console.WriteLine(Nulldate)
-            If Not Nulldate.Equals(Nothing) Then
+            Dim d As Date = Nothing
+            'Console.WriteLine(Nulldate)
+            If Not Nulldate = d Then
                 Return Nulldate.Value.ToString("dd/MM/yyyy")
-
             Else
                 Return "Activa"
             End If

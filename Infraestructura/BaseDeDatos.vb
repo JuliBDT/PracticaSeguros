@@ -213,7 +213,7 @@ Public Class BaseDeDatos
     Public Sub AgregarPoliza(nRamo As Integer, nProducto As Integer, nPoliza As Integer, cliente As String, nulldate As Date, fechaEfecto As Date,
                              fechaVigencia As Date, domicilio As String, sumaAsegurada As Integer, waypay As Integer)
         Me._ListaDePolizas.Add(New Poliza(nRamo, nProducto, nPoliza, cliente, nulldate, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay))
-        Console.WriteLine(_ListaDePolizas)
+        'Console.WriteLine(_ListaDePolizas)
     End Sub
 
     Public Function ObtenerPolizas()
