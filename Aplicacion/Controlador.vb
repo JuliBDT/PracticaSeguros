@@ -61,6 +61,9 @@ Public Class Controlador
         Throw New NotImplementedException()
     End Function
 
+    Public Function BuscarPoliza(ramo As Integer, producto As Integer, poliza As Integer) As Poliza
+        Return _db.BuscarPoliza(ramo, producto, poliza)
+    End Function
     Public Function ObtenerUltimoidPoliza() As Integer
         ' Obtener la lista de pólizas
         Dim listaPolizas = _db.ObtenerPolizas()

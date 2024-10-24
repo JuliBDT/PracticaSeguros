@@ -93,5 +93,22 @@ Public Class Endosos
         acontrolador.BajarPoliza(ramoId, productoId, polizaId)
     End Sub
 
+    Protected Sub ddlPoliza_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles ddlPolizas.SelectedIndexChanged
+        If ddlPolizas.SelectedIndex > 0 Then
+            Dim polizaId As Integer = Convert.ToInt32(ddlPolizas.SelectedValue)
+            Dim productoId As Integer = Convert.ToInt32(ddlProductos.SelectedValue)
+            Dim ramoId As Integer = Convert.ToInt32(ddlRamos.SelectedValue)
+            Dim poliza As Poliza = acontrolador.BuscarPoliza(ramoId, productoId, polizaId)
+
+            If poliza IsNot Nothing Then
+                txtClienteTitular.Text = poliza.ClienteTitular
+                txtFechaEfecto.Text = poliza.FechaDeEfecto.ToString("yyyy-MM-dd")
+                txtFechaVigencia.Text = poliza.FechaDeVigencia.ToString("yyyy-MM-dd")
+                txtDomicilio.Text = poliza.Domicilio
+                txtSumaAsegurada.Text = poliza.SumaAsegurada.ToString()
+            End If
+        End If
+    End Sub
+
 End Class
 

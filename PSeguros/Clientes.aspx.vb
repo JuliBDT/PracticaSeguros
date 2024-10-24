@@ -11,7 +11,7 @@ Public Class Clientes
             gvClientes.DataSource = clientes
             gvClientes.DataBind()
         Else
-            Console.WriteLine("No se encontraron pólizas.")
+            Console.WriteLine("No se encontraron clientes.")
         End If
     End Sub
 
