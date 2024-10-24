@@ -157,7 +157,7 @@ Public Class BaseDeDatos
             Dim polizaARegistrar As Poliza = polizaExistente
             Me._HistorialDePolizas.Add(polizaARegistrar)
             Dim polizaModificada As Poliza = EfectuarEndoso(polizaExistente, cliente, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay)
-            Me._ListaDePolizas.Add(polizaModificada)
+
         End If
     End Sub
 

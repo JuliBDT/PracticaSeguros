@@ -5,18 +5,17 @@
 
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="table table-striped" />
 
-    
-        <asp:GridView ID="gvPolizas" runat="server" AutoGenerateColumns="False">
-             <Columns>
-                <asp:BoundField DataField="Poliza" HeaderText="Número de Póliza" />
-                <asp:BoundField DataField="ClienteTitular" HeaderText="Cliente" />
-                 <asp:BoundField DataField="FechaDeEfecto" HeaderText="Fecha de Efecto" DataFormatString="{0:dd/MM/yyyy}" />
-                <asp:BoundField DataField="FechaDeVigencia" HeaderText="Fecha de Vigencia" DataFormatString="{0:dd/MM/yyyy}" />
-                <asp:BoundField DataField="SumaAsegurada" HeaderText="Suma Asegurada" />
-                <asp:BoundField DataField="Domicilio" HeaderText="Domicilio" />
-             </Columns>
-         </asp:GridView>
-         <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
+    <asp:GridView ID="gvPolizas" runat="server" AutoGenerateColumns="False">
+    <Columns>
+        <asp:BoundField DataField="Poliza" HeaderText="Número de Póliza" />
+        <asp:BoundField DataField="ClienteTitular" HeaderText="Cliente" />
+        <asp:BoundField DataField="FechaDeEfecto" HeaderText="Fecha de Efecto" DataFormatString="{0:dd/MM/yyyy}" />
+        <asp:BoundField DataField="FechaDeVigencia" HeaderText="Fecha de Vigencia" DataFormatString="{0:dd/MM/yyyy}" />
+        <asp:BoundField DataField="SumaAsegurada" HeaderText="Suma Asegurada" />
+        <asp:BoundField DataField="Domicilio" HeaderText="Domicilio" />
+        <asp:BoundField DataField="Nulldate" HeaderText="Baja Logica" DataFormatString="{0:dd/MM/yyyy}" /> 
+    </Columns>
+</asp:GridView>
     <div>
         <!--<asp:GridView ID="gvPolizasFalso" runat="server" AutoGenerateColumns="False" CssClass="table table-striped" GridLines="None" AllowPaging="True" PageSize="10">
         <Columns>
