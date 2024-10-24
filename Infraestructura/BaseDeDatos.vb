@@ -26,6 +26,8 @@ Public Class BaseDeDatos
         _ListaDeRoles = New List(Of Rol)
     End Sub
 
+
+
     Private Sub GenerarEstadoCivil()
         _ListaEstadoCivil = New List(Of EstadoCivil)
         _ListaEstadoCivil.Add(New EstadoCivil(1, "SOLTERO"))
@@ -35,8 +37,18 @@ Public Class BaseDeDatos
     End Sub
 
     Private Sub GenerarListaDeClientes()
-        _ListaDeClientes = New List(Of Cliente)
-        _ListaDeClientes.Add(New Cliente("1111111111", "AAAAAA", #1074-04-17#, Nothing, Now, 1))
+        ListaDeClientes = New List(Of Cliente)
+        Dim rnd As New Random()
+
+        For i As Integer = 1 To 15
+            Dim cliente As String = "Cliente" & i.ToString()
+            Dim nombre As String = "Nombre" & i.ToString()
+            Dim fechaNacimiento As Date = New Date(1980 + rnd.Next(0, 20), rnd.Next(1, 13), rnd.Next(1, 29))
+            Dim fechaModificacion As Date = Date.Now
+            Dim estadoCivil As Integer = rnd.Next(0, 5)
+
+            ListaDeClientes.Add(New Cliente(cliente, nombre, fechaNacimiento, fechaModificacion, estadoCivil))
+        Next
     End Sub
 
     Public Function PolizasActivas() As List(Of Poliza)
@@ -64,6 +76,14 @@ Public Class BaseDeDatos
         End Set
     End Property
 
+    Public Property ListaDeClientes As List(Of Cliente)
+        Get
+            Return _ListaDeClientes
+        End Get
+        Set(value As List(Of Cliente))
+            _ListaDeClientes = value
+        End Set
+    End Property
 
     Private Sub GenerarListaDeWayPays()
         _ListaDeWayPays = New List(Of WayPay)

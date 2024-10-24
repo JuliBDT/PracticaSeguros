@@ -16,6 +16,9 @@ Public Class Controlador
         Return _instance
     End Function
 
+    Public Function ListarClientes() As List(Of Cliente)
+        Return _db.ListaDeClientes()
+    End Function
     Public Function ObtenerRamos() As List(Of Ramo)
         Return _db.ObtenerRamos() ' Esta función se implementa en la capa de Infraestructura
     End Function
