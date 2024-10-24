@@ -172,15 +172,6 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.NewPoliza._ddlPolizas">
-<summary>
-Control ddlPolizas.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
 <member name="F:PSeguros.NewPoliza._txtClienteTitular">
 <summary>
 Control txtClienteTitular.
@@ -364,15 +355,6 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:PSeguros.Site_Mobile._ViewSwitcher1">
 <summary>
 Control ViewSwitcher1.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:PSeguros.WebForm1._gvPolizas">
-<summary>
-Control gvPolizas.
 </summary>
 <remarks>
 Campo generado automáticamente.

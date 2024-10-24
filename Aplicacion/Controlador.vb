@@ -79,6 +79,7 @@ Public Class Controlador
     Public Sub EndosarPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer, cliente As String, fechaEfecto As Date,
                              fechaVigencia As Date, domicilio As String, sumaAsegurada As Integer, waypay As Integer)
         _db.EndosarPoliza(ramoId, productoId, polizaId, cliente, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay)
+
     End Sub
 
     Public Sub CrearRol(idRamo As Integer, idProducto As Integer, idPoliza As Integer, text As String, fechaEfecto As Date, value As Object)

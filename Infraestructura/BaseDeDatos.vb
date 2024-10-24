@@ -154,7 +154,9 @@ Public Class BaseDeDatos
         Dim polizaExistente As Poliza = BuscarPoliza(ramoId, productoId, polizaId)
         If polizaExistente IsNot Nothing Then
             polizaExistente.Nulldate = Now
-            Dim polizaARegistrar As Poliza = polizaExistente
+            Dim polizaARegistrar As Poliza = New Poliza(polizaExistente.Ramo, polizaExistente.Producto, polizaExistente.Poliza, polizaExistente.ClienteTitular,
+                                                        Now, polizaExistente.FechaDeEfecto, polizaExistente.FechaDeVigencia, polizaExistente.Domicilio,
+                                                        polizaExistente.SumaAsegurada, polizaExistente.Waypay)
             Me._HistorialDePolizas.Add(polizaARegistrar)
             Dim polizaModificada As Poliza = EfectuarEndoso(polizaExistente, cliente, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay)
 
