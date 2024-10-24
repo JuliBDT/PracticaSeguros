@@ -186,6 +186,7 @@
     <Content Include="Global.asax" />
     <Content Include="HistorialPolizas.aspx" />
     <Content Include="NewPoliza.aspx" />
+    <Content Include="PolizasActuales.aspx" />
     <Content Include="Roles.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -316,6 +317,13 @@
     </Compile>
     <Compile Include="NewPoliza.aspx.vb">
       <DependentUpon>NewPoliza.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PolizasActuales.aspx.designer.vb">
+      <DependentUpon>PolizasActuales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PolizasActuales.aspx.vb">
+      <DependentUpon>PolizasActuales.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Roles.aspx.designer.vb">
