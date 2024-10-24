@@ -67,8 +67,8 @@ Public Class Endosos
         Dim fechaVigencia As Date = Convert.ToDateTime(txtFechaVigencia.Text)
         Dim idPoliza As Integer = Convert.ToInt32(ddlPolizas.SelectedValue)
 
-        acontrolador.EndosarPoliza(idProducto, idPoliza, idRamo, txtClienteTitular.Text,
-                                fechaVigencia, txtDomicilio.Text, fechaEfecto, txtSumaAsegurada.Text, idWayPay)
+        acontrolador.EndosarPoliza(idRamo, idProducto, idPoliza,, txtClienteTitular.Text, Now, fechaEfecto,
+                                fechaVigencia, txtDomicilio.Text, txtSumaAsegurada.Text, idWayPay)
 
         ' Validar si el usuario seleccionó "Nueva Póliza"
         'If idPoliza = "NuevaPoliza" Then

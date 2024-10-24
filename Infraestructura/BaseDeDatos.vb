@@ -133,7 +133,7 @@ Public Class BaseDeDatos
         _ListaDeRamos.Add(New Ramo(12, #2017-05-26#, "Accidentes Personales", 1, 386))
     End Sub
 
-    Public Function BuscarPoliza(poliza As Integer, ramo As Integer, producto As Integer) As Poliza
+    Public Function BuscarPoliza(ramo As Integer, producto As Integer, poliza As Integer) As Poliza
         Return _ListaDePolizas.FirstOrDefault(Function(p) p.Poliza = poliza AndAlso p.Producto = producto AndAlso p.Ramo = ramo)
     End Function
 
@@ -145,23 +145,21 @@ Public Class BaseDeDatos
     Public Sub AgregarRol(rol As Rol)
         Me.ListaDeRoles.Add(rol)
     End Sub
-    Public Sub EndosarPoliza(nProducto As Integer, nPoliza As Integer, nRamo As Integer, cliente As String,
-                             fechaVigencia As Date, domicilio As String,
-                             fechaEfecto As Date, sumaAsegurada As Integer, waypay As Integer)
-        Dim polizaExistente As Poliza = BuscarPoliza(nPoliza, nRamo, nProducto)
+    Public Sub EndosarPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer, cliente As String, nulldate As Date,
+                           fechaEfecto As Date, fechaVigencia As Date, domicilio As String, sumaAsegurada As Integer, waypay As Integer)
+        Dim polizaExistente As Poliza = BuscarPoliza(ramoId, productoId, polizaId)
         If polizaExistente IsNot Nothing Then
             polizaExistente.Nulldate = Now
             Me._HistorialDePolizas.Add(polizaExistente)
             Me._ListaDePolizas.Remove(polizaExistente)
-            Dim nuevaPoliza As Poliza = New Poliza(nRamo, nProducto, nPoliza, cliente, Nothing, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay)
+            Dim nuevaPoliza As Poliza = New Poliza(ramoId, productoId, polizaId, cliente, Nothing, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay)
             Me._ListaDePolizas.Add(nuevaPoliza)
         End If
     End Sub
 
-    Public Sub AgregarPoliza(nProducto As Integer, nPoliza As Integer, nRamo As Integer, cliente As String,
-                             fechaVigencia As Date, domicilio As String,
-                             fechaEfecto As Date, sumaAsegurada As Integer, waypay As Integer)
-        Me._ListaDePolizas.Add(New Poliza(nRamo, nProducto, nPoliza, cliente, Nothing, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay))
+    Public Sub AgregarPoliza(nRamo As Integer, nProducto As Integer, nPoliza As Integer, cliente As String, nulldate As Date, fechaEfecto As Date,
+                             fechaVigencia As Date, domicilio As String, sumaAsegurada As Integer, waypay As Integer)
+        Me._ListaDePolizas.Add(New Poliza(nRamo, nProducto, nPoliza, cliente, nulldate, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay))
         Console.WriteLine(_ListaDePolizas)
     End Sub
 

@@ -24,10 +24,10 @@ Public Class Controlador
         Return _db.ProductoPorRamo(ramoId)
     End Function
 
-    Public Sub CrearPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer, cliente As String,
-                           fechaEfecto As Date, fechaVigencia As Date, now As Date, domicilio As String, sumaAsegurada As Integer, waypay As Integer)
+    Public Sub CrearPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer, cliente As String, nulldate As Date,
+                           fechaEfecto As Date, fechaVigencia As Date, domicilio As String, sumaAsegurada As Integer, waypay As Integer)
 
-        _db.AgregarPoliza(productoId, polizaId, ramoId, cliente, fechaVigencia, domicilio, fechaEfecto, sumaAsegurada, waypay)
+        _db.AgregarPoliza(ramoId, productoId, polizaId, cliente, nulldate, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay)
     End Sub
 
     Public Function ObtenerPolizas() As List(Of Poliza)
@@ -50,11 +50,11 @@ Public Class Controlador
         Throw New NotImplementedException()
     End Function
 
-    Public Function ObtenerListaPolizasPorRamo(idRamo As Integer) As List(Of Poliza)
-        Return _db.PolizaPorRamo(idRamo)
+    Public Function ObtenerListaPolizasPorRamo(ramoId As Integer) As List(Of Poliza)
+        Return _db.PolizaPorRamo(ramoId)
     End Function
 
-    Public Shared Function ObtenerListaProductosPorRamo(idRamo As Integer) As List(Of Producto)
+    Public Shared Function ObtenerListaProductosPorRamo(ramoId As Integer) As List(Of Producto)
         Throw New NotImplementedException()
     End Function
 
@@ -72,10 +72,9 @@ Public Class Controlador
         End If
     End Function
 
-    Public Sub EndosarPoliza(idProducto, idPoliza, idRamo, cliente,
-                                fechaVigencia, domicilio, fechaEfecto, sumaAsegurada, idWayPay)
-        _db.EndosarPoliza(idProducto, idPoliza, idRamo, cliente,
-                                 fechaVigencia, domicilio, fechaEfecto, sumaAsegurada, idWayPay)
+    Public Sub EndosarPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer, cliente As String, nulldate As Date,
+                           fechaEfecto As Date, fechaVigencia As Date, domicilio As String, sumaAsegurada As Integer, waypay As Integer)
+        _db.EndosarPoliza(ramoId, productoId, polizaId, cliente, nulldate, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay)
     End Sub
 
     Public Sub CrearRol(idRamo As Integer, idProducto As Integer, idPoliza As Integer, text As String, fechaEfecto As Date, value As Object)
