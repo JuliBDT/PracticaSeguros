@@ -5,7 +5,7 @@ Imports Infraestructura
 
 Public Class Endosos
     Inherits System.Web.UI.Page
-    Dim aEndosos As AEndoso = AEndoso.Instance
+    Dim acontrolador As Controlador = Controlador.Instance
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         If Not IsPostBack Then
@@ -15,7 +15,7 @@ Public Class Endosos
     End Sub
 
     Private Sub CargarRamos()
-        ddlRamos.DataSource = aEndosos.ObtenerRamos
+        ddlRamos.DataSource = acontrolador.ObtenerRamos
         ddlRamos.DataTextField = "Descripcion"
         ddlRamos.DataValueField = "Ramo"
         ddlRamos.DataBind()
@@ -28,7 +28,7 @@ Public Class Endosos
             Dim idRamo As Integer = Convert.ToInt32(ddlRamos.SelectedValue)
 
             ' Cargar las pólizas correspondientes al ramo seleccionado
-            Dim listaPolizas = aEndosos.ObtenerListaPolizasPorRamo(idRamo)
+            Dim listaPolizas = acontrolador.ObtenerListaPolizasPorRamo(idRamo)
             ddlPolizas.DataSource = listaPolizas
             ddlPolizas.DataValueField = "Poliza"
             ddlPolizas.DataBind()
@@ -38,7 +38,7 @@ Public Class Endosos
             End If ' Insertar la opción "Nueva Póliza"
             ddlPolizas.Items.Insert(0, New ListItem("Selecciona una poliza"))
 
-            Dim listaProductos = aEndosos.ObtenerProductosPorRamo(idRamo)
+            Dim listaProductos = acontrolador.ObtenerProductosPorRamo(idRamo)
             ddlProductos.DataSource = listaProductos
             ddlProductos.DataTextField = "Descripcion"
             ddlProductos.DataValueField = "Producto"
@@ -52,7 +52,7 @@ Public Class Endosos
     End Sub
 
     Private Sub CargarWayPay()
-        ddlWayPay.DataSource = aEndosos.ObtenerListaWayPay()
+        ddlWayPay.DataSource = acontrolador.ObtenerListaWayPay()
         ddlWayPay.DataTextField = "Descripcion"
         ddlWayPay.DataValueField = "WayPay"
         ddlWayPay.DataBind()
@@ -67,7 +67,7 @@ Public Class Endosos
         Dim fechaVigencia As Date = Convert.ToDateTime(txtFechaVigencia.Text)
         Dim idPoliza As Integer = Convert.ToInt32(ddlPolizas.SelectedValue)
 
-        aEndosos.EndosarPoliza(idProducto, idPoliza, idRamo, txtClienteTitular.Text,
+        acontrolador.EndosarPoliza(idProducto, idPoliza, idRamo, txtClienteTitular.Text,
                                 fechaVigencia, txtDomicilio.Text, fechaEfecto, txtSumaAsegurada.Text, idWayPay)
 
         ' Validar si el usuario seleccionó "Nueva Póliza"

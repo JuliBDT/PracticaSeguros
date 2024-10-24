@@ -72,6 +72,12 @@ Public Class Controlador
         End If
     End Function
 
+    Public Sub EndosarPoliza(idProducto, idPoliza, idRamo, cliente,
+                                fechaVigencia, domicilio, fechaEfecto, sumaAsegurada, idWayPay)
+        _db.EndosarPoliza(idProducto, idPoliza, idRamo, cliente,
+                                 fechaVigencia, domicilio, fechaEfecto, sumaAsegurada, idWayPay)
+    End Sub
+
     Public Sub CrearRol(idRamo As Integer, idProducto As Integer, idPoliza As Integer, text As String, fechaEfecto As Date, value As Object)
         Throw New NotImplementedException()
     End Sub
