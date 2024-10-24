@@ -53,15 +53,6 @@
         End Set
     End Property
 
-    Public Property Nulldate As Date
-        Get
-            Return _Nulldate
-        End Get
-        Set(value As Date)
-            _Nulldate = value
-        End Set
-    End Property
-
     Public Property FechaDeEfecto As Date
         Get
             Return _FechaDeEfecto
@@ -114,6 +105,27 @@
         Set(value As String)
             _ClienteTitular = value
         End Set
+    End Property
+
+    Public Property Nulldate As Date?
+        Get
+            Return _Nulldate
+        End Get
+        Set(value As Date?)
+            _Nulldate = value
+        End Set
+    End Property
+
+    Public ReadOnly Property EstadoNulldate As String
+        Get
+            Console.WriteLine(Nulldate)
+            If Not Nulldate.Equals(Nothing) Then
+                Return Nulldate.Value.ToString("dd/MM/yyyy")
+
+            Else
+                Return "Activa"
+            End If
+        End Get
     End Property
 #End Region
 

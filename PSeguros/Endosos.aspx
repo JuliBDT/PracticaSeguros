@@ -44,6 +44,7 @@
         <br />
 
         <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" AutoPostBack="True" />
+        <asp:Button ID="BtnBaja" runat="server" Text="Dar de Baja" OnClick="btnBaja_Click" AutoPostBack="True" />
     </div>
 
 </asp:Content>

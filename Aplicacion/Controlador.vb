@@ -82,6 +82,9 @@ Public Class Controlador
 
     End Sub
 
+    Public Sub BajarPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer)
+        _db.BajarPoliza(ramoId, productoId, polizaId)
+    End Sub
     Public Sub CrearRol(idRamo As Integer, idProducto As Integer, idPoliza As Integer, text As String, fechaEfecto As Date, value As Object)
         Throw New NotImplementedException()
     End Sub

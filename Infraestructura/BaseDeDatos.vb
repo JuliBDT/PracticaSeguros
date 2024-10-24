@@ -211,6 +211,11 @@ Public Class BaseDeDatos
         Return _ListaDeProductos.Where(Function(p) p.Ramos = ramo).ToList()
     End Function
 
+    Public Sub BajarPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer)
+        Dim poliza As Poliza = BuscarPoliza(ramoId, productoId, polizaId)
+        poliza.Nulldate = Now
+    End Sub
+
 
     Public Function ObtenerListaWayPay() As List(Of WayPay)
         Return _ListaDeWayPays

@@ -85,5 +85,13 @@ Public Class Endosos
         ' Mostrar un mensaje de error si faltan datos
         'End If
     End Sub
+
+    Protected Sub btnBaja_Click()
+        Dim ramoId As Integer = Convert.ToInt32(ddlRamos.SelectedValue)
+        Dim productoId As Integer = Convert.ToInt32(ddlProductos.SelectedValue)
+        Dim polizaId As Integer = Convert.ToInt32(ddlPolizas.SelectedValue)
+        acontrolador.BajarPoliza(ramoId, productoId, polizaId)
+    End Sub
+
 End Class
 
