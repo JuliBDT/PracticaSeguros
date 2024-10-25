@@ -256,4 +256,8 @@ Public Class BaseDeDatos
     Public Function ObtenerListaWayPay() As List(Of WayPay)
         Return _ListaDeWayPays
     End Function
+
+    Public Function ObtenerClientes() As Object
+        Return _ListaDeClientes
+    End Function
 End Class

@@ -32,13 +32,40 @@ Partial Public Class NewPoliza
     Protected WithEvents ddlProductos As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Control txtClienteTitular.
+    '''Control ddlClienteTitular.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtClienteTitular As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ddlClienteTitular As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control btnAgregarRol.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnAgregarRol As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control pnlRoles.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents pnlRoles As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''Control tblRolesBody.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tblRolesBody As Global.System.Web.UI.WebControls.Table
 
     '''<summary>
     '''Control txtFechaEfecto.

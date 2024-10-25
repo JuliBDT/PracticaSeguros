@@ -45,10 +45,11 @@ Public Class Roles
     Protected Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim idRamo As Integer = Convert.ToInt32(ddlRamos.SelectedValue)
         Dim idProducto As Integer = Convert.ToInt32(ddlProductos.SelectedValue)
+        ' Dim idPoliza As Integer = Convert.ToInt32(ddl)
         Dim idRol As Integer = Convert.ToInt32(ddlRol.SelectedValue)
         Dim fechaEfecto As DateTime = Convert.ToDateTime(txtFechaEfecto.Text)
 
-        Controlador.CrearRol(idRamo, idProducto, idRol, txtClienteTitular.Text, fechaEfecto)
+        'Controlador.CrearRol(idRamo, idProducto, idRol, txtClienteTitular.Text, fechaEfecto)
 
         ' Limpiar el formulario
         LimpiarFormulario()

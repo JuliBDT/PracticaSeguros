@@ -1,14 +1,16 @@
 ﻿Public Class Rol
     Private _Ramo As Integer
     Private _Producto As Integer
+    Private _Poliza As Integer
     Private _Rol As Integer
     Private _Cliente As String
     Private _FecaDeEfecto As Date
     Private _Nulldate As Date
 
-    Public Sub New(ramo As Integer, producto As Integer, rol As Integer, cliente As String, fecaDeEfecto As Date, nulldate As Date)
+    Public Sub New(ramo As Integer, producto As Integer, poliza As Integer, rol As Integer, cliente As String, fecaDeEfecto As Date, nulldate As Date)
         _Ramo = ramo
         _Producto = producto
+        _Poliza = poliza
         _Rol = rol
         _Cliente = cliente
         _FecaDeEfecto = fecaDeEfecto
@@ -33,6 +35,15 @@
         End Get
         Set(value As Integer)
             _Producto = value
+        End Set
+    End Property
+
+    Public Property Poliza As Integer
+        Get
+            Return _Poliza
+        End Get
+        Set(value As Integer)
+            _Poliza = value
         End Set
     End Property
 

@@ -13,8 +13,24 @@
         </asp:DropDownList>
         <br />
 
-        <label for="txtClienteTitular">Cliente Titular:</label>
-        <asp:TextBox ID="txtClienteTitular" runat="server" CssClass="form-control"></asp:TextBox>
+        <label for="ddlClienteTitular">Cliente Titular:</label>
+        <asp:DropDownList ID="ddlClienteTitular" runat="server" CssClass="form-control" AutoPostBack="True"></asp:DropDownList>
+        <br />
+
+        <label for="btnAgregarRol">Agregar Rol:</label>
+        <asp:Button ID="btnAgregarRol" runat="server" Text="+" OnClick="btnAgregarRol_Click" AutoPostBack="True" />
+        
+        <!-- Tabla dinámica para agregar roles -->
+        <asp:Panel ID="pnlRoles" runat="server" Visible="False">
+            <asp:Table ID="tblRolesBody" runat="server" CssClass="table">
+                <asp:TableHeaderRow>
+                    <asp:TableHeaderCell>Cliente</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Rol</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Acciones</asp:TableHeaderCell>
+                </asp:TableHeaderRow>
+            </asp:Table>
+        </asp:Panel>
+        
         <br />
 
         <label for="txtFechaEfecto">Fecha de Efecto:</label>

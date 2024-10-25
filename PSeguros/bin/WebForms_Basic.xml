@@ -199,9 +199,36 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.NewPoliza._txtClienteTitular">
+<member name="F:PSeguros.NewPoliza._ddlClienteTitular">
 <summary>
-Control txtClienteTitular.
+Control ddlClienteTitular.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:PSeguros.NewPoliza._btnAgregarRol">
+<summary>
+Control btnAgregarRol.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:PSeguros.NewPoliza._pnlRoles">
+<summary>
+Control pnlRoles.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:PSeguros.NewPoliza._tblRolesBody">
+<summary>
+Control tblRolesBody.
 </summary>
 <remarks>
 Campo generado automáticamente.
