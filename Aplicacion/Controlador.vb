@@ -37,6 +37,11 @@ Public Class Controlador
         Return _db.ObtenerPolizas()
     End Function
 
+    Public Function RolesActivos() As List(Of Rol)
+        Return _db.ListaDeRoles()
+    End Function
+
+
     Public Function ObtenerListaRoles() As Object
         Return _db.ObtenerRoles
     End Function
@@ -59,6 +64,10 @@ Public Class Controlador
 
     Public Shared Function ObtenerListaProductosPorRamo(ramoId As Integer) As List(Of Producto)
         Throw New NotImplementedException()
+    End Function
+
+    Public Function PolizaPorRamoYProducto(ramo As Integer, producto As Integer) As List(Of Poliza)
+        Return _db.PolizaPorRamoYProducto(ramo, producto)
     End Function
 
     Public Function BuscarPoliza(ramo As Integer, producto As Integer, poliza As Integer) As Poliza

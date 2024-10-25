@@ -1,4 +1,5 @@
 ﻿Imports Aplicacion
+Imports Dominio
 
 Public Class Roles
     Inherits System.Web.UI.Page
@@ -41,11 +42,28 @@ Public Class Roles
         End If
     End Sub
 
+    Protected Sub ddlProductos_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles ddlProductos.SelectedIndexChanged
+        If ddlProductos.SelectedIndex > 0 And ddlRamos.SelectedIndex > 0 Then
+            Dim idRamo As Integer = Convert.ToInt32(ddlRamos.SelectedValue)
+            Dim idProducto As Integer = Convert.ToInt32(ddlProductos.SelectedValue)
+
+            ' Obtener las pólizas disponibles para el ramo y producto seleccionados
+            ddlPoliza.DataSource = Controlador.PolizaPorRamoYProducto(idRamo, idProducto)
+            ddlPoliza.DataValueField = "Poliza"
+            ddlPoliza.DataBind()
+            ddlPoliza.Items.Insert(0, New ListItem("--Seleccione una Póliza--", "0"))
+        Else
+            ' Limpia el DropDownList de pólizas si no se ha seleccionado correctamente
+            ddlPoliza.Items.Clear()
+            ddlPoliza.Items.Insert(0, New ListItem("--Seleccione una Póliza--", "0"))
+        End If
+    End Sub
+
 
     Protected Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim idRamo As Integer = Convert.ToInt32(ddlRamos.SelectedValue)
         Dim idProducto As Integer = Convert.ToInt32(ddlProductos.SelectedValue)
-        ' Dim idPoliza As Integer = Convert.ToInt32(ddl)
+        Dim idPoliza As Integer = Convert.ToInt32(ddlPoliza.SelectedValue)
         Dim idRol As Integer = Convert.ToInt32(ddlRol.SelectedValue)
         Dim fechaEfecto As DateTime = Convert.ToDateTime(txtFechaEfecto.Text)
 

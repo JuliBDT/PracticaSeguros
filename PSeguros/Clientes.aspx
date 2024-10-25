@@ -2,15 +2,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 
-        <h2>Clientes</h2>
+        <h2>Roles</h2>
 
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="table table-striped" />
 
     <asp:GridView ID="gvClientes" runat="server" AutoGenerateColumns="False">
     <Columns>
-        <asp:BoundField DataField="Cliente" HeaderText="Numero de CLiente" />
-        <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
-        <asp:BoundField DataField="FechaNacimiento" HeaderText="Fecha de Nacimiento" DataFormatString="{0:dd/MM/yyyy}" />
+        <asp:BoundField DataField="Ramo" HeaderText="Ramo" />
+        <asp:BoundField DataField="Producto" HeaderText="Producto" />
+        <asp:BoundField DataField="Rol" HeaderText="Rol" />
+        <asp:BoundField DataField="Cliente" HeaderText="Cliente" />
+        <asp:BoundField DataField="FecaDeEfecto" HeaderText="Fecha de Efecto" DataFormatString="{0:dd/MM/yyyy}" />
     </Columns>
 </asp:GridView>
     

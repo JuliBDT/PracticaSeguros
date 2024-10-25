@@ -23,7 +23,7 @@ Public Class BaseDeDatos
         _ListaDePolizas = New List(Of Poliza)
         GenerarListaDeClientes()
         GenerarEstadoCivil()
-        _ListaDeRoles = New List(Of Rol)
+        ListaDeRoles = New List(Of Rol)
     End Sub
 
 
@@ -67,14 +67,7 @@ Public Class BaseDeDatos
         End If
         Return _instance
     End Function
-    Public Property ListaDeRoles As List(Of Rol)
-        Get
-            Return _ListaDeRoles
-        End Get
-        Set(value As List(Of Rol))
-            _ListaDeRoles = value
-        End Set
-    End Property
+
 
     Public Property ListaDeClientes As List(Of Cliente)
         Get
@@ -82,6 +75,15 @@ Public Class BaseDeDatos
         End Get
         Set(value As List(Of Cliente))
             _ListaDeClientes = value
+        End Set
+    End Property
+
+    Public Property ListaDeRoles As List(Of Rol)
+        Get
+            Return _ListaDeRoles
+        End Get
+        Set(value As List(Of Rol))
+            _ListaDeRoles = value
         End Set
     End Property
 
@@ -181,6 +183,9 @@ Public Class BaseDeDatos
         Return _ListaDePolizas.Where(Function(p) p.Ramo = ramo).ToList()
     End Function
 
+    Public Function PolizaPorRamoYProducto(ramo As Integer, producto As Integer) As List(Of Poliza)
+        Return _ListaDePolizas.Where(Function(p) p.Ramo = ramo AndAlso p.Producto = producto).ToList()
+    End Function
 
     Public Sub AgregarRol(rol As Rol)
         Me.ListaDeRoles.Add(rol)
