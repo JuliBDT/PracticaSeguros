@@ -265,4 +265,8 @@ Public Class BaseDeDatos
     Public Function ObtenerClientes() As Object
         Return _ListaDeClientes
     End Function
+
+    Public Function ObtenerRolesDePoliza(poliza As Integer) As List(Of Rol)
+        Return _ListaDeRoles.Where(Function(r) r.Poliza = poliza).ToList()
+    End Function
 End Class

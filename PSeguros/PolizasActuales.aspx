@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
    <div>
     <h2>Pólizas</h2>
-    <asp:GridView ID="gvPolizas" runat="server" AutoGenerateColumns="False">
+    <asp:GridView ID="gvPolizas" runat="server" AutoGenerateColumns="False" OnRowCommand="gvPolizas_RowCommand">
  <Columns>
         <asp:BoundField DataField="Ramo" HeaderText="Ramo" />
         <asp:BoundField DataField="Producto" HeaderText="Producto" />
@@ -12,6 +12,7 @@
         <asp:BoundField DataField="SumaAsegurada" HeaderText="Suma Asegurada" />
         <asp:BoundField DataField="FechaDeVigencia" HeaderText="Fecha de Vigencia" DataFormatString="{0:dd/MM/yyyy}" />
         <asp:BoundField DataField="EstadoNulldate" HeaderText="Fecha de Baja" />
+        <asp:ButtonField ButtonType="Button" Text="Roles de Póliza" CommandName="VerRoles" />
     </Columns>
     </asp:GridView>
 </div>

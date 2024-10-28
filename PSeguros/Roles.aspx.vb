@@ -67,7 +67,7 @@ Public Class Roles
         Dim idRol As Integer = Convert.ToInt32(ddlRol.SelectedValue)
         Dim fechaEfecto As DateTime = Convert.ToDateTime(txtFechaEfecto.Text)
 
-        'Controlador.CrearRol(idRamo, idProducto, idRol, txtClienteTitular.Text, fechaEfecto)
+        Controlador.CrearRol(idRamo, idProducto, idPoliza, idRol, txtClienteTitular.Text, fechaEfecto)
 
         ' Limpiar el formulario
         LimpiarFormulario()

@@ -109,4 +109,8 @@ Public Class Controlador
     Public Function ObtenerClientes()
         Return _db.ObtenerClientes()
     End Function
+
+    Public Function ObtenerRolesDePoliza(poliza As Integer) As List(Of Rol)
+        Return _db.ObtenerRolesDePoliza(poliza)
+    End Function
 End Class

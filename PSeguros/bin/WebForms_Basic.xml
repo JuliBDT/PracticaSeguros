@@ -37,7 +37,7 @@ PSeguros
  Devuelve el objeto de registro Asp.
  </summary>
 </member>
-<member name="F:PSeguros.Clientes._ValidationSummary1">
+<member name="F:PSeguros.RolesDePoliza._ValidationSummary1">
 <summary>
 Control ValidationSummary1.
 </summary>
@@ -46,9 +46,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.Clientes._gvClientes">
+<member name="F:PSeguros.RolesDePoliza._gvRoles">
 <summary>
-Control gvClientes.
+Control gvRoles.
 </summary>
 <remarks>
 Campo generado automáticamente.

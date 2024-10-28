@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Clientes
+Partial Public Class RolesDePoliza
 
     '''<summary>
     '''Control ValidationSummary1.
@@ -23,11 +23,11 @@ Partial Public Class Clientes
     Protected WithEvents ValidationSummary1 As Global.System.Web.UI.WebControls.ValidationSummary
 
     '''<summary>
-    '''Control gvClientes.
+    '''Control gvRoles.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents gvClientes As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents gvRoles As Global.System.Web.UI.WebControls.GridView
 End Class
