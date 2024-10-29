@@ -37,6 +37,10 @@ Public Class Controlador
         Return _db.ObtenerPolizas()
     End Function
 
+    Public Function PolizasPorCliente(cliente As String) As List(Of Poliza)
+        Return _db.PolizasPorCliente(cliente)
+    End Function
+
     Public Function RolesActivos() As List(Of Rol)
         Return _db.ListaDeRoles()
     End Function

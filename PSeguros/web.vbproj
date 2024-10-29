@@ -162,6 +162,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Clientes.aspx" />
+    <Content Include="PolizasCliente.aspx" />
     <Content Include="RolesDePoliza.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -261,6 +263,20 @@
     </Compile>
     <Compile Include="About.aspx.vb">
       <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Clientes.aspx.designer.vb">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes.aspx.vb">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="PolizasCliente.aspx.designer.vb">
+      <DependentUpon>PolizasCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PolizasCliente.aspx.vb">
+      <DependentUpon>PolizasCliente.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="RolesDePoliza.aspx.designer.vb">

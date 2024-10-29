@@ -53,6 +53,7 @@
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Roles">Roles</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/HistorialPolizas">Historial de pólizas</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/PolizasActuales">Pólizas</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Clientes">Clientes</a></li>
 
                      </ul>
                 </div>

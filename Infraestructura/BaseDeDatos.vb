@@ -179,6 +179,10 @@ Public Class BaseDeDatos
         Return _ListaDePolizas.FirstOrDefault(Function(p) p.Poliza = poliza AndAlso p.Producto = producto AndAlso p.Ramo = ramo)
     End Function
 
+    Public Function PolizasPorCliente(cliente As String) As List(Of Poliza)
+        Return _ListaDePolizas.Where(Function(p) p.ClienteTitular = cliente).ToList
+    End Function
+
     Public Function PolizaPorRamo(ramo As Integer) As List(Of Poliza)
         Return _ListaDePolizas.Where(Function(p) p.Ramo = ramo).ToList()
     End Function
