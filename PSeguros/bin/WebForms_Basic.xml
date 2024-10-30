@@ -100,9 +100,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.Endosos._txtClienteTitular">
+<member name="F:PSeguros.Endosos._ddlClienteTitular">
 <summary>
-Control txtClienteTitular.
+Control ddlClienteTitular.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -148,6 +148,42 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:PSeguros.Endosos._ddlWayPay">
 <summary>
 Control ddlWayPay.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:PSeguros.Endosos._chkHabilitarRol">
+<summary>
+Control chkHabilitarRol.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:PSeguros.Endosos._ddlRol">
+<summary>
+Control ddlRol.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:PSeguros.Endosos._ddlClienteRol">
+<summary>
+Control ddlClienteRol.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:PSeguros.Endosos._txtFechaEfectoRol">
+<summary>
+Control txtFechaEfectoRol.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -226,27 +262,18 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.NewPoliza._btnAgregarRol">
+<member name="F:PSeguros.NewPoliza._txtDomicilio">
 <summary>
-Control btnAgregarRol.
+Control txtDomicilio.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.NewPoliza._pnlRoles">
+<member name="F:PSeguros.NewPoliza._txtSumaAsegurada">
 <summary>
-Control pnlRoles.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:PSeguros.NewPoliza._tblRolesBody">
-<summary>
-Control tblRolesBody.
+Control txtSumaAsegurada.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -265,24 +292,6 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:PSeguros.NewPoliza._txtFechaVigencia">
 <summary>
 Control txtFechaVigencia.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:PSeguros.NewPoliza._txtDomicilio">
-<summary>
-Control txtDomicilio.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:PSeguros.NewPoliza._txtSumaAsegurada">
-<summary>
-Control txtSumaAsegurada.
 </summary>
 <remarks>
 Campo generado automáticamente.

@@ -41,31 +41,22 @@ Partial Public Class NewPoliza
     Protected WithEvents ddlClienteTitular As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Control btnAgregarRol.
+    '''Control txtDomicilio.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnAgregarRol As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents txtDomicilio As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control pnlRoles.
+    '''Control txtSumaAsegurada.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents pnlRoles As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''Control tblRolesBody.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents tblRolesBody As Global.System.Web.UI.WebControls.Table
+    Protected WithEvents txtSumaAsegurada As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control txtFechaEfecto.
@@ -84,24 +75,6 @@ Partial Public Class NewPoliza
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents txtFechaVigencia As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Control txtDomicilio.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtDomicilio As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Control txtSumaAsegurada.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtSumaAsegurada As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control ddlWayPay.

@@ -105,6 +105,10 @@ Public Class Controlador
         _db.BajarPoliza(ramoId, productoId, polizaId)
     End Sub
 
+    Public Sub darBajaRolesDePoliza(ramoId As Integer, productoId As Integer, polizaId As Integer)
+        _db.darBajaRolesDePoliza(ramoId, productoId, polizaId)
+    End Sub
+
     Public Sub CrearRol(idRamo As Integer, idProducto As Integer, idPoliza As Integer, idRol As Integer, cliente As String, fechaEfecto As Date)
         Dim nuevoRol As Rol = New Rol(idRamo, idProducto, idPoliza, idRol, cliente, fechaEfecto, Nothing)
         _db.AgregarRol(nuevoRol)
@@ -114,7 +118,11 @@ Public Class Controlador
         Return _db.ObtenerClientes()
     End Function
 
-    Public Function ObtenerRolesDePoliza(poliza As Integer) As List(Of Rol)
-        Return _db.ObtenerRolesDePoliza(poliza)
+    Public Function ObtenerRolesDePoliza(ramoId As Integer, productoId As Integer, polizaId As Integer) As List(Of Rol)
+        Return _db.ObtenerRolesDePoliza(ramoId, productoId, polizaId)
     End Function
+
+    Public Sub EndosarRol(ramoId As Integer, productoId As Integer, polizaId As Integer, tipoDeRol As Integer, cliente As String, fechaEfecto As Date)
+        _db.EndosarRol(ramoId, productoId, polizaId, tipoDeRol, cliente, fechaEfecto)
+    End Sub
 End Class

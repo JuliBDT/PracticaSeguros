@@ -11,6 +11,7 @@ Public Class BaseDeDatos
     Private _ListaDeWayPays As List(Of WayPay)
     Private _ListaDeRoles As List(Of Rol)
     Private _ListaEstadoCivil As List(Of EstadoCivil)
+    Private _ListaClienteTitularEndosado As List(Of Rol)
     Private Shared _instance As BaseDeDatos
     Private Shared ReadOnly _lock As New Object()
 
@@ -24,6 +25,7 @@ Public Class BaseDeDatos
         GenerarListaDeClientes()
         GenerarEstadoCivil()
         ListaDeRoles = New List(Of Rol)
+        _ListaClienteTitularEndosado = New List(Of Rol)
     End Sub
 
 
@@ -270,7 +272,28 @@ Public Class BaseDeDatos
         Return _ListaDeClientes
     End Function
 
-    Public Function ObtenerRolesDePoliza(poliza As Integer) As List(Of Rol)
-        Return _ListaDeRoles.Where(Function(r) r.Poliza = poliza).ToList()
+    Public Function ObtenerRolesDePoliza(ramo As Integer, producto As Integer, poliza As Integer) As List(Of Rol)
+        Return _ListaDeRoles.Where(Function(r) r.Ramo = ramo AndAlso r.Producto = producto AndAlso r.Poliza = poliza).ToList()
+    End Function
+
+    Public Sub darBajaRolesDePoliza(ramoId As Integer, productoId As Integer, polizaId As Integer)
+        Dim listaRoles As List(Of Rol) = ObtenerRolesDePoliza(ramoId, productoId, polizaId)
+        If (listaRoles.Count > 0) Then
+            For Each rol In listaRoles
+                rol.Nulldate = Now
+            Next
+        End If
+    End Sub
+
+    Public Sub EndosarRol(ramoId As Integer, productoId As Integer, polizaId As Integer, tipoDeRol As Integer, cliente As String, fechaEfecto As Date)
+        Dim rolClienteTitular As Rol = BuscarClienteTitular(ramoId, productoId, polizaId, tipoDeRol)
+        Dim rolHistorico As Rol = New Rol(rolClienteTitular.Ramo, rolClienteTitular.Producto, rolClienteTitular.Poliza, rolClienteTitular.Rol, rolClienteTitular.Cliente, rolClienteTitular.FecaDeEfecto, Now)
+        _ListaClienteTitularEndosado.Add(rolHistorico)
+        rolClienteTitular.Cliente = cliente
+        rolClienteTitular.FecaDeEfecto = fechaEfecto
+    End Sub
+
+    Private Function BuscarClienteTitular(ramoId As Integer, productoId As Integer, polizaId As Integer, tipoDeRol As Integer) As Rol
+        Return _ListaDeRoles.FirstOrDefault(Function(r) r.Ramo = ramoId AndAlso r.Producto = productoId AndAlso r.Poliza = polizaId AndAlso r.Rol = tipoDeRol)
     End Function
 End Class

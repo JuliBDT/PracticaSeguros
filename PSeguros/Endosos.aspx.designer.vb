@@ -41,13 +41,13 @@ Partial Public Class Endosos
     Protected WithEvents ddlPolizas As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Control txtClienteTitular.
+    '''Control ddlClienteTitular.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtClienteTitular As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ddlClienteTitular As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control txtFechaEfecto.
@@ -93,6 +93,42 @@ Partial Public Class Endosos
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents ddlWayPay As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control chkHabilitarRol.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents chkHabilitarRol As Global.System.Web.UI.HtmlControls.HtmlInputCheckBox
+
+    '''<summary>
+    '''Control ddlRol.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ddlRol As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control ddlClienteRol.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ddlClienteRol As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control txtFechaEfectoRol.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtFechaEfectoRol As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control btnGuardar.
