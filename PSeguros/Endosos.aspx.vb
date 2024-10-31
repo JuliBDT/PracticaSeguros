@@ -111,7 +111,7 @@ Public Class Endosos
     End Sub
 
     Private Sub CargamosTiposDeRol()
-        ddlRol.DataSource = acontrolador.ObtenerListaRoles()
+        ddlRol.DataSource = acontrolador.ObtenerListaRolesOracle()
         ddlRol.DataTextField = "Descripcion"
         ddlRol.DataValueField = "Rol"
         ddlRol.DataBind()

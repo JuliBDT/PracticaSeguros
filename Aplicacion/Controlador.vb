@@ -2,6 +2,7 @@
 Imports Infraestructura
 
 Public Class Controlador
+    Private _dbRMOracle As New RoleMasterRepository
     Private _db As BaseDeDatos = BaseDeDatos.Instance
     Private Shared _instance As Controlador
     Private Shared ReadOnly _lock As New Object()
@@ -48,6 +49,10 @@ Public Class Controlador
 
     Public Function ObtenerListaRoles() As Object
         Return _db.ObtenerRoles
+    End Function
+
+    Public Function ObtenerListaRolesOracle() As List(Of TipoDeRoles)
+        Return _dbRMOracle.GetRoleMasterList()
     End Function
 
     Public Function AgregarRol(rolID As TipoDeRoles, rol As Rol)

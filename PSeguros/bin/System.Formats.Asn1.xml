@@ -166,17 +166,22 @@
       <param name="info">The object that holds the serialized object data.</param>
       <param name="context">The contextual information about the source or destination.</param>
     </member>
-    <member name="M:System.Formats.Asn1.AsnContentException.#ctor(System.String)">
-      <summary>Initializes a new instance of the <see cref="T:System.Formats.Asn1.AsnContentException" /> class, using the provided message.</summary>
-      <param name="message">The error message that explains the reason for the exception.</param>
-    </member>
     <member name="M:System.Formats.Asn1.AsnContentException.#ctor(System.String,System.Exception)">
       <summary>Initializes a new instance of the <see cref="T:System.Formats.Asn1.AsnContentException" /> class, using the provided message and exception that is the cause of this exception.</summary>
       <param name="message">The error message that explains the reason for the exception.</param>
       <param name="inner">The exception that is the cause of the current exception.</param>
     </member>
+    <member name="M:System.Formats.Asn1.AsnContentException.#ctor(System.String)">
+      <summary>Initializes a new instance of the <see cref="T:System.Formats.Asn1.AsnContentException" /> class, using the provided message.</summary>
+      <param name="message">The error message that explains the reason for the exception.</param>
+    </member>
     <member name="T:System.Formats.Asn1.AsnDecoder">
       <summary>Provides stateless methods for decoding BER-encoded, CER-encoded, and DER-encoded ASN.1 data.</summary>
+    </member>
+    <member name="M:System.Formats.Asn1.AsnDecoder.DecodeLength(System.ReadOnlySpan{System.Byte},System.Formats.Asn1.AsnEncodingRules,System.Int32@)">
+      <param name="source" />
+      <param name="ruleSet" />
+      <param name="bytesConsumed" />
     </member>
     <member name="M:System.Formats.Asn1.AsnDecoder.ReadBitString(System.ReadOnlySpan{System.Byte},System.Formats.Asn1.AsnEncodingRules,System.Int32@,System.Int32@,System.Nullable{System.Formats.Asn1.Asn1Tag})">
       <summary>Reads a Bit String value from <paramref name="source" /> with a specified tag under the specified encoding rules, returning the contents in a new array.</summary>
@@ -667,6 +672,12 @@ The contents are not valid under the current encoding rules.</exception>
       <exception cref="T:System.ArgumentException">
         <paramref name="expectedTag" />.<see cref="P:System.Formats.Asn1.Asn1Tag.TagClass" /> is <see cref="F:System.Formats.Asn1.TagClass.Universal" />, but <paramref name="expectedTag" />.<see cref="P:System.Formats.Asn1.Asn1Tag.TagValue" /> is not correct for the method.</exception>
       <returns>The decoded value.</returns>
+    </member>
+    <member name="M:System.Formats.Asn1.AsnDecoder.TryDecodeLength(System.ReadOnlySpan{System.Byte},System.Formats.Asn1.AsnEncodingRules,System.Nullable{System.Int32}@,System.Int32@)">
+      <param name="source" />
+      <param name="ruleSet" />
+      <param name="decodedLength" />
+      <param name="bytesConsumed" />
     </member>
     <member name="M:System.Formats.Asn1.AsnDecoder.TryReadBitString(System.ReadOnlySpan{System.Byte},System.Span{System.Byte},System.Formats.Asn1.AsnEncodingRules,System.Int32@,System.Int32@,System.Int32@,System.Nullable{System.Formats.Asn1.Asn1Tag})">
       <summary>Attempts to copy a Bit String value from <paramref name="source" /> with a specified tag under the specified encoding rules into <paramref name="destination" />.</summary>
@@ -1659,12 +1670,6 @@ The contents are not valid under the current encoding rules.</exception>
     <member name="T:System.Formats.Asn1.AsnWriter">
       <summary>A writer for BER-, CER-, and DER-encoded ASN.1 data.</summary>
     </member>
-    <member name="M:System.Formats.Asn1.AsnWriter.#ctor(System.Formats.Asn1.AsnEncodingRules)">
-      <summary>Create a new <see cref="T:System.Formats.Asn1.AsnWriter" /> with a given set of encoding rules.</summary>
-      <param name="ruleSet">The encoding constraints for the writer.</param>
-      <exception cref="T:System.ArgumentOutOfRangeException">
-        <paramref name="ruleSet" /> is not defined.</exception>
-    </member>
     <member name="M:System.Formats.Asn1.AsnWriter.#ctor(System.Formats.Asn1.AsnEncodingRules,System.Int32)">
       <summary>Initializes a new instance of <see cref="T:System.Formats.Asn1.AsnWriter" /> with a given set of encoding rules and an initial capacity.</summary>
       <param name="ruleSet">The encoding constraints for the writer.</param>
@@ -1675,6 +1680,12 @@ The contents are not valid under the current encoding rules.</exception>
 -or-
 
 <paramref name="initialCapacity" /> is a negative number.</exception>
+    </member>
+    <member name="M:System.Formats.Asn1.AsnWriter.#ctor(System.Formats.Asn1.AsnEncodingRules)">
+      <summary>Create a new <see cref="T:System.Formats.Asn1.AsnWriter" /> with a given set of encoding rules.</summary>
+      <param name="ruleSet">The encoding constraints for the writer.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="ruleSet" /> is not defined.</exception>
     </member>
     <member name="M:System.Formats.Asn1.AsnWriter.CopyTo(System.Formats.Asn1.AsnWriter)">
       <summary>Copy the value of this writer into another.</summary>
