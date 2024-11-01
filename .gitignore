@@ -416,3 +416,20 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio,visualstudiocode
+PSeguros/bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll
+PSeguros/bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll
+PSeguros/bin/roslyn/Microsoft.CodeAnalysis.dll
+PSeguros/bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll
+PSeguros/bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll
+PSeguros/bin/roslyn/System.Collections.Immutable.dll
+PSeguros/bin/roslyn/VBCSCompiler.exe
+PSeguros/bin/roslyn/System.Reflection.Metadata.dll
+PSeguros/bin/roslyn/System.Collections.Immutable.dll
+*.dll
+PSeguros/Web.config
+PSeguros/Web.config
+PSeguros/Web.config
+PSeguros/Web.config
+PSeguros/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+PSeguros/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+PSeguros/bin/PSeguros.dll
