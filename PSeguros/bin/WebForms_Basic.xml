@@ -46,6 +46,51 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:PSeguros.NewCliente._txtDocumento">
+<summary>
+Control txtDocumento.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:PSeguros.NewCliente._txtNombre">
+<summary>
+Control txtNombre.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:PSeguros.NewCliente._txtFechaNacimiento">
+<summary>
+Control txtFechaNacimiento.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:PSeguros.NewCliente._ddlEstadoCivil">
+<summary>
+Control ddlEstadoCivil.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:PSeguros.NewCliente._btnGuardar">
+<summary>
+Control btnGuardar.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:PSeguros.PolizasCliente._gvPolizas">
 <summary>
 Control gvPolizas.
@@ -319,69 +364,6 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:PSeguros.PolizasActuales._gvPolizas">
 <summary>
 Control gvPolizas.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:PSeguros.Roles._ddlRamos">
-<summary>
-Control ddlRamos.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:PSeguros.Roles._ddlProductos">
-<summary>
-Control ddlProductos.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:PSeguros.Roles._ddlPoliza">
-<summary>
-Control ddlPoliza.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:PSeguros.Roles._ddlRol">
-<summary>
-Control ddlRol.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:PSeguros.Roles._txtClienteTitular">
-<summary>
-Control txtClienteTitular.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:PSeguros.Roles._txtFechaEfecto">
-<summary>
-Control txtFechaEfecto.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:PSeguros.Roles._btnGuardar">
-<summary>
-Control btnGuardar.
 </summary>
 <remarks>
 Campo generado automáticamente.

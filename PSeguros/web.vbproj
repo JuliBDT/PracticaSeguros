@@ -177,6 +177,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
+    <Content Include="NewClientes.aspx" />
     <Content Include="PolizasCliente.aspx" />
     <Content Include="RolesDePoliza.aspx" />
     <Content Include="Contact.aspx" />
@@ -188,7 +189,6 @@
     <Content Include="HistorialPolizas.aspx" />
     <Content Include="NewPoliza.aspx" />
     <Content Include="PolizasActuales.aspx" />
-    <Content Include="Roles.aspx" />
     <Content Include="Content\bootstrap.rtl.min.css.map" />
     <Content Include="Content\bootstrap.rtl.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
@@ -256,6 +256,13 @@
     </Compile>
     <Compile Include="Clientes.aspx.vb">
       <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NewClientes.aspx.designer.vb">
+      <DependentUpon>NewClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewClientes.aspx.vb">
+      <DependentUpon>NewClientes.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="PolizasCliente.aspx.designer.vb">
@@ -334,13 +341,6 @@
     </Compile>
     <Compile Include="PolizasActuales.aspx.vb">
       <DependentUpon>PolizasActuales.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Roles.aspx.designer.vb">
-      <DependentUpon>Roles.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Roles.aspx.vb">
-      <DependentUpon>Roles.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Site.Master.designer.vb">

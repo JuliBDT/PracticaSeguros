@@ -433,3 +433,12 @@ PSeguros/Web.config
 PSeguros/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 PSeguros/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 PSeguros/bin/PSeguros.dll
+PSeguros/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+PSeguros/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+PSeguros/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+*.xml
+*.dll
+*.dll
+*.config
+*.exe
+*.vbproj
