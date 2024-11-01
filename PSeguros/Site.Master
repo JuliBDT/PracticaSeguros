@@ -50,9 +50,9 @@
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/NewPoliza">Nueva Poliza</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Endosos">Endosos</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/NewClientes">Registrar cliente</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/HistorialPolizas">Historial de pólizas</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/PolizasActuales">Pólizas</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/AgregarCliente">Agregar Cliente</a></li
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Clientes">Clientes</a></li>
 
                      </ul>

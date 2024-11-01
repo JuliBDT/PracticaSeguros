@@ -11,61 +11,43 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Roles
+Partial Public Class AgregarCliente
 
     '''<summary>
-    '''Control ddlRamos.
+    '''Control txtDocumento.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents ddlRamos As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents txtDocumento As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control ddlProductos.
+    '''Control txtNombre.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents ddlProductos As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents txtNombre As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control ddlPoliza.
+    '''Control txtFechaNacimiento.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents ddlPoliza As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents txtFechaNacimiento As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control ddlRol.
+    '''Control ddlEstadoCivil.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents ddlRol As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''Control txtClienteTitular.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtClienteTitular As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Control txtFechaEfecto.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtFechaEfecto As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ddlEstadoCivil As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control btnGuardar.

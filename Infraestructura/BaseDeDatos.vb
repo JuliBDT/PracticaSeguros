@@ -28,7 +28,9 @@ Public Class BaseDeDatos
         _ListaClienteTitularEndosado = New List(Of Rol)
     End Sub
 
-
+    Public Function ListaEstadoCivil() As List(Of EstadoCivil)
+        Return _ListaEstadoCivil
+    End Function
 
     Private Sub GenerarEstadoCivil()
         _ListaEstadoCivil = New List(Of EstadoCivil)

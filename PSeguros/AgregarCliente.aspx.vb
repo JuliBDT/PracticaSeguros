@@ -1,19 +1,15 @@
 ﻿Imports Aplicacion
-Imports Dominio
 
-Public Class NewCliente
+Public Class AgregarCliente
     Inherits System.Web.UI.Page
-    Dim Controlador As Controlador = Controlador.Instance
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         If Not IsPostBack Then
             CargarEstadoCivil()
-
         End If
     End Sub
-
     Private Sub CargarEstadoCivil()
-        ddlEstadoCivil.DataSource = Controlador.ObtenerEstadoCivil()
+        ddlEstadoCivil.DataSource = Controlador.Instance.ObtenerEstadoCivil()
         ddlEstadoCivil.DataTextField = "Descripcion"
         ddlEstadoCivil.DataValueField = "ID"
         ddlEstadoCivil.DataBind()
@@ -21,24 +17,20 @@ Public Class NewCliente
         ddlEstadoCivil.Items(0).Attributes.Add("disabled", "true")
         ddlEstadoCivil.SelectedIndex = 0
     End Sub
-
     Protected Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim documento As String = Convert.ToString(txtDocumento.Text)
         Dim nombre As String = Convert.ToString(txtNombre.Text)
         Dim fechaNacimiento As Date = Convert.ToDateTime(txtFechaNacimiento.Text)
         Dim estadoCivil As Integer = Convert.ToInt32(ddlEstadoCivil.SelectedValue)
-
-
-        Controlador.AddCliente(documento, nombre, fechaNacimiento, estadoCivil)
-
+        Controlador.Instance.AddCliente(documento, nombre, fechaNacimiento, estadoCivil)
         ' Limpiar el formulario
         LimpiarFormulario()
     End Sub
-
     Private Sub LimpiarFormulario()
         ddlEstadoCivil.SelectedIndex = 0
         txtDocumento.Text = String.Empty
         txtNombre.Text = String.Empty
         txtFechaNacimiento.Text = String.Empty
     End Sub
+
 End Class

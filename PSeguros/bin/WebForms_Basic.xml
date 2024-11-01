@@ -37,16 +37,7 @@ PSeguros
  Devuelve el objeto de registro Asp.
  </summary>
 </member>
-<member name="F:PSeguros.Clientes._gvClientes">
-<summary>
-Control gvClientes.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:PSeguros.NewCliente._txtDocumento">
+<member name="F:PSeguros.AgregarCliente._txtDocumento">
 <summary>
 Control txtDocumento.
 </summary>
@@ -55,7 +46,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.NewCliente._txtNombre">
+<member name="F:PSeguros.AgregarCliente._txtNombre">
 <summary>
 Control txtNombre.
 </summary>
@@ -64,7 +55,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.NewCliente._txtFechaNacimiento">
+<member name="F:PSeguros.AgregarCliente._txtFechaNacimiento">
 <summary>
 Control txtFechaNacimiento.
 </summary>
@@ -73,7 +64,7 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.NewCliente._ddlEstadoCivil">
+<member name="F:PSeguros.AgregarCliente._ddlEstadoCivil">
 <summary>
 Control ddlEstadoCivil.
 </summary>
@@ -82,9 +73,18 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.NewCliente._btnGuardar">
+<member name="F:PSeguros.AgregarCliente._btnGuardar">
 <summary>
 Control btnGuardar.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:PSeguros.Clientes._gvClientes">
+<summary>
+Control gvClientes.
 </summary>
 <remarks>
 Campo generado automáticamente.
