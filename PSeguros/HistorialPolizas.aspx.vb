@@ -7,6 +7,7 @@ Partial Class HistorialPolizas
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         If Not IsPostBack Then
             CargarPolizas()
+
         End If
     End Sub
 

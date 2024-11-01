@@ -3,6 +3,7 @@ Imports Infraestructura
 
 Public Class Controlador
     Private _dbRMOracle As New RoleMasterRepository
+    Private _clientesRepository As New ClientesRepository
     Private _db As BaseDeDatos = BaseDeDatos.Instance
     Private Shared _instance As Controlador
     Private Shared ReadOnly _lock As New Object()
@@ -46,6 +47,9 @@ Public Class Controlador
         Return _db.ListaDeRoles()
     End Function
 
+    Public Function AddCliente(documento As String, nombre As String, nacimiento As Date, estadoCivil As Integer)
+        Return _clientesRepository.AddCliente(documento, nombre, nacimiento, estadoCivil)
+    End Function
 
     Public Function ObtenerListaRoles() As Object
         Return _db.ObtenerRoles
@@ -130,4 +134,8 @@ Public Class Controlador
     Public Sub EndosarRol(ramoId As Integer, productoId As Integer, polizaId As Integer, tipoDeRol As Integer, cliente As String, fechaEfecto As Date)
         _db.EndosarRol(ramoId, productoId, polizaId, tipoDeRol, cliente, fechaEfecto)
     End Sub
+
+    Public Function ObtenerEstadoCivil() As List(Of EstadoCivil)
+        Return _db.ListaEstadoCivil()
+    End Function
 End Class

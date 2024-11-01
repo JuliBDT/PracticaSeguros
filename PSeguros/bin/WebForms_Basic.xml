@@ -325,61 +325,43 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.Roles._ddlRamos">
+<member name="F:PSeguros.NewCliente._txtDocumento">
 <summary>
-Control ddlRamos.
+Control txtDocumento.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.Roles._ddlProductos">
+<member name="F:PSeguros.NewCliente._txtNombre">
 <summary>
-Control ddlProductos.
+Control txtNombre.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.Roles._ddlPoliza">
+<member name="F:PSeguros.NewCliente._txtFechaNacimiento">
 <summary>
-Control ddlPoliza.
+Control txtFechaNacimiento.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.Roles._ddlRol">
+<member name="F:PSeguros.NewCliente._ddlEstadoCivil">
 <summary>
-Control ddlRol.
+Control ddlEstadoCivil.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.Roles._txtClienteTitular">
-<summary>
-Control txtClienteTitular.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:PSeguros.Roles._txtFechaEfecto">
-<summary>
-Control txtFechaEfecto.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:PSeguros.Roles._btnGuardar">
+<member name="F:PSeguros.NewCliente._btnGuardar">
 <summary>
 Control btnGuardar.
 </summary>

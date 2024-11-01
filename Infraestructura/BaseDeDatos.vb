@@ -32,10 +32,10 @@ Public Class BaseDeDatos
 
     Private Sub GenerarEstadoCivil()
         _ListaEstadoCivil = New List(Of EstadoCivil)
-        _ListaEstadoCivil.Add(New EstadoCivil(1, "SOLTERO"))
-        _ListaEstadoCivil.Add(New EstadoCivil(2, "CASADO"))
-        _ListaEstadoCivil.Add(New EstadoCivil(3, "DIVORCIADO"))
-        _ListaEstadoCivil.Add(New EstadoCivil(4, "VIUDO"))
+        _ListaEstadoCivil.Add(New EstadoCivil(0, "SOLTERO"))
+        _ListaEstadoCivil.Add(New EstadoCivil(1, "CASADO"))
+        _ListaEstadoCivil.Add(New EstadoCivil(2, "DIVORCIADO"))
+        _ListaEstadoCivil.Add(New EstadoCivil(3, "VIUDO"))
     End Sub
 
     Private Sub GenerarListaDeClientes()
@@ -295,5 +295,9 @@ Public Class BaseDeDatos
 
     Private Function BuscarClienteTitular(ramoId As Integer, productoId As Integer, polizaId As Integer, tipoDeRol As Integer) As Rol
         Return _ListaDeRoles.FirstOrDefault(Function(r) r.Ramo = ramoId AndAlso r.Producto = productoId AndAlso r.Poliza = polizaId AndAlso r.Rol = tipoDeRol)
+    End Function
+
+    Public Function ListaEstadoCivil() As List(Of EstadoCivil)
+        Return _ListaEstadoCivil
     End Function
 End Class

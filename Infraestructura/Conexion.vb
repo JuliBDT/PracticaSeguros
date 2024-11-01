@@ -2,7 +2,7 @@
 Imports Oracle.ManagedDataAccess.Client
 Public Class Conexion
     Private Shared _instance As Conexion
-    Private connectionString As String = "User Id=sys;Password=Bdt24++;Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.43.190)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=XEPDB1)));DBA Privilege=SYSDBA;"
+    Private connectionString As String = "User Id=sys;Password=Bdt24++;Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=XEPDB1)));DBA Privilege=SYSDBA;"
     Private _connection As OracleConnection
     Private Sub New()
         _connection = New OracleConnection(connectionString)
