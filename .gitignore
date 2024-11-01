@@ -426,3 +426,10 @@ PSeguros/bin/roslyn/VBCSCompiler.exe
 PSeguros/bin/roslyn/System.Reflection.Metadata.dll
 PSeguros/bin/roslyn/System.Collections.Immutable.dll
 *.dll
+PSeguros/Web.config
+PSeguros/Web.config
+PSeguros/Web.config
+PSeguros/Web.config
+PSeguros/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+PSeguros/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+PSeguros/bin/PSeguros.dll
