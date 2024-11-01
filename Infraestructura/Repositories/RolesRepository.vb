@@ -1,8 +1,7 @@
 ﻿Imports Dominio
 Imports Oracle.ManagedDataAccess.Client
 
-Public Class ProductMasterRepository
-
+Public Class RolesRepository
 
     Dim _conexion As Conexion
 
@@ -10,27 +9,28 @@ Public Class ProductMasterRepository
         _conexion = Conexion.getInstance()
     End Sub
 
-    Public Function GetProductMaster() As List(Of Producto)
+    Public Function GetRoleList() As List(Of Rol)
 
-        Dim list As New List(Of Producto)
+        Dim list As New List(Of Rol)
 
         Try
             _conexion.OpenConnection()
 
             Dim command = _conexion.Connection.CreateCommand()
             command.CommandType = CommandType.Text
-            command.CommandText = "SELECT RAMO, PRODUCTO, FECHACOMPUTO, DESCRIPCION, ESTADOREGISTRO,CODUSUARIO FROM PRODUCTMASTER"
+            command.CommandText = "SELECT RAMO, PRODUCTO, POLIZA, ROL, CLIENTE,FECHA_EFECTO,NULLDATE FROM ROLES"
 
             Using reader As OracleDataReader = command.ExecuteReader()
                 While reader.Read()
-                    Dim entity As New Producto(
+                    Dim entity As New Rol(
                         reader.GetInt32(reader.GetOrdinal("RAMO")),
                         reader.GetInt32(reader.GetOrdinal("PRODUCTO")),
-                        reader.GetDateTime(reader.GetOrdinal("FECHACOMPUTO")),
-                        reader.GetString(reader.GetOrdinal("DESCRIPCION")),
-                        reader.GetInt32(reader.GetOrdinal("ESTADOREGISTRO")),
-                        reader.GetInt32(reader.GetOrdinal("CODUSUARIO"))
-                    )
+                        reader.GetInt32(reader.GetOrdinal("POLIZA")),
+                        reader.GetInt32(reader.GetOrdinal("ROL")),
+                        reader.GetString(reader.GetOrdinal("CLIENTE")),
+                        reader.GetDateTime(reader.GetOrdinal("FECHA_EFECTO")),
+                        reader.GetDateTime(reader.GetOrdinal("NULLDATE"))
+                        )
                     list.Add(entity)
                 End While
             End Using
@@ -41,7 +41,7 @@ Public Class ProductMasterRepository
             _conexion.CloseConnection()
         End Try
 
-        GetProductMaster = list
+        GetRoleList = list
 
     End Function
 

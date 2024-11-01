@@ -131,10 +131,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Repositories\BranchMasterRepository.vb" />
     <Compile Include="Repositories\ClientesRepository.vb" />
+    <Compile Include="Repositories\DocumentosRepository.vb" />
+    <Compile Include="Repositories\HistorialPolizasRepository.vb" />
     <Compile Include="Repositories\PolizaRepository.vb" />
     <Compile Include="Repositories\ProductMasterRepository.vb" />
     <Compile Include="Repositories\RoleMasterRepository.vb" />
+    <Compile Include="Repositories\RolesRepository.vb" />
+    <Compile Include="Repositories\WayPayMasterRepository.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

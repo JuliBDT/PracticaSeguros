@@ -1,8 +1,7 @@
 ﻿Imports Dominio
 Imports Oracle.ManagedDataAccess.Client
 
-Public Class ProductMasterRepository
-
+Public Class BranchMasterRepository
 
     Dim _conexion As Conexion
 
@@ -10,27 +9,26 @@ Public Class ProductMasterRepository
         _conexion = Conexion.getInstance()
     End Sub
 
-    Public Function GetProductMaster() As List(Of Producto)
+    Public Function GetBranchMaster() As List(Of Ramo)
 
-        Dim list As New List(Of Producto)
+        Dim list As New List(Of Ramo)
 
         Try
             _conexion.OpenConnection()
 
             Dim command = _conexion.Connection.CreateCommand()
             command.CommandType = CommandType.Text
-            command.CommandText = "SELECT RAMO, PRODUCTO, FECHACOMPUTO, DESCRIPCION, ESTADOREGISTRO,CODUSUARIO FROM PRODUCTMASTER"
+            command.CommandText = "SELECT RAMO, FECHACOMPUTO, DESCRIPCION, ESTADOREGISTRO, CODUSUARIO FROM BRANCHMASTER"
 
             Using reader As OracleDataReader = command.ExecuteReader()
                 While reader.Read()
-                    Dim entity As New Producto(
+                    Dim entity As New Ramo(
                         reader.GetInt32(reader.GetOrdinal("RAMO")),
-                        reader.GetInt32(reader.GetOrdinal("PRODUCTO")),
                         reader.GetDateTime(reader.GetOrdinal("FECHACOMPUTO")),
                         reader.GetString(reader.GetOrdinal("DESCRIPCION")),
                         reader.GetInt32(reader.GetOrdinal("ESTADOREGISTRO")),
                         reader.GetInt32(reader.GetOrdinal("CODUSUARIO"))
-                    )
+)
                     list.Add(entity)
                 End While
             End Using
@@ -41,9 +39,8 @@ Public Class ProductMasterRepository
             _conexion.CloseConnection()
         End Try
 
-        GetProductMaster = list
+        GetBranchMaster = list
 
     End Function
-
 
 End Class

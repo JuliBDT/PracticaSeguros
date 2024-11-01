@@ -2,8 +2,16 @@
     Private _Doctype As Integer
     Private _Documento As String
     Private _Cliente As String
+    Private _cuilCuitDni As Integer
     Private _FechaExpiracion As Date
 
+    Public Sub New(doctype As Integer, documento As String, cliente As String, cuit As Integer, fechaExpiracion As Date)
+        _Doctype = doctype
+        _Documento = documento
+        _Cliente = cliente
+        _cuilCuitDni = cuit
+        _FechaExpiracion = fechaExpiracion
+    End Sub
 
     Public Property Doctype As Integer
         Get
