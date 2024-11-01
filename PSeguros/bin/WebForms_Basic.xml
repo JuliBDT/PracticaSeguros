@@ -325,43 +325,61 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.NewCliente._txtDocumento">
+<member name="F:PSeguros.Roles._ddlRamos">
 <summary>
-Control txtDocumento.
+Control ddlRamos.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.NewCliente._txtNombre">
+<member name="F:PSeguros.Roles._ddlProductos">
 <summary>
-Control txtNombre.
+Control ddlProductos.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.NewCliente._txtFechaNacimiento">
+<member name="F:PSeguros.Roles._ddlPoliza">
 <summary>
-Control txtFechaNacimiento.
+Control ddlPoliza.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.NewCliente._ddlEstadoCivil">
+<member name="F:PSeguros.Roles._ddlRol">
 <summary>
-Control ddlEstadoCivil.
+Control ddlRol.
 </summary>
 <remarks>
 Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:PSeguros.NewCliente._btnGuardar">
+<member name="F:PSeguros.Roles._txtClienteTitular">
+<summary>
+Control txtClienteTitular.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:PSeguros.Roles._txtFechaEfecto">
+<summary>
+Control txtFechaEfecto.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:PSeguros.Roles._btnGuardar">
 <summary>
 Control btnGuardar.
 </summary>
