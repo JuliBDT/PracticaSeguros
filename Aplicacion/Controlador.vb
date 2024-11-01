@@ -4,6 +4,7 @@ Imports Infraestructura
 Public Class Controlador
     Private _dbRMOracle As New RoleMasterRepository
     Private ClientesRepo As New ClientesRepository
+    Private RolesRepo As New RolesRepository
     Private _db As BaseDeDatos = BaseDeDatos.Instance
     Private Shared _instance As Controlador
     Private Shared ReadOnly _lock As New Object()
@@ -116,8 +117,7 @@ Public Class Controlador
     End Sub
 
     Public Sub CrearRol(idRamo As Integer, idProducto As Integer, idPoliza As Integer, idRol As Integer, cliente As String, fechaEfecto As Date)
-        Dim nuevoRol As Rol = New Rol(idRamo, idProducto, idPoliza, idRol, cliente, fechaEfecto, Nothing)
-        _db.AgregarRol(nuevoRol)
+        RolesRepo.AddRol(idRamo, idProducto, idPoliza, idRol, cliente, fechaEfecto)
     End Sub
 
     Public Function ObtenerClientes() As List(Of Cliente)

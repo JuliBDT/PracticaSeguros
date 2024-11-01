@@ -65,7 +65,7 @@ Public Class Endosos
 
         ddlClienteTitular.Items.Insert(0, New ListItem("--Seleccione un Cliente--", "0"))
         ddlClienteTitular.Items(0).Attributes.Add("disabled", "true")
-        ddlClienteTitular.SelectedIndex = 0
+        'ddlClienteTitular.SelectedIndex = 0
 
 
     End Sub

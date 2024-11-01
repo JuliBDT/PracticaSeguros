@@ -197,6 +197,7 @@ Public Class BaseDeDatos
 
     Public Sub AgregarRol(rol As Rol)
         Me.ListaDeRoles.Add(rol)
+
     End Sub
     Public Sub EndosarPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer, cliente As String,
                            fechaEfecto As Date, fechaVigencia As Date, domicilio As String, sumaAsegurada As Integer, waypay As Integer)

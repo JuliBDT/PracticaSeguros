@@ -22,7 +22,7 @@ Public Class AgregarCliente
         Dim nombre As String = Convert.ToString(txtNombre.Text)
         Dim fechaNacimiento As Date = Convert.ToDateTime(txtFechaNacimiento.Text)
         Dim estadoCivil As Integer = Convert.ToInt32(ddlEstadoCivil.SelectedValue)
-        Controlador.Instance.AddCliente(documento, nombre, fechaNacimiento, estadoCivil)
+        Controlador.Instance.AddCliente(documento, nombre, fechaNacimiento, estadoCivil - 1)
         ' Limpiar el formulario
         LimpiarFormulario()
     End Sub

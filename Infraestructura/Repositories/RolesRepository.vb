@@ -45,5 +45,27 @@ Public Class RolesRepository
 
     End Function
 
+    Public Function AddRol(idRamo As Integer, idProducto As Integer, idPoliza As Integer, idRol As Integer, cliente As String, fechaEfecto As Date) As Boolean
+        Dim result As Boolean = False
+        Try
+            _conexion.OpenConnection()
+            Dim command = _conexion.Connection.CreateCommand()
+            command.CommandType = CommandType.StoredProcedure
+            command.CommandText = "roles_insert"
+            command.Parameters.Add(New OracleParameter("p_ramo", idRamo))
+            command.Parameters.Add(New OracleParameter("p_producto", idProducto))
+            command.Parameters.Add(New OracleParameter("p_poliza", idPoliza))
+            command.Parameters.Add(New OracleParameter("p_rol", idRol))
+            command.Parameters.Add(New OracleParameter("p_cliente", cliente))
+            command.Parameters.Add(New OracleParameter("p_fecha_efecto", fechaEfecto))
+            command.Parameters.Add(New OracleParameter("p_nulldate", DBNull.Value))
+            result = command.ExecuteNonQuery() > 0
+        Catch ex As Exception
+            Throw New Exception("Error al insertar datos en CLIENTES", ex)
+        Finally
+            _conexion.CloseConnection()
+        End Try
+        Return result
+    End Function
 
 End Class
