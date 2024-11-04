@@ -2,9 +2,11 @@
 Imports Infraestructura
 
 Public Class Controlador
-    Private _dbRMOracle As New RoleMasterRepository
+    Private RoleMasterRepo As New RoleMasterRepository
     Private ClientesRepo As New ClientesRepository
     Private RolesRepo As New RolesRepository
+    Private PolizasRepo As New PolizaRepository
+    Private PolizaRepo As New PolizaRepository
     Private _db As BaseDeDatos = BaseDeDatos.Instance
     Private Shared _instance As Controlador
     Private Shared ReadOnly _lock As New Object()
@@ -20,7 +22,7 @@ Public Class Controlador
     End Function
 
     Public Function ListarClientes() As List(Of Cliente)
-        Return _db.ListaDeClientes()
+        Return ClientesRepo.GetClientes()
     End Function
     Public Function ObtenerRamos() As List(Of Ramo)
         Return _db.ObtenerRamos() ' Esta función se implementa en la capa de Infraestructura
@@ -33,7 +35,7 @@ Public Class Controlador
     Public Sub CrearPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer, cliente As String, nulldate As Date,
                            fechaEfecto As Date, fechaVigencia As Date, domicilio As String, sumaAsegurada As Integer, waypay As Integer)
 
-        _db.AgregarPoliza(ramoId, productoId, polizaId, cliente, nulldate, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay)
+        PolizasRepo.InsertarPoliza(ramoId, productoId, polizaId, cliente, nulldate, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay)
     End Sub
 
     Public Function ObtenerPolizas() As List(Of Poliza)
@@ -41,48 +43,34 @@ Public Class Controlador
     End Function
 
     Public Function PolizasPorCliente(cliente As String) As List(Of Poliza)
-        Return _db.PolizasPorCliente(cliente)
+        Return PolizaRepo.ObtenerPolizasPorCliente(cliente)
     End Function
 
     Public Function RolesActivos() As List(Of Rol)
-        Return _db.ListaDeRoles()
-    End Function
-
-
-    Public Function ObtenerListaRoles() As Object
-        Return _db.ObtenerRoles
+        Return RolesRepo.GetRoleList()
     End Function
 
     Public Function ObtenerListaRolesOracle() As List(Of TipoDeRoles)
-        Return _dbRMOracle.GetRoleMasterList()
+        Return RoleMasterRepo.GetRoleMasterList()
     End Function
 
-    Public Function AgregarRol(rolID As TipoDeRoles, rol As Rol)
-        Throw New NotImplementedException()
-    End Function
 
     Public Function ObtenerListaWayPay() As List(Of WayPay)
         Return _db.ObtenerListaWayPay
     End Function
 
-    Public Function ObtenerListaProductos() As List(Of Producto)
-        Throw New NotImplementedException()
-    End Function
 
     Public Function ObtenerListaPolizasPorRamo(ramoId As Integer) As List(Of Poliza)
-        Return _db.PolizaPorRamo(ramoId)
+        Return PolizaRepo.ObtenerPolizasPorRamo(ramoId)
     End Function
 
-    Public Shared Function ObtenerListaProductosPorRamo(ramoId As Integer) As List(Of Producto)
-        Throw New NotImplementedException()
-    End Function
 
     Public Function PolizaPorRamoYProducto(ramo As Integer, producto As Integer) As List(Of Poliza)
         Return _db.PolizaPorRamoYProducto(ramo, producto)
     End Function
 
     Public Function BuscarPoliza(ramo As Integer, producto As Integer, poliza As Integer) As Poliza
-        Return _db.BuscarPoliza(ramo, producto, poliza)
+        Return PolizaRepo.ObtenerPolizaPorLlaves(ramo, producto, poliza)
     End Function
     Public Function ObtenerUltimoidPoliza() As Integer
         ' Obtener la lista de pólizas
@@ -98,8 +86,8 @@ Public Class Controlador
         End If
     End Function
 
-    Public Function PolizasActivas()
-        Return _db.PolizasActivas()
+    Public Function PolizasActivas() As List(Of Poliza)
+        Return PolizaRepo.GetPolizas()
     End Function
 
     Public Sub EndosarPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer, cliente As String, fechaEfecto As Date,
@@ -125,7 +113,7 @@ Public Class Controlador
     End Function
 
     Public Function ObtenerRolesDePoliza(ramoId As Integer, productoId As Integer, polizaId As Integer) As List(Of Rol)
-        Return _db.ObtenerRolesDePoliza(ramoId, productoId, polizaId)
+        Return RolesRepo.ObtenerRolesPorPoliza(ramoId, productoId, polizaId)
     End Function
 
     Public Sub EndosarRol(ramoId As Integer, productoId As Integer, polizaId As Integer, tipoDeRol As Integer, cliente As String, fechaEfecto As Date)

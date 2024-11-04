@@ -22,13 +22,13 @@ Public Class ClientesRepository
 
             Using reader As OracleDataReader = command.ExecuteReader()
                 While reader.Read()
-                    Dim entity As New Cliente(
-                        reader.GetString(reader.GetOrdinal("CLIENTE")),
-                         reader.GetString(reader.GetOrdinal("NOM_COMPLETO")),
-                        reader.GetDateTime(reader.GetOrdinal("FECHANACIMIENTO")),
-                        reader.GetDateTime(reader.GetOrdinal("NULLDATE")),
-                        reader.GetInt32(reader.GetOrdinal("ESTADO_CIVIL"))
-)
+                    Dim cliente As String = reader.GetString(reader.GetOrdinal("CLIENTE"))
+                    Dim nomCompleto As String = If(reader.IsDBNull(reader.GetOrdinal("NOM_COMPLETO")), Nothing, reader.GetString(reader.GetOrdinal("NOM_COMPLETO")))
+                    Dim fechaNacimiento As DateTime? = If(reader.IsDBNull(reader.GetOrdinal("FECHA_NACIMIENTO")), Nothing, reader.GetDateTime(reader.GetOrdinal("FECHA_NACIMIENTO")))
+                    Dim nullDate As DateTime? = If(reader.IsDBNull(reader.GetOrdinal("NULLDATE")), Nothing, reader.GetDateTime(reader.GetOrdinal("NULLDATE")))
+                    Dim estadoCivil As Integer? = If(reader.IsDBNull(reader.GetOrdinal("ESTADO_CIVIL")), Nothing, reader.GetInt32(reader.GetOrdinal("ESTADO_CIVIL")))
+
+                    Dim entity As New Cliente(cliente, nomCompleto, fechaNacimiento, nullDate, estadoCivil)
                     list.Add(entity)
                 End While
             End Using

@@ -7,7 +7,7 @@ Public Class Clientes
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
-            Dim clientes As List(Of Cliente) = aControlador.ObtenerClientes()
+            Dim clientes As List(Of Cliente) = aControlador.ListarClientes()
             gvClientes.DataSource = clientes
             gvClientes.DataBind()
         End If
