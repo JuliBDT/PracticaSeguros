@@ -4,8 +4,8 @@
     <h2>Pólizas</h2>
     <asp:GridView ID="gvPolizas" runat="server" AutoGenerateColumns="False" OnRowCommand="gvPolizas_RowCommand">
  <Columns>
-        <asp:BoundField DataField="Ramo" HeaderText="Ramo" />
-        <asp:BoundField DataField="Producto" HeaderText="Producto" />
+        <asp:BoundField DataField="DescripcionDeRamo" HeaderText="Ramo" />
+        <asp:BoundField DataField="DescripcionDeProducto" HeaderText="Producto" />
         <asp:BoundField DataField="Poliza" HeaderText="Número de Póliza" />
         <asp:BoundField DataField="ClienteTitular" HeaderText="Cliente Titular" />
         <asp:BoundField DataField="Domicilio" HeaderText="Domicilio" />

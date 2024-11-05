@@ -1,4 +1,5 @@
-﻿Public Class Poliza
+﻿
+Public Class Poliza
     Private _Ramo As Integer
     Private _Producto As Integer
     Private _Poliza As Integer
@@ -128,5 +129,18 @@
         End Get
     End Property
 #End Region
+
+    Public ReadOnly Property DescripcionDeRamo() As String
+        Get
+            Return EnumRamo.obtenerDescripcionRamo(_Ramo)
+        End Get
+    End Property
+
+    Public ReadOnly Property DescripcionDeProducto() As String
+        Get
+            Return EnumRamo.ObtenerDescripcionProducto(_Producto)
+        End Get
+    End Property
+
 
 End Class
