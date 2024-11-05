@@ -6,6 +6,7 @@ Public Class Controlador
     Private ClientesRepo As New ClientesRepository
     Private RolesRepo As New RolesRepository
     Private PolizasRepo As New PolizaRepository
+    Private HistorialRepo As New HistorialPolizasRepository
     Private PolizaRepo As New PolizaRepository
     Private _db As BaseDeDatos = BaseDeDatos.Instance
     Private Shared _instance As Controlador
@@ -92,7 +93,7 @@ Public Class Controlador
 
     Public Sub EndosarPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer, cliente As String, fechaEfecto As Date,
                              fechaVigencia As Date, domicilio As String, sumaAsegurada As Integer, waypay As Integer)
-        _db.EndosarPoliza(ramoId, productoId, polizaId, cliente, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay)
+        PolizaRepo.EndosarPoliza(ramoId, productoId, polizaId, cliente, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay)
 
     End Sub
 
@@ -126,5 +127,9 @@ Public Class Controlador
 
     Public Function AddCliente(documento As String, nombre As String, nacimiento As Date, estadoCivil As Integer)
         Return ClientesRepo.AddCliente(documento, nombre, nacimiento, estadoCivil)
+    End Function
+
+    Public Function getHistorialPolizas() As List(Of Poliza)
+        Return HistorialRepo.GetHistorialPolizas()
     End Function
 End Class

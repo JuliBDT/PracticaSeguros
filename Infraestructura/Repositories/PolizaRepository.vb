@@ -238,5 +238,39 @@ Public Class PolizaRepository
         Return polizaBuscada
     End Function
 
+    Public Sub EndosarPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer, cliente As String,
+                          fechaEfecto As Date, fechaVigencia As Date, domicilio As String,
+                          sumaAsegurada As Integer, waypay As Integer)
+        Try
+            _conexion.OpenConnection()
+
+            Using command As OracleCommand = _conexion.Connection.CreateCommand()
+                command.CommandType = CommandType.StoredProcedure
+                command.CommandText = "ENDOSAR_POLIZA"
+
+                ' Parámetros de entrada para el procedimiento almacenado
+                command.Parameters.Add("p_ramo", OracleDbType.Int32).Value = ramoId
+                command.Parameters.Add("p_producto", OracleDbType.Int32).Value = productoId
+                command.Parameters.Add("p_poliza", OracleDbType.Int32).Value = polizaId
+                command.Parameters.Add("p_cliente_titular", OracleDbType.Varchar2).Value = cliente
+                command.Parameters.Add("p_fecha_efecto", OracleDbType.Date).Value = fechaEfecto
+                command.Parameters.Add("p_fecha_vigencia", OracleDbType.Date).Value = fechaVigencia
+                command.Parameters.Add("p_domicilio", OracleDbType.Varchar2).Value = domicilio
+                command.Parameters.Add("p_suma_asegurada", OracleDbType.Int32).Value = sumaAsegurada
+                command.Parameters.Add("p_waypay", OracleDbType.Int32).Value = waypay
+
+                ' Ejecutar el procedimiento almacenado
+                command.ExecuteNonQuery()
+            End Using
+
+
+        Catch ex As Exception
+            Throw New Exception("Error al endosar la póliza", ex)
+        Finally
+            _conexion.CloseConnection()
+        End Try
+    End Sub
+
+
 
 End Class

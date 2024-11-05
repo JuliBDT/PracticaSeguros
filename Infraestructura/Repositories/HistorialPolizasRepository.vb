@@ -10,7 +10,6 @@ Public Class HistorialPolizasRepository
     End Sub
 
     Public Function GetHistorialPolizas() As List(Of Poliza)
-
         Dim list As New List(Of Poliza)
 
         Try
@@ -18,7 +17,7 @@ Public Class HistorialPolizasRepository
 
             Dim command = _conexion.Connection.CreateCommand()
             command.CommandType = CommandType.Text
-            command.CommandText = "SELECT RAMO, PRODUCTO, POLIZA, CLIENTE_TITULAR, NULLDATE,FECHA_EFECTO,FECHA_VIGENTE,DOMICILIO ,SUMA_ASEGURADA,WAYPAY FROM HISTORIAL_POLIZA"
+            command.CommandText = "SELECT RAMO, PRODUCTO, POLIZA, CLIENTE_TITULAR, NULLDATE, FECHA_EFECTO, FECHA_VIGENCIA, DOMICILIO, SUMA_ASEGURADA, WAYPAY FROM HISTORIAL_POLIZAS"
 
             Using reader As OracleDataReader = command.ExecuteReader()
                 While reader.Read()
@@ -29,11 +28,11 @@ Public Class HistorialPolizasRepository
                         reader.GetString(reader.GetOrdinal("CLIENTE_TITULAR")),
                         reader.GetDateTime(reader.GetOrdinal("NULLDATE")),
                         reader.GetDateTime(reader.GetOrdinal("FECHA_EFECTO")),
-                        reader.GetDateTime(reader.GetOrdinal("FECHA_VIGENTE")),
+                        reader.GetDateTime(reader.GetOrdinal("FECHA_VIGENCIA")),
                         reader.GetString(reader.GetOrdinal("DOMICILIO")),
                         reader.GetInt32(reader.GetOrdinal("SUMA_ASEGURADA")),
                         reader.GetInt32(reader.GetOrdinal("WAYPAY"))
-)
+                    )
                     list.Add(entity)
                 End While
             End Using
@@ -44,8 +43,8 @@ Public Class HistorialPolizasRepository
             _conexion.CloseConnection()
         End Try
 
-        GetHistorialPolizas = list
-
+        Return list
     End Function
+
 
 End Class

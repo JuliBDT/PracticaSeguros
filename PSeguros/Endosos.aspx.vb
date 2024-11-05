@@ -159,7 +159,7 @@ Public Class Endosos
 
         acontrolador.EndosarPoliza(ramoId, productoId, polizaId, cliente, fechaEfecto, fechaVigencia,
                                    txtDomicilio.Text, txtSumaAsegurada.Text, wayPay)
-        acontrolador.EndosarRol(ramoId, productoId, polizaId, 1, cliente, Now)
+        '  acontrolador.EndosarRol(ramoId, productoId, polizaId, 1, cliente, Now)
         LimpiarFormulario()
     End Sub
 

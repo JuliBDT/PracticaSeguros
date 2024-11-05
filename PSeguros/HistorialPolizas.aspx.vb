@@ -1,4 +1,5 @@
-﻿Imports Dominio
+﻿Imports Aplicacion
+Imports Dominio
 Imports Infraestructura
 
 Partial Class HistorialPolizas
@@ -11,7 +12,7 @@ Partial Class HistorialPolizas
     End Sub
 
     Private Sub CargarPolizas()
-        Dim polizas As List(Of Poliza) = BaseDeDatos.Instance.GetHistoriaPoliza()
+        Dim polizas As List(Of Poliza) = Controlador.Instance.getHistorialPolizas()
         If polizas IsNot Nothing AndAlso polizas.Count > 0 Then
             gvPolizas.DataSource = polizas
             gvPolizas.DataBind()
