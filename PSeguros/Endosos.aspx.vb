@@ -11,7 +11,8 @@ Public Class Endosos
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         If Not IsPostBack Then
             CargarRamos()
-
+            CargarWayPay()
+            CargarClientesRol()
             CargamosTiposDeRol()
 
         Else
@@ -55,7 +56,6 @@ Public Class Endosos
         ddlRamos.SelectedIndex = 0
 
         CargarClientes()
-        CargarWayPay()
     End Sub
 
     Private Sub CargarClientes()
@@ -66,9 +66,7 @@ Public Class Endosos
 
         ddlClienteTitular.Items.Insert(0, New ListItem("--Seleccione un Cliente--", "0"))
         ddlClienteTitular.Items(0).Attributes.Add("disabled", "true")
-        'ddlClienteTitular.SelectedIndex = 0
-
-
+        ddlClienteTitular.SelectedIndex = 0
     End Sub
 
     ' Evento que se dispara cuando se selecciona un ramo
@@ -128,7 +126,7 @@ Public Class Endosos
         ddlWayPay.DataBind()
         ddlWayPay.Items.Insert(0, New ListItem("--Seleccione una Forma de Pago--", "0"))
         ddlWayPay.Items(0).Attributes.Add("disabled", "true")
-        'ddlWayPay.SelectedIndex = 0
+        ddlWayPay.SelectedIndex = 0
     End Sub
 
     Private Sub CargamosTiposDeRol()
@@ -141,8 +139,6 @@ Public Class Endosos
         ddlRol.Items(0).Attributes.Add("disabled", "true")
         ddlRol.Items(1).Attributes.Add("disabled", "True")
         ddlRol.SelectedIndex = 0
-
-        CargarClientesRol()
     End Sub
 
     Private Sub CargarClientesRol()
@@ -168,9 +164,9 @@ Public Class Endosos
 
 
         If chkHabilitarRol.Checked AndAlso
-           ddlRol.SelectedValue = Nothing AndAlso
-           ddlClienteRol.SelectedValue = Nothing AndAlso
-           txtFechaEfectoRol.Text = Nothing Then
+           ddlRol.SelectedValue IsNot Nothing AndAlso
+           ddlClienteRol.SelectedValue IsNot Nothing AndAlso
+           txtFechaEfectoRol.Text IsNot fechaDefault.ToString Then
             Dim idRol As Integer = Convert.ToInt32(ddlRol.SelectedValue)
             Dim clienteRol As String = Convert.ToString(ddlClienteRol.SelectedValue)
             Dim fechaEfectoRol As Date = Convert.ToDateTime(txtFechaEfectoRol.Text)
@@ -203,13 +199,6 @@ Public Class Endosos
 
             If poliza IsNot Nothing Then
 
-                ' For Each item As ListItem In ddlClienteTitular.Items
-                'If item.Text = poliza.ClienteTitular Then
-                'ddlClienteTitular.DataTextField = item.Value
-                'Exit For
-                'End If
-                'Next
-
                 ddlClienteTitular.SelectedValue = poliza.ClienteTitular
                 txtFechaEfecto.Text = poliza.FechaDeEfecto.ToString("yyyy-MM-dd")
                 txtFechaVigencia.Text = poliza.FechaDeVigencia.ToString("yyyy-MM-dd")
@@ -236,8 +225,11 @@ Public Class Endosos
         txtFechaVigencia.Text = String.Empty
         txtDomicilio.Text = String.Empty
         txtSumaAsegurada.Text = String.Empty
-        chkHabilitarRol.Checked = False
 
+        chkHabilitarRol.Checked = False
+        ddlClienteRol.SelectedIndex = 0
+        ddlRol.SelectedIndex = 0
+        txtFechaEfectoRol.Text = String.Empty
     End Sub
 End Class
 
