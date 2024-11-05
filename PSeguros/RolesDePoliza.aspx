@@ -8,10 +8,10 @@
 
    <asp:GridView ID="gvRoles" runat="server" AutoGenerateColumns="False">
     <Columns>
-        <asp:BoundField DataField="Ramo" HeaderText="Ramo" />
-        <asp:BoundField DataField="Producto" HeaderText="Producto" />
+        <asp:BoundField DataField="DescripcionDeRamo" HeaderText="Ramo" />
+        <asp:BoundField DataField="DescripcionDeProducto" HeaderText="Producto" />
         <asp:BoundField DataField="Poliza" HeaderText="Poliza" />
-        <asp:BoundField DataField="Rol" HeaderText="Rol" />
+        <asp:BoundField DataField="DescripcionDeRol" HeaderText="Rol" />
         <asp:BoundField DataField="Cliente" HeaderText="Cliente" />
         <asp:BoundField DataField="FecaDeEfecto" HeaderText="Fecha de Efecto" DataFormatString="{0:dd/MM/yyyy}" />
     </Columns>

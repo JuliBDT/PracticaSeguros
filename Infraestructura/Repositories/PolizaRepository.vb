@@ -322,6 +322,42 @@ Public Class PolizaRepository
         End Try
     End Sub
 
+    Public Sub BajarPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer)
+        Try
+            ' Abrir la conexión a la base de datos
+            _conexion.OpenConnection()
 
+            ' Crear el comando para ejecutar el procedimiento almacenado
+            Using command As OracleCommand = _conexion.Connection.CreateCommand()
+                command.CommandType = CommandType.StoredProcedure
+                command.CommandText = "BajaPoliza"
 
+                ' Agregar los parámetros de entrada
+                command.Parameters.Add("p_ramo", OracleDbType.Int32).Value = ramoId
+                command.Parameters.Add("p_producto", OracleDbType.Int32).Value = productoId
+                command.Parameters.Add("p_poliza", OracleDbType.Int32).Value = polizaId
+
+                ' Ejecutar el procedimiento almacenado
+                command.ExecuteNonQuery()
+            End Using
+
+            ' Opcional: Informar al usuario que la operación fue exitosa
+            Console.WriteLine("NULLDATE actualizado exitosamente.")
+
+        Catch ex As OracleException
+            ' Manejo específico de errores de Oracle
+            Console.WriteLine("Error al actualizar NULLDATE en POLIZA: " & ex.Message)
+            Throw New Exception("Error en Oracle", ex)
+        Catch ex As Exception
+            ' Manejo general de otros errores
+            Console.WriteLine("Ocurrió un error inesperado: " & ex.Message)
+            Throw
+        Finally
+            ' Asegurarse de cerrar la conexión
+            _conexion.CloseConnection()
+        End Try
+    End Sub
 End Class
+
+
+

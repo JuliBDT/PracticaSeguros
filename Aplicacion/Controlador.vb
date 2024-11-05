@@ -94,7 +94,7 @@ Public Class Controlador
     End Sub
 
     Public Sub BajarPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer)
-        _db.BajarPoliza(ramoId, productoId, polizaId)
+        PolizaRepo.BajarPoliza(ramoId, productoId, polizaId)
     End Sub
 
     Public Sub darBajaRolesDePoliza(ramoId As Integer, productoId As Integer, polizaId As Integer)

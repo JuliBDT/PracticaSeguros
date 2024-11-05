@@ -88,4 +88,34 @@
     End Function
 
 
+    Public Shared Function ObtenerDescripcionRol(codigo As Integer) As String
+        Select Case codigo
+            Case 1
+                Return "Contratante"
+            Case 2
+                Return "Asegurado"
+            Case 3
+                Return "Tercero"
+            Case 5
+                Return "Contacto"
+            Case 6
+                Return "Contragarante"
+            Case 7
+                Return "Co-Asegurado"
+            Case 16
+                Return "Beneficiario"
+            Case 25
+                Return "Pagador"
+            Case 31
+                Return "Denunciante"
+            Case 90
+                Return "Representante legal"
+            Case 14
+                Return "Descripción de prueba"
+            Case Else
+                Return "Código no encontrado"
+        End Select
+    End Function
+
+
 End Class

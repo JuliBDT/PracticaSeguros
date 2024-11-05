@@ -29,6 +29,23 @@
         End Set
     End Property
 
+    Public ReadOnly Property DescripcionDeRamo() As String
+        Get
+            Return EnumRamo.obtenerDescripcionRamo(_Ramo)
+        End Get
+    End Property
+
+
+    Public ReadOnly Property DescripcionDeRol() As String
+        Get
+            Return EnumRamo.ObtenerDescripcionRol(_Rol)
+        End Get
+    End Property
+    Public ReadOnly Property DescripcionDeProducto() As String
+        Get
+            Return EnumRamo.ObtenerDescripcionProducto(_Producto)
+        End Get
+    End Property
     Public Property Producto As Integer
         Get
             Return _Producto
