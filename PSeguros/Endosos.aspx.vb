@@ -58,9 +58,9 @@ Public Class Endosos
     End Sub
 
     Private Sub CargarClientes()
-        ddlClienteTitular.DataSource = acontrolador.ObtenerClientes()
-        ddlClienteTitular.DataTextField = "Cliente"
-        ddlClienteTitular.DataValueField = "Nombre"
+        ddlClienteTitular.DataSource = acontrolador.ListarClientes()
+        ddlClienteTitular.DataTextField = "Nombre"
+        ddlClienteTitular.DataValueField = "Cliente"
         ddlClienteTitular.DataBind()
 
         ddlClienteTitular.Items.Insert(0, New ListItem("--Seleccione un Cliente--", "0"))
@@ -75,8 +75,17 @@ Public Class Endosos
         If ddlRamos.SelectedIndex > 0 Then
             Dim idRamo As Integer = Convert.ToInt32(ddlRamos.SelectedValue)
 
+            Dim listaProductos = acontrolador.ObtenerProductosPorRamo(idRamo)
+            ddlProductos.DataSource = listaProductos
+            ddlProductos.DataTextField = "Descripcion"
+            ddlProductos.DataValueField = "Producto"
+            ddlProductos.DataBind()
+            ddlProductos.Items.Insert(0, New ListItem("--Seleccione un Producto--", "0"))
+            ddlProductos.Items(0).Attributes.Add("disabled", "true")
+            'ddlProductos.SelectedIndex = 0
+
             ' Cargar las pólizas correspondientes al ramo seleccionado
-            Dim listaPolizas = acontrolador.ObtenerListaPolizasPorRamo(idRamo)
+            Dim listaPolizas = acontrolador.ObtenerListaPolizasPorRamo(idRamo, ddlProductos.SelectedValue)
             ddlPolizas.DataSource = listaPolizas
             ddlPolizas.DataValueField = "Poliza"
             ddlPolizas.DataBind()
@@ -85,15 +94,6 @@ Public Class Endosos
                 ddlPolizas.Items.Insert(0, New ListItem("No existen polizas para este ramo"))
             End If ' Insertar la opción "Nueva Póliza"
             ddlPolizas.Items.Insert(0, New ListItem("Selecciona una poliza"))
-
-            Dim listaProductos = acontrolador.ObtenerProductosPorRamo(idRamo)
-            ddlProductos.DataSource = listaProductos
-            ddlProductos.DataTextField = "Descripcion"
-            ddlProductos.DataValueField = "Producto"
-            ddlProductos.DataBind()
-            ddlProductos.Items.Insert(0, New ListItem("--Seleccione un Producto--", "0"))
-            ddlProductos.Items(0).Attributes.Add("disabled", "true")
-            ddlProductos.SelectedIndex = 0
         Else
             ddlPolizas.Items.Clear()
             ddlPolizas.Items.Insert(0, New ListItem("--Seleccione una Póliza--", "0"))

@@ -17,7 +17,7 @@ Public Class Clientes
         If e.CommandName = "VerPolizas" Then
             Dim index As Integer = Convert.ToInt32(e.CommandArgument)
             Dim row As GridViewRow = gvClientes.Rows(index)
-            Dim clienteId As String = row.Cells(1).Text
+            Dim clienteId As String = row.Cells(0).Text
             Response.Redirect($"PolizasCliente.aspx?clienteId={clienteId}")
         End If
     End Sub

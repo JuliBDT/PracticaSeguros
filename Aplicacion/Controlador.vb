@@ -36,10 +36,10 @@ Public Class Controlador
         Return lista.Where(Function(p) p.Ramos = ramoId).ToList()
     End Function
 
-    Public Sub CrearPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer, cliente As String, nulldate As Date,
+    Public Sub CrearPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer, cliente As String,
                            fechaEfecto As Date, fechaVigencia As Date, domicilio As String, sumaAsegurada As Integer, waypay As Integer)
 
-        PolizasRepo.InsertarPoliza(ramoId, productoId, polizaId, cliente, nulldate, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay)
+        PolizasRepo.InsertarPoliza(ramoId, productoId, polizaId, cliente, fechaEfecto, fechaVigencia, domicilio, sumaAsegurada, waypay)
     End Sub
 
     Public Function ObtenerPolizas() As List(Of Poliza)
@@ -64,8 +64,8 @@ Public Class Controlador
     End Function
 
 
-    Public Function ObtenerListaPolizasPorRamo(ramoId As Integer) As List(Of Poliza)
-        Return PolizaRepo.ObtenerPolizasPorRamo(ramoId)
+    Public Function ObtenerListaPolizasPorRamo(ramoId As Integer, productoId As Integer) As List(Of Poliza)
+        Return PolizaRepo.ObtenerPolizasPorRamoYProducto(ramoId, productoId)
     End Function
 
 
@@ -78,7 +78,7 @@ Public Class Controlador
     End Function
     Public Function ObtenerUltimoidPoliza() As Integer
         ' Obtener la lista de pólizas
-        Dim listaPolizas = _db.ObtenerPolizas()
+        Dim listaPolizas = PolizaRepo.GetPolizas()
 
         ' Verificar que la lista no esté vacía antes de acceder al último elemento
         If listaPolizas.Count > 0 Then

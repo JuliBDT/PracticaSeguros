@@ -51,7 +51,7 @@ Public Class PolizaRepository
 
     End Function
 
-    Public Sub InsertarPoliza(ramo As Integer, producto As Integer, poliza As Integer, clienteTitular As String, nulldate As Date?, fechaEfecto As Date, fechaVigencia As Date, domicilio As String, sumaAsegurada As Integer, waypay As Integer)
+    Public Sub InsertarPoliza(ramo As Integer, producto As Integer, poliza As Integer, clienteTitular As String, fechaEfecto As Date, fechaVigencia As Date, domicilio As String, sumaAsegurada As Integer, waypay As Integer)
         Try
             ' Abrir la conexión
             _conexion.OpenConnection()
@@ -66,7 +66,7 @@ Public Class PolizaRepository
                 command.Parameters.Add("p_producto", OracleDbType.Int32).Value = producto
                 command.Parameters.Add("p_poliza", OracleDbType.Int32).Value = poliza
                 command.Parameters.Add("p_cliente_titular", OracleDbType.Varchar2).Value = clienteTitular
-                command.Parameters.Add("p_nulldate", OracleDbType.Date).Value = If(nulldate.HasValue, CType(nulldate, DateTime?), DBNull.Value)
+                command.Parameters.Add("p_nulldate", OracleDbType.Date).Value = DBNull.Value
                 command.Parameters.Add("p_fecha_efecto", OracleDbType.Date).Value = fechaEfecto
                 command.Parameters.Add("p_fecha_vigencia", OracleDbType.Date).Value = fechaVigencia
                 command.Parameters.Add("p_domicilio", OracleDbType.Varchar2).Value = domicilio
@@ -152,6 +152,57 @@ Public Class PolizaRepository
 
             ' Parámetro de entrada
             command.Parameters.Add("p_ramo", OracleDbType.Int32).Value = ramo
+
+            ' Parámetro de salida
+            Dim cursorParam As OracleParameter = New OracleParameter("p_resultado", OracleDbType.RefCursor)
+            cursorParam.Direction = ParameterDirection.Output
+            command.Parameters.Add(cursorParam)
+
+            ' Ejecuta el procedimiento y obtiene el cursor
+            Using reader As OracleDataReader = command.ExecuteReader()
+                While reader.Read()
+                    ' Lee y agrega cada póliza a la lista
+                    Dim poliza As New Poliza(
+                        reader.GetInt32(reader.GetOrdinal("RAMO")),
+                        reader.GetInt32(reader.GetOrdinal("PRODUCTO")),
+                        reader.GetInt32(reader.GetOrdinal("POLIZA")),
+                        reader.GetString(reader.GetOrdinal("CLIENTE_TITULAR")),
+                        If(reader.IsDBNull(reader.GetOrdinal("NULLDATE")), Nothing, reader.GetDateTime(reader.GetOrdinal("NULLDATE"))),
+                        If(reader.IsDBNull(reader.GetOrdinal("FECHA_EFECTO")), Nothing, reader.GetDateTime(reader.GetOrdinal("FECHA_EFECTO"))),
+                        If(reader.IsDBNull(reader.GetOrdinal("FECHA_VIGENCIA")), Nothing, reader.GetDateTime(reader.GetOrdinal("FECHA_VIGENCIA"))),
+                        If(reader.IsDBNull(reader.GetOrdinal("DOMICILIO")), String.Empty, reader.GetString(reader.GetOrdinal("DOMICILIO"))),
+                        If(reader.IsDBNull(reader.GetOrdinal("SUMA_ASEGURADA")), 0, reader.GetInt32(reader.GetOrdinal("SUMA_ASEGURADA"))),
+                        If(reader.IsDBNull(reader.GetOrdinal("WAYPAY")), 0, reader.GetInt32(reader.GetOrdinal("WAYPAY")))
+                    )
+                    polizas.Add(poliza)
+                End While
+            End Using
+
+        Catch ex As Exception
+            Throw New Exception("Error al obtener pólizas por ramo", ex)
+        Finally
+            ' Cierra la conexión
+            _conexion.CloseConnection()
+        End Try
+
+        Return polizas
+    End Function
+
+    Public Function ObtenerPolizasPorRamoYProducto(ramo As Integer, producto As Integer) As List(Of Poliza)
+        Dim polizas As New List(Of Poliza)
+
+        Try
+            ' Abre la conexión
+            _conexion.OpenConnection()
+
+            ' Configura el comando para el procedimiento almacenado
+            Dim command As OracleCommand = _conexion.Connection.CreateCommand()
+            command.CommandText = "GET_POLIZAS_BY_RAMO_PRODUCTO"
+            command.CommandType = CommandType.StoredProcedure
+
+            ' Parámetro de entrada
+            command.Parameters.Add("p_ramo", OracleDbType.Int32).Value = ramo
+            command.Parameters.Add("p_producto", OracleDbType.Int32).Value = producto
 
             ' Parámetro de salida
             Dim cursorParam As OracleParameter = New OracleParameter("p_resultado", OracleDbType.RefCursor)

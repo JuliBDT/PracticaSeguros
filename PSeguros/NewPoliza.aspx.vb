@@ -33,9 +33,9 @@ Public Class NewPoliza
 
     ' Método para cargar clientes en el dropdownlist de cliente titular
     Private Sub CargarClientes()
-        ddlClienteTitular.DataSource = Controlador.ObtenerClientes()
-        ddlClienteTitular.DataTextField = "Cliente"
-        ddlClienteTitular.DataValueField = "Nombre"
+        ddlClienteTitular.DataSource = Controlador.ListarClientes()
+        ddlClienteTitular.DataTextField = "Nombre"
+        ddlClienteTitular.DataValueField = "Cliente"
         ddlClienteTitular.DataBind()
 
         ddlClienteTitular.Items.Insert(0, New ListItem("--Seleccione un Cliente--", "0"))
@@ -110,7 +110,7 @@ Public Class NewPoliza
         Dim idPoliza As Integer = (Controlador.ObtenerUltimoidPoliza() + 1)
         Dim idRolClienteTitular As Integer = 1
 
-        Controlador.CrearPoliza(idRamo, idProducto, idPoliza, cliente, Nothing, fechaEfecto,
+        Controlador.CrearPoliza(idRamo, idProducto, idPoliza, cliente, fechaEfecto,
                                 fechaVigencia, txtDomicilio.Text, txtSumaAsegurada.Text, idWayPay)
 
         Controlador.CrearRol(idRamo, idProducto, idPoliza, idRolClienteTitular, cliente, fechaEfecto)
