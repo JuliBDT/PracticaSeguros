@@ -6,8 +6,10 @@ Public Class Controlador
     Private ClientesRepo As New ClientesRepository
     Private RolesRepo As New RolesRepository
     Private PolizasRepo As New PolizaRepository
+    Private RamoMasterRepo As New BranchMasterRepository
     Private HistorialRepo As New HistorialPolizasRepository
     Private PolizaRepo As New PolizaRepository
+    Private ProductoRepo As New ProductMasterRepository
     Private _db As BaseDeDatos = BaseDeDatos.Instance
     Private Shared _instance As Controlador
     Private Shared ReadOnly _lock As New Object()
@@ -26,11 +28,12 @@ Public Class Controlador
         Return ClientesRepo.GetClientes()
     End Function
     Public Function ObtenerRamos() As List(Of Ramo)
-        Return _db.ObtenerRamos() ' Esta función se implementa en la capa de Infraestructura
+        Return RamoMasterRepo.GetBranchMaster() ' Esta función se implementa en la capa de Infraestructura
     End Function
 
     Public Function ObtenerProductosPorRamo(ramoId As Integer) As List(Of Producto)
-        Return _db.ProductoPorRamo(ramoId)
+        Dim lista = ProductoRepo.GetProductMaster()
+        Return lista.Where(Function(p) p.Ramos = ramoId).ToList()
     End Function
 
     Public Sub CrearPoliza(ramoId As Integer, productoId As Integer, polizaId As Integer, cliente As String, nulldate As Date,
