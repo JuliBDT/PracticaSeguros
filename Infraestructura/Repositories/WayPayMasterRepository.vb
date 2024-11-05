@@ -18,7 +18,7 @@ Public Class WayPayMasterRepository
 
             Dim command = _conexion.Connection.CreateCommand()
             command.CommandType = CommandType.Text
-            command.CommandText = "SELECT WAYPAY, FECHACOMPUTO, DESCRIPCION, ESTADPREGISTRO, CODUSUARIO FROM WAYPAYMASTER"
+            command.CommandText = "SELECT WAYPAY, FECHACOMPUTO, DESCRIPCION, ESTADOREGISTRO, CODUSUARIO FROM WAYPAYMASTER"
 
             Using reader As OracleDataReader = command.ExecuteReader()
                 While reader.Read()

@@ -1,4 +1,5 @@
 ﻿Imports System
+Imports System.Runtime.InteropServices
 Imports Aplicacion
 Imports Dominio
 Imports Infraestructura
@@ -75,30 +76,50 @@ Public Class Endosos
         If ddlRamos.SelectedIndex > 0 Then
             Dim idRamo As Integer = Convert.ToInt32(ddlRamos.SelectedValue)
 
+            ' Cargar los productos para el ramo seleccionado
             Dim listaProductos = acontrolador.ObtenerProductosPorRamo(idRamo)
             ddlProductos.DataSource = listaProductos
             ddlProductos.DataTextField = "Descripcion"
             ddlProductos.DataValueField = "Producto"
             ddlProductos.DataBind()
+
+            ' Agregar el ítem inicial y deshabilitarlo
             ddlProductos.Items.Insert(0, New ListItem("--Seleccione un Producto--", "0"))
             ddlProductos.Items(0).Attributes.Add("disabled", "true")
-            'ddlProductos.SelectedIndex = 0
+            ddlProductos.SelectedIndex = 0
 
-            ' Cargar las pólizas correspondientes al ramo seleccionado
-            Dim listaPolizas = acontrolador.ObtenerListaPolizasPorRamo(idRamo, ddlProductos.SelectedValue)
-            ddlPolizas.DataSource = listaPolizas
-            ddlPolizas.DataValueField = "Poliza"
-            ddlPolizas.DataBind()
+            ' Limpiar y deshabilitar el listado de pólizas hasta que se seleccione un producto
+            ddlPolizas.Items.Clear()
+            ddlPolizas.Items.Insert(0, New ListItem("--Seleccione una Póliza--", "0"))
+        End If
+    End Sub
 
-            If Not listaPolizas.Any() Then
-                ddlPolizas.Items.Insert(0, New ListItem("No existen polizas para este ramo"))
-            End If ' Insertar la opción "Nueva Póliza"
-            ddlPolizas.Items.Insert(0, New ListItem("Selecciona una poliza"))
+    Protected Sub ddlProductos_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles ddlProductos.SelectedIndexChanged
+        If ddlProductos.SelectedIndex > 0 Then
+            Dim idRamo As Integer = Convert.ToInt32(ddlRamos.SelectedValue)
+            Dim idProducto As Integer = Convert.ToInt32(ddlProductos.SelectedValue)
+
+            ' Cargar las pólizas correspondientes al ramo y producto seleccionados
+            Dim lista = acontrolador.PolizasActivas()
+            Dim listaPolizas = lista.Where(Function(p) p.Ramo = idRamo AndAlso p.Producto = idProducto)
+            If listaPolizas IsNot Nothing AndAlso listaPolizas.Any() Then
+                ddlPolizas.DataSource = listaPolizas
+                ddlPolizas.DataTextField = "Poliza" ' Ajusta esto al campo de descripción de póliza si es necesario
+                ddlPolizas.DataValueField = "Poliza"
+                ddlPolizas.DataBind()
+
+                ddlPolizas.Items.Insert(0, New ListItem("Selecciona una póliza", "0"))
+            Else
+                ' Si no hay pólizas, mostrar mensaje de "No existen pólizas para este ramo y producto"
+                ddlPolizas.Items.Clear()
+                ddlPolizas.Items.Insert(0, New ListItem("No existen pólizas para este ramo y producto", "0"))
+            End If
         Else
             ddlPolizas.Items.Clear()
             ddlPolizas.Items.Insert(0, New ListItem("--Seleccione una Póliza--", "0"))
         End If
     End Sub
+
 
     Private Sub CargarWayPay()
         ddlWayPay.DataSource = acontrolador.ObtenerListaWayPay()
