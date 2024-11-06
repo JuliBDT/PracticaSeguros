@@ -67,7 +67,7 @@
             Case 3600
                 Return "Seguro de Bicicleta"
             Case 3800
-                Return "Protección Integral Galicia"
+                Return "Proteccion Integral Galicia"
             Case 3801
                 Return "PIG Stock"
             Case 3900
@@ -77,9 +77,9 @@
             Case 1668
                 Return "Robo Celulares"
             Case 1669
-                Return "Robo en Vía Pública BGBA"
+                Return "Robo en Via Publica BGBA"
             Case 1670
-                Return "Protección Tecno Portátil"
+                Return "Proteccion Tecno Portatil"
             Case 1671
                 Return "Accidentes Personales"
             Case Else
