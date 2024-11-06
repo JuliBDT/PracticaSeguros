@@ -11,6 +11,7 @@ Public Class Endosos
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         If Not IsPostBack Then
             CargarRamos()
+            CargarClientes()
             CargarWayPay()
             CargarClientesRol()
             CargamosTiposDeRol()
@@ -89,6 +90,11 @@ Public Class Endosos
             ' Limpiar y deshabilitar el listado de pólizas hasta que se seleccione un producto
             ddlPolizas.Items.Clear()
             ddlPolizas.Items.Insert(0, New ListItem("--Seleccione una Póliza--", "0"))
+
+            CargarClientes()
+            CargarWayPay()
+            CargarClientesRol()
+            CargamosTiposDeRol()
         End If
     End Sub
 
@@ -116,6 +122,10 @@ Public Class Endosos
             ddlPolizas.Items.Clear()
             ddlPolizas.Items.Insert(0, New ListItem("--Seleccione una Póliza--", "0"))
         End If
+        CargarClientes()
+        CargarWayPay()
+        CargarClientesRol()
+        CargamosTiposDeRol()
     End Sub
 
 
@@ -169,7 +179,12 @@ Public Class Endosos
            txtFechaEfectoRol.Text IsNot fechaDefault.ToString Then
             Dim idRol As Integer = Convert.ToInt32(ddlRol.SelectedValue)
             Dim clienteRol As String = Convert.ToString(ddlClienteRol.SelectedValue)
-            Dim fechaEfectoRol As Date = Convert.ToDateTime(txtFechaEfectoRol.Text)
+            Dim fechaEfectoRol As DateTime
+            If String.IsNullOrEmpty(txtFechaEfecto.Text) Then
+                fechaEfectoRol = Now
+            Else
+                fechaEfectoRol = Convert.ToDateTime(txtFechaEfecto.Text)
+            End If
 
             acontrolador.CrearRol(ramoId, productoId, polizaId, idRol, clienteRol, fechaEfectoRol)
         End If
@@ -205,6 +220,8 @@ Public Class Endosos
                 txtDomicilio.Text = poliza.Domicilio
                 txtSumaAsegurada.Text = poliza.SumaAsegurada.ToString()
                 ddlWayPay.SelectedValue = poliza.Waypay
+                CargarClientesRol()
+                CargamosTiposDeRol()
             End If
         End If
     End Sub

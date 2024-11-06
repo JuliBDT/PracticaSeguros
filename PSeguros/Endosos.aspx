@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="Endosos.aspx.vb" Inherits="PSeguros.Endosos" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server" onsubmit="return validarFormulario() && validarFormularioRol();">
 
-    <div onsubmit="return validarFormulario();">
+    <div>
         <h2>Endoso de Póliza</h2>
 
         <div class="row" >
@@ -52,7 +52,7 @@
                     <input type="checkbox" runat="server" id="chkHabilitarRol" ClientIDMode="Static" onclick="toggleSeccionRol()">Habilitar
                 </label>
                 <br />
-                <div id="frmRol">
+                <div id="frmRol" >
                                                         
                     <label for="ddlRol">Rol:</label>
                     <asp:DropDownList ID="ddlRol" runat="server" CssClass="form-control" TextMode="Number" >
@@ -74,7 +74,7 @@
         </div>
         
 
-        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" AutoPostBack="True" OnClientClick="return validarFormulario();"/>
+        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" AutoPostBack="True" OnClientClick="return validarFormulario() && validarFormularioRol();"/>
         <asp:Button ID="BtnBaja" runat="server" Text="Dar de Baja" OnClick="btnBaja_Click" AutoPostBack="True" />
     </div>
     <script>
@@ -88,9 +88,7 @@
             var fechaVigencia = document.getElementById("<%= txtFechaVigencia.ClientID %>").value;
             var waypay = document.getElementById("<%= ddlWayPay.ClientID %>").value;
 
-            var rol = document.getElementById("<%= ddlRol.ClientID %>")
-            var clienteRol = document.getElementById("<%= ddlClienteRol.ClientID %>")
-            var fechaEfectoRol = document.getElementById("<%= txtFechaEfectoRol.ClientID %>")
+            
 
             if (ramo === "0") {
                 alert("Por favor, seleccione un ramo.");
@@ -131,6 +129,10 @@
                 alert("Por favor, seleccione una forma de pago.");
                 return false;
             }
+                       
+            var rol = document.getElementById("<%= ddlRol.ClientID %>")
+            var clienteRol = document.getElementById("<%= ddlClienteRol.ClientID %>")
+            var fechaEfectoRol = document.getElementById("<%= txtFechaEfectoRol.ClientID %>")
 
             if (document.getElementById("<%= chkHabilitarRol.ClientID %>").checked) {
                 if (rol === "0") {
@@ -147,7 +149,28 @@
                 }
             }
 
+            return true;
+        }
 
+        function validarFormularioRol() {
+            var rol = document.getElementById("<%= ddlRol.ClientID %>")
+            var clienteRol = document.getElementById("<%= ddlClienteRol.ClientID %>")
+            var fechaEfectoRol = document.getElementById("<%= txtFechaEfectoRol.ClientID %>")
+
+            if (document.getElementById("<%= chkHabilitarRol.ClientID %>").checked) {
+                if (rol === "0") {
+                    alert("Por  favor, ingrese un rol")
+                    return false;
+                }
+                if (clienteRol === "0") {
+                    alert("Por  favor, ingrese un cliente para el rol")
+                    return false;
+                }
+                if (fechaEfectoRol === "") {
+                    alert("Si no ingresa una fecha de efecto, se aplicará la fecha de hoy.");
+                    return true;
+                }
+            }
             return true;
         }
 
