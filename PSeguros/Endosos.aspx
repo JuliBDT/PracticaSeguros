@@ -55,16 +55,16 @@
                 <div id="frmRol" >
                                                         
                     <label for="ddlRol">Rol:</label>
-                    <asp:DropDownList ID="ddlRol" runat="server" CssClass="form-control" TextMode="Number" >
+                    <asp:DropDownList ID="ddlRol" runat="server" CssClass="form-control" TextMode="Number" ClientIDMode="Static">
                     </asp:DropDownList>
                     <br />
 
                     <label for="ddlClienteRol">Usuario de rol:</label>
-                    <asp:DropDownList ID="ddlClienteRol" runat="server" CssClass="form-control" AutoPostBack="True"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlClienteRol" runat="server"  CssClass="form-control" AutoPostBack="True" ClientIDMode="Static"></asp:DropDownList>
                     <br />
 
                     <label for="txtFechaEfectoRol">Fecha de Efecto:</label>
-                    <asp:TextBox ID="txtFechaEfectoRol" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
+                    <asp:TextBox ID="txtFechaEfectoRol" runat="server"  CssClass="form-control" TextMode="Date" ClientIDMode="Static"></asp:TextBox>
                     <br />
                     
 
@@ -130,24 +130,7 @@
                 return false;
             }
                        
-            var rol = document.getElementById("<%= ddlRol.ClientID %>")
-            var clienteRol = document.getElementById("<%= ddlClienteRol.ClientID %>")
-            var fechaEfectoRol = document.getElementById("<%= txtFechaEfectoRol.ClientID %>")
-
-            if (document.getElementById("<%= chkHabilitarRol.ClientID %>").checked) {
-                if (rol === "0") {
-                    alert("Por  favor, ingrese un rol")
-                    return false;
-                }
-                if (clienteRol === "0") {
-                    alert("Por  favor, ingrese un cliente para el rol")
-                    return false;
-                }
-                if (fechaEfectoRol === "") {
-                    alert("Si no ingresa una fecha de efecto, se aplicará la fecha de hoy.");
-                    return true;
-                }
-            }
+           
 
             return true;
         }
@@ -158,15 +141,21 @@
             var fechaEfectoRol = document.getElementById("<%= txtFechaEfectoRol.ClientID %>")
 
             if (document.getElementById("<%= chkHabilitarRol.ClientID %>").checked) {
-                if (rol === "0") {
+                console.log(rol.value, clienteRol.value, fechaEfectoRol.value);
+
+                if (rol.value === "0") {
                     alert("Por  favor, ingrese un rol")
                     return false;
                 }
-                if (clienteRol === "0") {
+                if (rol.value === "1") {
+                    alert("No se puede agregar otro rol Contratante aparte del titular. Por favor, seleccione otro rol.")
+                    return false;
+                }
+                if (clienteRol.value === "0") {
                     alert("Por  favor, ingrese un cliente para el rol")
                     return false;
                 }
-                if (fechaEfectoRol === "") {
+                if (fechaEfectoRol.value === "") {
                     alert("Si no ingresa una fecha de efecto, se aplicará la fecha de hoy.");
                     return true;
                 }
