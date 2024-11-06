@@ -143,8 +143,8 @@ Public Class Endosos
 
     Private Sub CargarClientesRol()
         ddlClienteRol.DataSource = acontrolador.ObtenerClientes()
-        ddlClienteRol.DataTextField = "Cliente"
-        ddlClienteRol.DataValueField = "Nombre"
+        ddlClienteRol.DataTextField = "Nombre"
+        ddlClienteRol.DataValueField = "Cliente"
         ddlClienteRol.DataBind()
 
         ddlClienteRol.Items.Insert(0, New ListItem("--Seleccione un Cliente--", "0"))
