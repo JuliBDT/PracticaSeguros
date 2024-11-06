@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="Endosos.aspx.vb" Inherits="PSeguros.Endosos" %>
+﻿<%@ Page Title="Endosos" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="Endosos.aspx.vb" Inherits="PSeguros.Endosos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server" onsubmit="return validarFormulario() && validarFormularioRol();">
 
     <div>
@@ -74,8 +74,8 @@
         </div>
         
 
-        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" AutoPostBack="True" OnClientClick="return validarFormulario() && validarFormularioRol();"/>
-        <asp:Button ID="BtnBaja" runat="server" Text="Dar de Baja" OnClick="btnBaja_Click" AutoPostBack="True" />
+        <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" AutoPostBack="True" CssClass="btn btn-primary w-50 mt-3" OnClientClick="return validarFormulario() && validarFormularioRol();"/>
+        <asp:Button ID="BtnBaja" runat="server" Text="Dar de Baja" OnClick="btnBaja_Click"  AutoPostBack="True" CssClass="btn btn-outline-danger w-50 mt-3" OnClientClick="return validarFormulario();"/>
     </div>
     <script>
         function validarFormulario() {

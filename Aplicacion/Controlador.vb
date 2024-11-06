@@ -69,9 +69,11 @@ Public Class Controlador
     Public Function BuscarPoliza(ramo As Integer, producto As Integer, poliza As Integer) As Poliza
         Return PolizaRepo.ObtenerPolizaPorLlaves(ramo, producto, poliza)
     End Function
-    Public Function ObtenerUltimoidPoliza() As Integer
+    Public Function ObtenerUltimoidPoliza(ramo As Integer, producto As Integer) As Integer
         ' Obtener la lista de pólizas
-        Return PolizaRepo.GetPolizas().Count
+        Dim polizas = PolizaRepo.GetPolizas()
+        Dim filtrada = polizas.Where(Function(p) p.Ramo = ramo AndAlso p.Producto = producto).ToList()
+        Return filtrada.Count
     End Function
 
     Public Function PolizasActivas() As List(Of Poliza)

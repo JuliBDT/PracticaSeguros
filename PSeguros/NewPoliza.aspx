@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="NewPoliza.aspx.vb" Inherits="PSeguros.NewPoliza" %>
+﻿<%@ Page Title="Nueva Poliza" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="NewPoliza.aspx.vb" Inherits="PSeguros.NewPoliza" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="row" onsubmit="return validarFormulario()">
@@ -43,7 +43,7 @@
         </section>
 
 
-        <asp:Button ID="btnGuardar" runat="server" CssClass="btn-success" Text="Guardar" OnClick="btnGuardar_Click" OnClientClick="return validarFormulario();" />
+        <asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-primary w-50 mt-3" Text="Guardar" OnClick="btnGuardar_Click" OnClientClick="return validarFormulario();" />
 
     </div>
     <script>

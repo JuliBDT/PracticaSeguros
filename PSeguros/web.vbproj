@@ -177,6 +177,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Fotos\logo.jpg" />
     <Content Include="ILLink\ILLink.Descriptors.LibraryBuild.xml" />
     <Content Include="PolizasCliente.aspx" />
     <Content Include="RolesDePoliza.aspx" />

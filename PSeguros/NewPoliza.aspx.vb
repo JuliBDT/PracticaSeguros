@@ -107,7 +107,7 @@ Public Class NewPoliza
         Dim cliente As String = ddlClienteTitular.SelectedValue
 
 
-        Dim idPoliza As Integer = (Controlador.ObtenerUltimoidPoliza() + 1)
+        Dim idPoliza As Integer = (Controlador.ObtenerUltimoidPoliza(idRamo, idProducto) + 1)
         Dim idRolClienteTitular As Integer = 1
 
         Controlador.CrearPoliza(idRamo, idProducto, idPoliza, cliente, fechaEfecto,
