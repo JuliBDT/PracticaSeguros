@@ -13,7 +13,7 @@
         <asp:BoundField DataField="FechaDeVigencia" HeaderText="Fecha de Vigencia" DataFormatString="{0:dd/MM/yyyy}" />
         <asp:BoundField DataField="SumaAsegurada" HeaderText="Suma Asegurada" />
         <asp:BoundField DataField="Domicilio" HeaderText="Domicilio" />
-        <asp:BoundField DataField="Nulldate" HeaderText="Baja Logica" DataFormatString="{0:dd/MM/yyyy}" /> 
+        <asp:BoundField DataField="Nulldate" HeaderText="Fecha de Modificacion" DataFormatString="{0:dd/MM/yyyy}" /> 
     </Columns>
 </asp:GridView>
     <div>

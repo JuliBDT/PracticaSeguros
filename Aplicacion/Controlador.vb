@@ -71,16 +71,7 @@ Public Class Controlador
     End Function
     Public Function ObtenerUltimoidPoliza() As Integer
         ' Obtener la lista de pólizas
-        Dim listaPolizas = PolizaRepo.GetPolizas()
-
-        ' Verificar que la lista no esté vacía antes de acceder al último elemento
-        If listaPolizas.Count > 0 Then
-            ' Devolver el ID de la última póliza (accediendo a Count - 1)
-            Return listaPolizas(listaPolizas.Count - 1).Poliza
-        Else
-            ' Si la lista está vacía, devolver un valor por defecto
-            Return 0 ' O algún valor que represente que no hay pólizas
-        End If
+        Return PolizaRepo.GetPolizas().Count
     End Function
 
     Public Function PolizasActivas() As List(Of Poliza)
